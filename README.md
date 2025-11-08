@@ -92,4 +92,5 @@
 
 Повна, автоматично згенерована документація коду доступна за посиланням нижче. Вона оновлюється після кожного коміту в основну гілку.
 https://docs.google.com/document/d/1l9Tk6m8J5BB61gVjx5jy_GbcesXdLQRNW45NY0BQDe8/edit?tab=t.0
+https://quitel-hub.github.io/Zombie-game/
 
