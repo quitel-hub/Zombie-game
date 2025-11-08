@@ -1,0 +1,12 @@
+# Doxyfile
+PROJECT_NAME           = "Zombie Survival Game"
+PROJECT_BRIEF          = "Лабораторна робота №2 - Документація коду"
+OUTPUT_DIRECTORY       = "docs"
+INPUT                  = .
+RECURSIVE              = YES
+FILE_PATTERNS          = *.h *.cpp
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = YES
+GENERATE_HTML          = YES
+HTML_OUTPUT            = html
+GENERATE_LATEX         = NO
