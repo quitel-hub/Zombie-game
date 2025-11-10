@@ -1,0 +1,34 @@
+{
+  "game_start": "=== GAME START ===",
+  "choose_weapon": "Choose weapon:\n1 - Sword\n2 - Gun",
+  "invalid_weapon_choice": "Invalid choice! Defaulting to Sword.",
+  "weapon_already_chosen": "Weapon already chosen: {0}",
+  "player_equipped": "{0} equipped {1}",
+
+  "entity_takes_damage": "{0} takes {1} damage!",
+  "target_hp_remaining": "{0} now has {1} HP",
+  "enemy_defeated": "{0} defeated!",
+
+  "player_attack_header": "\n[PLAYER ATTACK]",
+  "zombie_attack_header": "\n[ZOMBIE ATTACK]",
+  "boss_attack_header": "\n[BOSS ATTACK]",
+
+  "player_attacks_target": "{0} ({1} HP) attacks {2} ({3} HP)",
+  "zombie_bites_target": "{0} ({1} HP) bites {2} ({3} HP)",
+  "boss_attacks_target": "{0} in rage! ({1} HP) attacks {2} ({3} HP)",
+
+  "player_deals_damage": ">>> Deals {0} damage with {1}",
+  "player_no_weapon": "{0} has no weapon equipped!",
+  "cant_move_wall": "Can't move there (wall).",
+  "no_enemy_in_range": "No enemies in range to attack!",
+
+  "health_score_hud": "\nHealth: {0} | Score: {1}",
+  "player_turn_header": "\n--- PLAYER TURN ---",
+  "enemy_turn_header": "\n--- ENEMY TURN ---",
+  "player_turn_prompt": "W/A/S/D to move, F to attack, Q to quit: ",
+
+  "player_fallen": "Player has fallen!",
+  "victory": "\n=== Victory! All enemies defeated! ===",
+  "defeat": "\n=== Defeat... ===",
+  "final_score": "Final score: {0}"
+}

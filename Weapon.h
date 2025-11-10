@@ -12,8 +12,12 @@ protected:
     string name;
     int damage;
 public:
+
     Weapon(string n, int d) : name(n), damage(d) {}
+
     virtual ~Weapon() {}
+
     virtual int getDamage() const { return damage; }
+
     virtual string getName() const { return name; }
 };

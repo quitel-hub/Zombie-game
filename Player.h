@@ -21,20 +21,21 @@ class Player : public Entity {
     bool weaponChosen;
 
 public:
-    void reset(int startX, int startY) {
-        health = 100;
-        score = 0;
-        x = startX;
-        y = startY;
-        weapon.reset();
-        weaponChosen = false;
-    }
 
     Player(const std::string& n, int h, int d, int sx, int sy)
             : Entity(n, h, d), weapon(nullptr), score(0), x(sx), y(sy), weaponChosen(false) {}
 
 
     ~Player() {}
+
+    void reset(int startX, int startY) {
+        health = 100; // Початкове здоров'я
+        score = 0;    // Початковий рахунок
+        x = startX;   // Початкова позиція X
+        y = startY;   // Початкова позиція Y
+        weapon.reset(); // Видалити поточну зброю (unique_ptr має метод reset)
+        weaponChosen = false;
+    }
 
     void chooseWeapon(int choice) {
         if (weaponChosen) {
@@ -73,8 +74,11 @@ public:
     char getSymbol() const override { return 'P'; }
 
     void addScore(int points) { score += points; }
+
     int getScore() const { return score; }
+
     int getX() const { return x; }
+
     int getY() const { return y; }
 
     void move(int dx, int dy, const vector<vector<int>>& map) {

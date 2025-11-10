@@ -11,8 +11,11 @@ using namespace std;
 
 class Zombie : public Entity {
     int x, y;
+
 public:
+
     Zombie() : Entity("Zombie", 50, 10), x(0), y(0) {}
+
     Zombie(const string& n, int h, int d, int sx, int sy)
             : Entity(n, h, d), x(sx), y(sy) {}
 
@@ -23,7 +26,10 @@ public:
         cout << L10N.getFormattedString("target_hp_remaining", target.getName(), target.getHealth()) << "\n";
     }
 
+
     char getSymbol() const override { return 'Z'; }
+
     int getX() const { return x; }
+
     int getY() const { return y; }
 };

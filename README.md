@@ -1,243 +1,96 @@
-# Zombie-game
-
-A simple 2D zombie shooter, created in C++ using the SFML library.
+﻿# Zombie-game
+# 2D Zombie Game (Лабораторні роботи з С++)
 
-## Requirements
+Це навчальний проєкт, розроблений у рамках університетського курсу з програмування. Проєкт являє собою простий 2D-шутер з видом зверху, реалізований на C++ з використанням бібліотеки **SFML**.
 
-To build and run the project, you will need:
+Основна мета проєкту — вивчення та застосування сучасних практик розробки, включаючи unit-тестування, CI/CD та автоматичну генерацію документації.
 
-* CMake: 3.30 or later.
-* C++ Compiler: with C++20 standard support.
-* SFML: 2.6.1 (graphics, window, and system components).
 
-## Building and Running
-
-1. Clone the repository:
-```bash
-git clone [your-repository-URL]
-cd Zombie-game-main
-```
-
-2. Download SFML 2.6.1 from the [official website](https://www.sfml-dev.org/download.php).
-
-3. Create a `libs` folder in the project root.
-
-4. Unzip the SFML archive into this folder. Expected directory structure:
-```
-Zombie-game-main/
-├── libs/
-│ └── SFML-2.6.1/
-│ ├── bin/
-│ ├── include/
-│ ├── lib/
-│ └── ...
-├── CMakeLists.txt
-├── main.cpp
-└── ...
-```
-
-5. **Important:** CMakeLists.txt specifies a hardcoded path to SFML:
-```cmake
-set(SFML_DIR) "C:/Users/quitel/CLionProjects/Zombie-game/libs/SFML-2.6.1/lib/cmake/SFML")
-```
-To ensure the project can be built on other computers, it is recommended to replace this path with a relative one using the `PROJECT_SOURCE_DIR` variable:
-```cmake
-# Make sure SFML is in the libs folder, as in step 4
-set(SFML_DIR "${PROJECT_SOURCE_DIR}/libs/SFML-2.6.1/lib/cmake/SFML")
-```
-
-6. Create a build directory and build with CMake:
-```bash
-mkdir build
-cd build
-cmake ..
-cmake --build .
-```
-
-7. The executable (named `untitled23` according to `CMakeLists.txt`) will be located in the `build` folder.
-
-## Running tests
-
-The project uses Google Test (v1.14.0) for unit testing.
-
-1. CMake will automatically configure and build the `runTests` target.
-2. To run tests, run one of the commands from the `build` folder:
-
-```bash
-# Using CTest
-ctest
-```
-Or
-```bash
-# Directly running the test executable
-./runTests
-```
-
-## Technology Stack
-
-* **Language:** C++20
-* **Graphics Library:** SFML 2.6.1
-* **Build System:** CMake 3.30+
-* **Testing:** Google Test v1.14.0
-
-## Project Structure
-
-Below is the structure of the main files specified in `CMakeLists.txt`:A simple 2D zombie shooter, created in C++ using the SFML library.
-
-## Requirements
-
-To build and run the project, you will need:
-
-* CMake: 3.30 or later.
-* C++ Compiler: with C++20 standard support.
-* SFML: 2.6.1 (graphics, window, and system components).
-
-## Building and Running
-
-1. Clone the repository:
-```bash
-git clone [your-repository-URL]
-cd Zombie-game-main
-```
-
-2. Download SFML 2.6.1 from the [official website](https://www.sfml-dev.org/download.php).
-
-3. Create a `libs` folder in the project root.
-
-4. Unzip the SFML archive into this folder. Expected directory structure:
-```
-Zombie-game-main/
-├── libs/
-│ └── SFML-2.6.1/
-│ ├── bin/
-│ ├── include/
-│ ├── lib/
-│ └── ...
-├── CMakeLists.txt
-├── main.cpp
-└── ...
-```
+## 🚀 Збірка та запуск проєкту
 
-5. **Important:** CMakeLists.txt specifies a hardcoded path to SFML:
-```cmake
-set(SFML_DIR) "C:/Users/quitel/CLionProjects/Zombie-game/libs/SFML-2.6.1/lib/cmake/SFML")
-```
-To ensure the project can be built on other computers, it is recommended to replace this path with a relative one using the `PROJECT_SOURCE_DIR` variable:
-```cmake
-# Make sure SFML is in the libs folder, as in step 4
-set(SFML_DIR "${PROJECT_SOURCE_DIR}/libs/SFML-2.6.1/lib/cmake/SFML")
-```
+Проєкт використовує **CMake** для автоматизації збірки. Всі необхідні залежності (зокрема SFML 2.6.1) вже включені до репозиторію в папку `libs/`.
 
-6. Create a build directory and build with CMake:
-```bash
-mkdir build
-cd build
-cmake ..
-cmake --build .
-```
+### Вимоги
 
-7. The executable (named `untitled23` according to `CMakeLists.txt`) will be located in the `build` folder.
+* C++ компілятор (GCC, Clang, MSVC тощо)
+* CMake (версії 3.10 або вище)
+* Git
 
-## Running tests
+### Інструкція зі збірки (Командний рядок)
 
-The project uses Google Test (v1.14.0) for unit testing.
+1.  **Клонуйте репозиторій:**
+    ```bash
+    git clone [https://github.com/](https://github.com/)[Ваш-GitHub-Username]/zombie-game-tests.git
+    cd zombie-game-tests
+    ```
 
-1. CMake will automatically configure and build the `runTests` target.
-2. To run tests, run one of the commands from the `build` folder:
+2.  **Створіть папку для збірки:**
+    ```bash
+    mkdir build
+    cd build
+    ```
 
-```bash
-# Using CTest
-ctest
-```
-Or
-```bash
-# Directly running the test executable
-./runTests
-```
+3.  **Запустіть CMake для генерації файлів збірки:**
+    ```bash
+    # Для Windows (наприклад, з Visual Studio)
+    cmake ..
+    
+    # Для Linux / macOS
+    cmake ..
+    ```
 
-## Technology Stack
+4.  **Скомпілюйте проєкт:**
+    ```bash
+    # Універсальна команда CMake
+    cmake --build .
+    
+    # Або для Linux / macOS
+    make
+    ```
 
-* **Language:** C++20
-* **Graphics Library:** SFML 2.6.1
-* **Build System:** CMake 3.30+
-* **Testing:** Google Test v1.14.0
+5.  **Запустіть гру:**
+    Після успішної компіляції виконуваний файл `zombie-game` (або `zombie-game.exe` для Windows) з'явиться у папці `build/`.
+    ```bash
+    ./zombie-game
+    ```
 
-## Project Structure
+---
 
-Below is the structure of the main files specified in `CMakeLists.txt`:
-  cmake_minimum_required(VERSION 3.30)
+## 🔬 Лабораторні роботи
 
-project(Zombie-game)
+### Лабораторна робота №1: Unit-тестування
 
-set(CMAKE_CXX_STANDARD 20)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(SFML_DIR "your way to sfml")
-find_package(SFML 2.6.1 COMPONENTS graphics window system REQUIRED)
+**Мета:** Написання та інтеграція unit-тестів для перевірки ключової ігрової логіки.
 
+У цій лабораторній роботі було впроваджено тестування за допомогою фреймворку **Google Test (gtest)**.
 
-add_library(GameLogic
-        Game.cpp
-        Entity.h
-        Player.h
-        Zombie.h
-        Boss.h
-        Weapon.h
-        Sword.h
-        Gun.h
-        Inventory.h
-        Map.h
-        Game.h
-        Container.h
-        LocalizationManager.h
-        Command.h
+* **Основні тести** (`tests/GameLogicTests.cpp`):
+    * Перевірка руху гравця.
+    * Перевірка логіки зіткнень (колізій).
+    * Тестування спавну та поведінки ворогів (зомбі).
+* **Інтеграція:** Тести налаштовані в `CMakeLists.txt` і можуть бути запущені окремо від основної гри, що дозволяє швидко перевіряти коректність коду після внесення змін.
 
-)
+### Лабораторна робота №2: Документація та CI/CD
 
+**Мета:** Документування кодової бази та налаштування автоматичної публікації документації.
 
-target_include_directories(GameLogic PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
-add_executable(Zombie-game main.cpp)
-target_link_libraries(GameLogic PRIVATE sfml-graphics sfml-window sfml-system)
+У цій лабораторній роботі було виконано два ключових завдання:
 
+1.  **Документування коду:**
+    * Усі основні класи (`Entity`, `Player`, `Zombie`, `Game`, `Map` тощо) та їхні методи були задокументовані за допомогою коментарів у стилі **Doxygen**.
+    * Використані стандартні теги, такі як `@brief`, `@param`, `@return`, для детального опису функціоналу.
 
+2.  **Автоматизація (CI/CD):**
+    * Створено workflow для **GitHub Actions** (`.github/workflows/docs.yml`).
+    * Цей workflow автоматично запускається при кожному `push` у гілки `main` або `feature/docs-ci`.
+    * Він встановлює Doxygen, генерує HTML-документацію на основі коментарів у коді та конфігураційного файлу `Doxyfile`.
+    * Згенерована документація автоматично публікується на **GitHub Pages**.
 
+---
 
-set(SFML_BIN_DIR "${CMAKE_CURRENT_SOURCE_DIR}/libs/SFML-2.6.1/bin")
+## 📖 Документація
 
+Повна, автоматично згенерована документація коду доступна за посиланням нижче. Вона оновлюється після кожного коміту в основну гілку.
+https://docs.google.com/document/d/1l9Tk6m8J5BB61gVjx5jy_GbcesXdLQRNW45NY0BQDe8/edit?tab=t.0
+https://quitel-hub.github.io/Zombie-game/
 
-file(GLOB SFML_DLLS "${SFML_BIN_DIR}/*.dll")
-
-file(COPY ${SFML_DLLS} DESTINATION ${CMAKE_BINARY_DIR})
-file(COPY assets/ DESTINATION ${CMAKE_BINARY_DIR})
-target_link_libraries(Zombie-game PRIVATE GameLogic sfml-graphics sfml-window sfml-system)
-
-
-
-enable_testing()
-
-
-include(FetchContent)
-FetchContent_Declare(
-        googletest
-        URL https://github.com/google/googletest/archive/refs/tags/v1.14.0.zip
-)
-FetchContent_MakeAvailable(googletest)
-
-
-add_subdirectory(tests)
-
-
-Below is the structure of the main files specified in `CMakeLists.txt`(for unit-tests):
-
-add_executable(runTests
-
-        GameLogicTests.cpp
-)
-
-target_link_libraries(runTests PRIVATE gtest_main)
-
-
-target_link_libraries(runTests PRIVATE GameLogic)
-
-
-include(GoogleTest)
-gtest_discover_tests(runTests)

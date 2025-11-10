@@ -1,4 +1,3 @@
-#include<iostream>
 #include "Weapon.h"
 #pragma once
 using namespace std;
@@ -8,7 +7,9 @@ using namespace std;
 
 #endif //UNTITLED23_SWORD_H
 
+
 class Sword : public Weapon {
 public:
+
     Sword() : Weapon("Sword", 40) {}
 };

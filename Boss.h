@@ -13,6 +13,7 @@ using namespace std;
 class Boss : public Zombie {
     int rage;
 public:
+
     Boss(const std::string& n, int h, int d, int r, int sx, int sy)
             : Zombie(n, h, d, sx, sy), rage(r) {}
 
@@ -23,6 +24,5 @@ public:
         target.takeDamage(totalDamage);
         cout << L10N.getFormattedString("target_hp_remaining", target.getName(), target.getHealth()) << "\n";
     }
-
     char getSymbol() const override { return 'B'; }
 };
