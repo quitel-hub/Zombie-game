@@ -61,7 +61,7 @@ void Game::setupUI() {
     float buttonWidth = 200.f;
     float buttonHeight = 50.f;
     sf::Color buttonColor(100, 100, 100);
-    sf::Color textColor = sf::Color::Black; // Чорний колір для кращої читабельності
+    sf::Color textColor = sf::Color::Green; // Чорний колір для кращої читабельності
     unsigned int charSize = 24;
     unsigned int titleCharSize = 50;
 
@@ -69,7 +69,7 @@ void Game::setupUI() {
     menuTitleText.setFont(font);
     menuTitleText.setString("Zombie Survival");
     menuTitleText.setCharacterSize(titleCharSize);
-    menuTitleText.setFillColor(textColor);
+    menuTitleText.setFillColor(sf::Color::Green);
     centerTextOrigin(menuTitleText);
     menuTitleText.setPosition(centerX, window.getSize().y / 4.0f);
 
@@ -97,12 +97,12 @@ void Game::setupUI() {
     configTitleText.setString("Game Configuration");
     configTitleText.setCharacterSize(40);
     centerTextOrigin(configTitleText);
-    configTitleText.setPosition(centerX, window.getSize().y / 6.0f);
+    configTitleText.setPosition(centerX, window.getSize().y / 20.0f);
 
     float buttonSize = 40.f;
     float labelY_MapWidth = window.getSize().y / 3.0f;
     float labelY_MapHeight = labelY_MapWidth + 80.f;
-    float labelY_Enemies = labelY_MapHeight + 80.f;
+    float labelY_Enemies = labelY_MapHeight + 100.0f;
     sf::Color smallButtonColor(70, 70, 70);
 
     // Map Width
@@ -113,7 +113,7 @@ void Game::setupUI() {
     mapWidthDecreaseButton.setSize({buttonSize, buttonSize});
     mapWidthDecreaseButton.setFillColor(smallButtonColor);
     mapWidthDecreaseButton.setOrigin(buttonSize / 2.0f, buttonSize / 2.0f);
-    mapWidthDecreaseButton.setPosition(centerX - 100.f, labelY_MapWidth);
+    mapWidthDecreaseButton.setPosition(centerX - 150.f, labelY_MapWidth);
     mapWidthDecreaseText.setFont(font);
     mapWidthDecreaseText.setString("-");
     mapWidthDecreaseText.setCharacterSize(charSize);
@@ -121,7 +121,7 @@ void Game::setupUI() {
     centerTextOrigin(mapWidthDecreaseText);
     mapWidthDecreaseText.setPosition(mapWidthDecreaseButton.getPosition());
     mapWidthIncreaseButton = mapWidthDecreaseButton;
-    mapWidthIncreaseButton.setPosition(centerX + 100.f, labelY_MapWidth);
+    mapWidthIncreaseButton.setPosition(centerX + 150.f, labelY_MapWidth);
     mapWidthIncreaseText = mapWidthDecreaseText;
     mapWidthIncreaseText.setString("+");
     centerTextOrigin(mapWidthIncreaseText);
@@ -131,11 +131,11 @@ void Game::setupUI() {
     mapHeightText = mapWidthText;
     mapHeightText.setPosition(centerX, labelY_MapHeight);
     mapHeightDecreaseButton = mapWidthDecreaseButton;
-    mapHeightDecreaseButton.setPosition(centerX - 100.f, labelY_MapHeight);
+    mapHeightDecreaseButton.setPosition(centerX - 150.f, labelY_MapHeight);
     mapHeightDecreaseText = mapWidthDecreaseText;
     mapHeightDecreaseText.setPosition(mapHeightDecreaseButton.getPosition());
     mapHeightIncreaseButton = mapWidthIncreaseButton;
-    mapHeightIncreaseButton.setPosition(centerX + 100.f, labelY_MapHeight);
+    mapHeightIncreaseButton.setPosition(centerX + 150.f, labelY_MapHeight);
     mapHeightIncreaseText = mapWidthIncreaseText;
     mapHeightIncreaseText.setPosition(mapHeightIncreaseButton.getPosition());
 
@@ -143,11 +143,11 @@ void Game::setupUI() {
     enemyCountText = mapWidthText;
     enemyCountText.setPosition(centerX, labelY_Enemies);
     enemyCountDecreaseButton = mapWidthDecreaseButton;
-    enemyCountDecreaseButton.setPosition(centerX - 100.f, labelY_Enemies);
+    enemyCountDecreaseButton.setPosition(centerX - 150.f, labelY_Enemies);
     enemyCountDecreaseText = mapWidthDecreaseText;
     enemyCountDecreaseText.setPosition(enemyCountDecreaseButton.getPosition());
     enemyCountIncreaseButton = mapWidthIncreaseButton;
-    enemyCountIncreaseButton.setPosition(centerX + 100.f, labelY_Enemies);
+    enemyCountIncreaseButton.setPosition(centerX + 150.f, labelY_Enemies);
     enemyCountIncreaseText = mapWidthIncreaseText;
     enemyCountIncreaseText.setPosition(enemyCountIncreaseButton.getPosition());
 
