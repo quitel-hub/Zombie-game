@@ -1,12 +1,11 @@
 #include "Game.h"
 #include "Zombie.h"
 #include "Boss.h"
-#include <iostream>
-#include <string> // Для std::to_string
-#include <algorithm> // Для std::clamp
+#include "Logger.h"
+#include <string>
+#include <algorithm>
 
-
-
+// Конструктор
 Game::Game(sf::RenderWindow& win)
         : window(win),
           currentState(GameState::MainMenu),
@@ -17,32 +16,64 @@ Game::Game(sf::RenderWindow& win)
           configMapHeight(15),
           configEnemyCount(3)
 {
-    // Ініціалізуємо ігрову камеру розміром з вікно
+    // Ініціалізуємо ігрову камеру
     gameView.setSize(static_cast<float>(window.getSize().x), static_cast<float>(window.getSize().y));
     gameView.setCenter(window.getSize().x / 2.f, window.getSize().y / 2.f);
+
+    LOG_INFO("Game engine initialized. Window size: " +
+             to_string(window.getSize().x) + "x" + to_string(window.getSize().y));
 
     loadAssets();
     setupUI();
 }
 
-
-Game::~Game() = default;
+Game::~Game() {
+    LOG_INFO("Game session ended. Shutting down.");
+}
 
 void Game::loadAssets() {
-    if (!font.loadFromFile("3Dumb.ttf")) { std::cout << "Error: Could not load font 'arial.ttf'" << std::endl; }
-    if (!playerTexture.loadFromFile("player.png")) { std::cout << "Error loading player.png" << std::endl; }
-    if (!zombieTexture.loadFromFile("zombie.png")) { std::cout << "Error loading zombie.png" << std::endl; }
-    if (!bossTexture.loadFromFile("boss.png"))   { std::cout << "Error loading boss.png" << std::endl; }
-    if (!wallTexture.loadFromFile("wall.png"))     { std::cout << "Error loading wall.png" << std::endl; }
-    if (!floorTexture.loadFromFile("floor.png"))   { std::cout << "Error loading floor.png" << std::endl; }
+    LOG_INFO("Loading assets...");
+    bool errorOccurred = false;
+
+    if (!font.loadFromFile("assets/3Dumb.ttf") && !font.loadFromFile("3Dumb.ttf")) {
+        LOG_ERR("CRITICAL: Could not load font '3Dumb.ttf'");
+        errorOccurred = true;
+    }
+    if (!playerTexture.loadFromFile("assets/player.png") && !playerTexture.loadFromFile("player.png")) {
+        LOG_ERR("Error loading player.png");
+        errorOccurred = true;
+    }
+    if (!zombieTexture.loadFromFile("assets/zombie.png") && !zombieTexture.loadFromFile("zombie.png")) {
+        LOG_ERR("Error loading zombie.png");
+        errorOccurred = true;
+    }
+    if (!bossTexture.loadFromFile("assets/boss.png") && !bossTexture.loadFromFile("boss.png"))   {
+        LOG_ERR("Error loading boss.png");
+        errorOccurred = true;
+    }
+    if (!wallTexture.loadFromFile("assets/wall.png") && !wallTexture.loadFromFile("wall.png"))     {
+        LOG_ERR("Error loading wall.png");
+        errorOccurred = true;
+    }
+    if (!floorTexture.loadFromFile("assets/floor.png") && !floorTexture.loadFromFile("floor.png"))   {
+        LOG_ERR("Error loading floor.png");
+        errorOccurred = true;
+    }
+
+    if (!errorOccurred) {
+        LOG_INFO("All assets loaded successfully.");
+    } else {
+        LOG_WARN("Some assets failed to load. Game may look incorrect.");
+    }
 }
 
 void Game::setupUI() {
+    // ... (Код налаштування UI залишається без змін, він не потребує логування) ...
     float centerX = window.getSize().x / 2.0f;
     float buttonWidth = 200.f;
     float buttonHeight = 50.f;
     sf::Color buttonColor(100, 100, 100);
-    sf::Color textColor = sf::Color::Green; // Чорний колір для кращої читабельності
+    sf::Color textColor = sf::Color::Green;
     unsigned int charSize = 24;
     unsigned int titleCharSize = 50;
 
@@ -213,7 +244,6 @@ void Game::setupUI() {
     scoreText.setFillColor(textColor);
     scoreText.setPosition(10.f, 30.f);
 
-    // HP Bar
     healthBarBackground.setSize({100.f, 15.f});
     healthBarBackground.setFillColor(sf::Color(50, 50, 50));
     healthBarBackground.setPosition(10.f, 50.f);
@@ -223,18 +253,23 @@ void Game::setupUI() {
     healthBarForeground.setPosition(10.f, 50.f);
 }
 
-
-
 void Game::resetGame() {
+    LOG_INFO("Resetting game state...");
+    LOG_INFO("Configuration: Map=" + to_string(configMapWidth) + "x" + to_string(configMapHeight) +
+             ", Enemies=" + to_string(configEnemyCount));
+
     map = Map(configMapWidth, configMapHeight, 20);
+
+    // Логуємо згенеровану карту в файл (для відладки)
+    map.render(player, enemies.getAllRaw());
 
     player.reset(1, 1);
     player.chooseWeapon(1);
     enemies.clear();
 
-    // Динамічно додаємо ворогів
     if (configEnemyCount > 0) {
         enemies.add(make_unique<Boss>("BOSS", 120, 20, configMapWidth - 2, configMapHeight - 2, 7));
+        LOG_INFO("Boss enemy spawned.");
     }
     for (int i = 0; i < configEnemyCount - 1; ++i) {
         int z_x = 3 + (i % (configMapWidth - 4));
@@ -245,28 +280,28 @@ void Game::resetGame() {
         }
         enemies.add(make_unique<Zombie>("Zombie " + std::to_string(i + 1), 50, 10, z_x, z_y));
     }
+    LOG_INFO("Total enemies active: " + to_string(enemies.size()));
 
     isPlayerTurn = true;
     logMessages.clear();
     addLogMessage("Game started!");
 }
 
-
-
 void Game::runGameLoop() {
+    LOG_INFO("Entering main game loop.");
     while (window.isOpen()) {
         processEvents();
         update();
         render();
     }
+    LOG_INFO("Exiting main game loop.");
 }
-
-
 
 void Game::processEvents() {
     sf::Event event;
     while (window.pollEvent(event)) {
         if (event.type == sf::Event::Closed) {
+            LOG_INFO("Window close event received.");
             window.close();
         }
 
@@ -280,14 +315,11 @@ void Game::processEvents() {
     }
 }
 
-
 void Game::update() {
     if (currentState == GameState::Playing) {
         updatePlaying();
     }
 }
-
-
 
 void Game::render() {
     window.clear(sf::Color::Black);
@@ -303,19 +335,19 @@ void Game::render() {
     window.display();
 }
 
-
 void Game::processMainMenuEvents(sf::Event& event) {
     if (event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left) {
         sf::Vector2f mousePos = window.mapPixelToCoords({event.mouseButton.x, event.mouseButton.y});
         if (playButton.getGlobalBounds().contains(mousePos)) {
-            currentState = GameState::ConfigSelection; // Перехід до налаштувань
+            LOG_INFO("User selected New Game.");
+            currentState = GameState::ConfigSelection;
         }
         if (exitButton.getGlobalBounds().contains(mousePos)) {
+            LOG_INFO("User selected Exit.");
             window.close();
         }
     }
 }
-
 
 void Game::processConfigSelectionEvents(sf::Event& event) {
     if (event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left) {
@@ -345,15 +377,15 @@ void Game::processConfigSelectionEvents(sf::Event& event) {
 
         // --- Start/Back ---
         if (configStartButton.getGlobalBounds().contains(mousePos)) {
-            resetGame(); // Застосувати налаштування
-            currentState = GameState::Playing; // Почати гру
+            LOG_INFO("Configuration confirmed. Starting game.");
+            resetGame();
+            currentState = GameState::Playing;
         }
         if (configBackButton.getGlobalBounds().contains(mousePos)) {
             currentState = GameState::MainMenu;
         }
     }
 }
-
 
 void Game::processPlayingEvents(sf::Event& event) {
     if (isPlayerTurn && event.type == sf::Event::KeyPressed) {
@@ -363,7 +395,10 @@ void Game::processPlayingEvents(sf::Event& event) {
         if (event.key.code == sf::Keyboard::A) { player.move(-1, 0, map.getGrid()); actionTaken = true; }
         if (event.key.code == sf::Keyboard::D) { player.move(1, 0, map.getGrid()); actionTaken = true; }
         if (event.key.code == sf::Keyboard::F) { handlePlayerAttack(); actionTaken = true; }
-        if (event.key.code == sf::Keyboard::Escape) { currentState = GameState::Paused; }
+        if (event.key.code == sf::Keyboard::Escape) {
+            LOG_INFO("Game paused by user.");
+            currentState = GameState::Paused;
+        }
 
         if (actionTaken && player.isAlive()) {
             isPlayerTurn = false; // Передача ходу ворогам
@@ -371,38 +406,41 @@ void Game::processPlayingEvents(sf::Event& event) {
     }
 }
 
-
 void Game::processPausedEvents(sf::Event& event) {
     if (event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left) {
         sf::Vector2f mousePos = window.mapPixelToCoords({event.mouseButton.x, event.mouseButton.y});
 
         if (resumeButton.getGlobalBounds().contains(mousePos)) {
+            LOG_INFO("Game resumed.");
             currentState = GameState::Playing;
         }
         if (pauseRestartButton.getGlobalBounds().contains(mousePos)) {
+            LOG_INFO("Game restarted from pause menu.");
             resetGame();
             currentState = GameState::Playing;
         }
         if (pauseToMenuButton.getGlobalBounds().contains(mousePos)) {
+            LOG_INFO("Returned to Main Menu from pause.");
             currentState = GameState::MainMenu;
         }
         if (pauseExitDesktopButton.getGlobalBounds().contains(mousePos)) {
+            LOG_INFO("Exit to desktop from pause.");
             window.close();
         }
     }
 
     if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape) {
+        LOG_INFO("Game resumed (Escape key).");
         currentState = GameState::Playing;
     }
 }
-
-
 
 void Game::processGameOverEvents(sf::Event& event) {
     if (event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left) {
         sf::Vector2f mousePos = window.mapPixelToCoords({event.mouseButton.x, event.mouseButton.y});
         if (restartButton.getGlobalBounds().contains(mousePos)) {
-            currentState = GameState::ConfigSelection; // Повернення до налаштувань
+            LOG_INFO("Restarting after Game Over.");
+            currentState = GameState::ConfigSelection;
         }
         if (gameOverExitButton.getGlobalBounds().contains(mousePos)) {
             currentState = GameState::MainMenu;
@@ -410,19 +448,16 @@ void Game::processGameOverEvents(sf::Event& event) {
     }
 }
 
-
-
 void Game::centerTextOrigin(sf::Text& text) {
     sf::FloatRect bounds = text.getLocalBounds();
     text.setOrigin(bounds.left + bounds.width / 2.0f, bounds.top + bounds.height / 2.0f);
 }
 
-
-
 void Game::updatePlaying() {
 
-    // 1. Перевірка умови перемоги (виправлено, перенесено на початок)
+    // Перевірка умови перемоги
     if (currentState == GameState::Playing && enemies.size() == 0) {
+        LOG_INFO("VICTORY! All enemies defeated.");
         currentState = GameState::GameOver;
         gameOverTitleText.setString("Victory!");
         centerTextOrigin(gameOverTitleText);
@@ -430,21 +465,25 @@ void Game::updatePlaying() {
         return;
     }
 
-    // 2. Логіка ходу ворогів
     if (!isPlayerTurn && player.isAlive()) {
-        addLogMessage("Enemy turn.");
-        for (auto* e : enemies.getAllRaw()) {
+        LOG_DEBUG("--- Enemy Turn Start ---");
+
+
+        const auto& allEnemiesRaw = enemies.getAllRaw();
+
+        for (auto* e : allEnemiesRaw) {
             if (auto* z = dynamic_cast<Zombie*>(e)) {
                 int dx = abs(z->getX() - player.getX());
                 int dy = abs(z->getY() - player.getY());
-                if (dx + dy == 1) { // Атака, якщо ворог поруч
 
+
+                if (dx + dy == 1) {
                     int damage = dynamic_cast<Boss*>(z) ? 20 : 10;
                     z->attack(player);
-                    addLogMessage(z->getName() + " hits player for " + std::to_string(damage) + "!");
+                    addLogMessage(z->getName() + " hits player!");
 
-                    // 3. Перевірка умови поразки
                     if (!player.isAlive()) {
+                        LOG_INFO("DEFEAT. Player killed by " + z->getName());
                         addLogMessage("Player has fallen!");
                         currentState = GameState::GameOver;
                         gameOverTitleText.setString("Defeat...");
@@ -452,10 +491,15 @@ void Game::updatePlaying() {
                         break;
                     }
                 }
+                else {
+                    z->moveTowards(player.getX(), player.getY(), map.getGrid(), allEnemiesRaw);
+                }
             }
             if (currentState == GameState::GameOver) break;
         }
-        isPlayerTurn = true; // Повернення ходу гравцю
+
+        LOG_DEBUG("--- Enemy Turn End ---");
+        isPlayerTurn = true;
     }
 
     // 4. Оновлення HUD
@@ -466,12 +510,11 @@ void Game::updatePlaying() {
     if (hpPercent < 0) hpPercent = 0;
     healthBarForeground.setSize({100.f * hpPercent, 15.f});
 
-    // 5. Оновлення камери (sf::View)
+    // 5. Оновлення камери
     const int TILE_SIZE = 32;
     float viewX = static_cast<float>(player.getX() * TILE_SIZE);
     float viewY = static_cast<float>(player.getY() * TILE_SIZE);
 
-    // "Затискання" камери в межах карти
     float halfViewX = gameView.getSize().x / 2.f;
     float halfViewY = gameView.getSize().y / 2.f;
     float mapPixelWidth = static_cast<float>(configMapWidth * TILE_SIZE);
@@ -484,7 +527,7 @@ void Game::updatePlaying() {
 }
 
 void Game::renderMainMenu() {
-    window.setView(window.getDefaultView()); // Використовуємо стандартну камеру
+    window.setView(window.getDefaultView());
     window.draw(menuTitleText);
     window.draw(playButton);
     window.draw(playButtonText);
@@ -492,14 +535,11 @@ void Game::renderMainMenu() {
     window.draw(exitButtonText);
 }
 
-
-
 void Game::renderConfigSelection() {
-    window.setView(window.getDefaultView()); // Використовуємо стандартну камеру
+    window.setView(window.getDefaultView());
 
     window.draw(configTitleText);
 
-    // Оновлення тексту перед рендерингом
     mapWidthText.setString("Map Width: " + std::to_string(configMapWidth));
     centerTextOrigin(mapWidthText);
     window.draw(mapWidthText);
@@ -512,7 +552,6 @@ void Game::renderConfigSelection() {
     centerTextOrigin(enemyCountText);
     window.draw(enemyCountText);
 
-    // Рендер кнопок
     window.draw(mapWidthDecreaseButton);
     window.draw(mapWidthDecreaseText);
     window.draw(mapWidthIncreaseButton);
@@ -534,10 +573,9 @@ void Game::renderConfigSelection() {
 void Game::renderPlaying() {
     const int TILE_SIZE = 32;
 
-    // --- 1. Рендер ігрового світу (з ігровою камерою) ---
+    // --- 1. Рендер ігрового світу ---
     window.setView(gameView);
 
-    // Малюємо карту
     for (int y = 0; y < configMapHeight; ++y) {
         for (int x = 0; x < configMapWidth; ++x) {
             sf::Sprite tileSprite;
@@ -547,7 +585,6 @@ void Game::renderPlaying() {
         }
     }
 
-    // Малюємо ворогів
     for (auto* e : enemies.getAllRaw()) {
         if (auto* z = dynamic_cast<Zombie*>(e)) {
             sf::Sprite enemySprite;
@@ -557,12 +594,11 @@ void Game::renderPlaying() {
         }
     }
 
-    // Малюємо гравця
     sf::Sprite playerSprite(playerTexture);
     playerSprite.setPosition(static_cast<float>(player.getX() * TILE_SIZE), static_cast<float>(player.getY() * TILE_SIZE));
     window.draw(playerSprite);
 
-    // --- 2. Рендер HUD (зі стандартною камерою) ---
+    // --- 2. Рендер HUD ---
     window.setView(window.getDefaultView());
 
     window.draw(healthText);
@@ -570,7 +606,6 @@ void Game::renderPlaying() {
     window.draw(healthBarBackground);
     window.draw(healthBarForeground);
 
-    // Малюємо ігровий лог
     float logY = window.getSize().y - 20.f;
     for (auto it = logMessages.rbegin(); it != logMessages.rend(); ++it) {
         it->setPosition(10.f, logY);
@@ -579,13 +614,8 @@ void Game::renderPlaying() {
     }
 }
 
-
-
 void Game::renderPaused() {
-    // 1. Малюємо гру на фоні
     renderPlaying();
-
-    // 2. Малюємо меню паузи поверх (renderPlaying вже встановив defaultView)
     sf::RectangleShape overlay({(float)window.getSize().x, (float)window.getSize().y});
     overlay.setFillColor(sf::Color(0, 0, 0, 150));
     window.draw(overlay);
@@ -601,10 +631,8 @@ void Game::renderPaused() {
     window.draw(pauseExitDesktopButtonText);
 }
 
-
-
 void Game::renderGameOver() {
-    window.setView(window.getDefaultView()); // Використовуємо стандартну камеру
+    window.setView(window.getDefaultView());
 
     finalScoreText.setString("Final Score: " + std::to_string(player.getScore()));
     centerTextOrigin(finalScoreText);
@@ -618,8 +646,6 @@ void Game::renderGameOver() {
     window.draw(gameOverExitButtonText);
 }
 
-
-
 void Game::handlePlayerAttack() {
     bool attacked = false;
     for (size_t i = 0; i < enemies.size(); ++i) {
@@ -628,12 +654,14 @@ void Game::handlePlayerAttack() {
             int dy = abs(z->getY() - player.getY());
             if (dx + dy == 1) { // Ворог у зоні досяжності
 
-                int damage = 20; // Пошкодження гравця
-                player.attack(*z);
+                LOG_DEBUG("Player engaged enemy: " + z->getName());
+
+                int damage = 20;
+                player.attack(*z); // LOG_INFO про атаку вже всередині player.attack
                 addLogMessage("Player hits " + z->getName() + " for " + std::to_string(damage) + "!");
 
-                // Перевірка, чи не загинув гравець від контратаки (наприклад, шипів)
                 if (!player.isAlive()) {
+                    LOG_INFO("Player died during attack phase.");
                     addLogMessage("Player has fallen!");
                     currentState = GameState::GameOver;
                     gameOverTitleText.setString("Defeat...");
@@ -642,12 +670,13 @@ void Game::handlePlayerAttack() {
                 }
 
                 attacked = true;
-                if (!z->isAlive()) { // Ворог загинув
+                if (!z->isAlive()) {
+                    LOG_INFO("Enemy neutralized: " + z->getName());
                     addLogMessage(z->getName() + " defeated!");
                     player.addScore(50);
                     enemies.remove(i);
                 }
-                break; // Атакуємо лише одного ворога за хід
+                break;
             }
         }
     }
@@ -655,9 +684,6 @@ void Game::handlePlayerAttack() {
         addLogMessage("No enemy in range!");
     }
 }
-
-
-
 
 void Game::addLogMessage(const std::string& message) {
     if (logMessages.size() >= MAX_LOG_MESSAGES) {
@@ -667,6 +693,6 @@ void Game::addLogMessage(const std::string& message) {
     newLog.setFont(font);
     newLog.setString(message);
     newLog.setCharacterSize(14);
-    newLog.setFillColor(sf::Color::Black); // Чорний колір для читабельності
+    newLog.setFillColor(sf::Color::Green); // Змінив на зелений для стилю
     logMessages.push_back(newLog);
 }

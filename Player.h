@@ -1,18 +1,19 @@
 #pragma once
-#include<iostream>
-#include<vector>
-#include<memory>
-#include"Entity.h"
+#include <iostream>
+#include <vector>
+#include <memory>
+#include "Entity.h"
 #include "Weapon.h"
 #include "Sword.h"
 #include "Gun.h"
 #include "LocalizationManager.h"
+#include "Logger.h"
+
 using namespace std;
 
 #ifndef UNTITLED23_PLAYER_H
 #define UNTITLED23_PLAYER_H
-
-#endif //UNTITLED23_PLAYER_H
+#endif
 
 class Player : public Entity {
     int score;
@@ -21,64 +22,59 @@ class Player : public Entity {
     bool weaponChosen;
 
 public:
-
     Player(const std::string& n, int h, int d, int sx, int sy)
             : Entity(n, h, d), weapon(nullptr), score(0), x(sx), y(sy), weaponChosen(false) {}
-
 
     ~Player() {}
 
     void reset(int startX, int startY) {
-        health = 100; // Початкове здоров'я
-        score = 0;    // Початковий рахунок
-        x = startX;   // Початкова позиція X
-        y = startY;   // Початкова позиція Y
-        weapon.reset(); // Видалити поточну зброю (unique_ptr має метод reset)
+        health = 100;
+        score = 0;
+        x = startX;
+        y = startY;
+        weapon.reset();
         weaponChosen = false;
+        LOG_INFO("Player stats reset to defaults.");
     }
 
     void chooseWeapon(int choice) {
         if (weaponChosen) {
-            cout << L10N.getFormattedString("weapon_already_chosen", weapon->getName())  << endl;
+            LOG_WARN(L10N.getFormattedString("weapon_already_chosen", weapon->getName()));
             return;
         }
-
 
         if (choice == 1) weapon = make_unique<Sword>();
         else if (choice == 2) weapon = make_unique<Gun>();
         else {
-            cout << L10N.getString("invalid_weapon_choice") << endl;
+            LOG_WARN(L10N.getString("invalid_weapon_choice"));
             weapon = make_unique<Sword>();
         }
 
         weaponChosen = true;
-        cout <<L10N.getFormattedString("player_equipped", name, weapon->getName()) << endl;
+        LOG_INFO(L10N.getFormattedString("player_equipped", name, weapon->getName()));
     }
 
     void attack(Entity& target) override {
-        cout << L10N.getString("player_attack_header") << endl;
-        cout << L10N.getFormattedString("player_attacks_target", name, health, target.getName(), target.getHealth()) << target.getName() << endl;
+        LOG_INFO(L10N.getString("player_attack_header"));
+        LOG_INFO(L10N.getFormattedString("player_attacks_target", name, health, target.getName(), target.getHealth()));
 
         if (!weapon) {
-            cout << L10N.getFormattedString("player_no_weapon", name) << endl;
+            LOG_WARN(L10N.getFormattedString("player_no_weapon", name));
             return;
         }
 
         int totalDamage = damage + weapon->getDamage();
-        cout << L10N.getFormattedString("player_deals_damage", totalDamage, weapon->getName()) << endl;
+        LOG_INFO(L10N.getFormattedString("player_deals_damage", totalDamage, weapon->getName()));
+
         target.takeDamage(totalDamage);
-        cout <<  L10N.getFormattedString("target_hp_remaining", target.getName(), target.getHealth()) << "\n";
+
+        LOG_INFO(L10N.getFormattedString("target_hp_remaining", target.getName(), target.getHealth()));
     }
 
-
     char getSymbol() const override { return 'P'; }
-
     void addScore(int points) { score += points; }
-
     int getScore() const { return score; }
-
     int getX() const { return x; }
-
     int getY() const { return y; }
 
     void move(int dx, int dy, const vector<vector<int>>& map) {
@@ -88,8 +84,10 @@ public:
             if (map[ny][nx] == 0) {
                 x = nx;
                 y = ny;
+                // Можно раскомментировать для детального лога движений
+                // LOG_DEBUG("Player moved to (" + to_string(x) + ", " + to_string(y) + ")");
             } else {
-                cout <<  L10N.getString("cant_move_wall") << endl;
+                LOG_INFO(L10N.getString("cant_move_wall"));
             }
         }
     }
