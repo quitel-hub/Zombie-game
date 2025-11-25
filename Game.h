@@ -98,6 +98,7 @@ private:
     // Ігровий HUD та лог
     sf::Text healthText;
     sf::Text scoreText;
+    sf::Text ammoText;
     sf::RectangleShape healthBarBackground;
     sf::RectangleShape healthBarForeground;
     std::deque<sf::Text> logMessages;

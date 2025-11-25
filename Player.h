@@ -20,6 +20,8 @@ class Player : public Entity {
     int x, y;
     unique_ptr<Weapon> weapon;
     bool weaponChosen;
+    int maxHealth = 100;
+    int ammo = 10;
 
 public:
     Player(const std::string& n, int h, int d, int sx, int sy)
@@ -30,45 +32,60 @@ public:
     void reset(int startX, int startY) {
         health = 100;
         score = 0;
+        ammo = 10;
         x = startX;
         y = startY;
         weapon.reset();
         weaponChosen = false;
-        LOG_INFO("Player stats reset to defaults.");
+        LOG_INFO("Player stats reset.");
     }
 
+    void heal(int amount) {
+        health += amount;
+        if (health > maxHealth) health = maxHealth;
+        LOG_INFO("Player healed. HP: " + to_string(health));
+    }
+
+
+    void addAmmo(int amount) {
+        ammo += amount;
+        LOG_INFO("Ammo collected: +" + to_string(amount) + ". Total: " + to_string(ammo));
+    }
+
+    int getAmmo() const { return ammo; }
+
     void chooseWeapon(int choice) {
-        if (weaponChosen) {
-            LOG_WARN(L10N.getFormattedString("weapon_already_chosen", weapon->getName()));
-            return;
-        }
-
+        if (weaponChosen) return;
         if (choice == 1) weapon = make_unique<Sword>();
-        else if (choice == 2) weapon = make_unique<Gun>();
-        else {
-            LOG_WARN(L10N.getString("invalid_weapon_choice"));
-            weapon = make_unique<Sword>();
-        }
-
+        else weapon = make_unique<Gun>();
         weaponChosen = true;
         LOG_INFO(L10N.getFormattedString("player_equipped", name, weapon->getName()));
     }
 
-    void attack(Entity& target) override {
-        LOG_INFO(L10N.getString("player_attack_header"));
-        LOG_INFO(L10N.getFormattedString("player_attacks_target", name, health, target.getName(), target.getHealth()));
 
-        if (!weapon) {
-            LOG_WARN(L10N.getFormattedString("player_no_weapon", name));
-            return;
+    bool canAttack() const {
+        if (!weapon) return false;
+        if (weapon->isRanged() && ammo <= 0) return false;
+        return true;
+    }
+
+    void attack(Entity& target) override {
+        if (!weapon) return;
+
+
+        if (weapon->isRanged()) {
+            if (ammo > 0) {
+                ammo--;
+                LOG_INFO("Shot fired! Ammo left: " + to_string(ammo));
+            } else {
+                LOG_WARN("Click! No ammo!");
+                return;
+            }
         }
 
         int totalDamage = damage + weapon->getDamage();
         LOG_INFO(L10N.getFormattedString("player_deals_damage", totalDamage, weapon->getName()));
-
         target.takeDamage(totalDamage);
-
-        LOG_INFO(L10N.getFormattedString("target_hp_remaining", target.getName(), target.getHealth()));
     }
 
     char getSymbol() const override { return 'P'; }
@@ -77,15 +94,18 @@ public:
     int getX() const { return x; }
     int getY() const { return y; }
 
+
+    int getWeaponRange() const {
+        return weapon ? weapon->getRange() : 1;
+    }
+
     void move(int dx, int dy, const vector<vector<int>>& map) {
         int nx = x + dx;
         int ny = y + dy;
         if (nx >= 0 && nx < (int)map[0].size() && ny >= 0 && ny < (int)map.size()) {
-            if (map[ny][nx] == 0) {
+            if (map[ny][nx] != 1) {
                 x = nx;
                 y = ny;
-                // Можно раскомментировать для детального лога движений
-                // LOG_DEBUG("Player moved to (" + to_string(x) + ", " + to_string(y) + ")");
             } else {
                 LOG_INFO(L10N.getString("cant_move_wall"));
             }

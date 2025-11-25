@@ -4,12 +4,12 @@ using namespace std;
 
 #ifndef UNTITLED23_GUN_H
 #define UNTITLED23_GUN_H
-
-#endif //UNTITLED23_GUN_H
-
+#endif
 
 class Gun : public Weapon {
 public:
 
-    Gun() : Weapon("Gun", 25) {}
+    Gun() : Weapon("Gun", 25, 5) {}
+
+    bool isRanged() const override { return true; }
 };

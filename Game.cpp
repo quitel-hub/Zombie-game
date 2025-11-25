@@ -2,6 +2,7 @@
 #include "Zombie.h"
 #include "Boss.h"
 #include "Logger.h"
+#include <iostream>
 #include <string>
 #include <algorithm>
 
@@ -16,7 +17,6 @@ Game::Game(sf::RenderWindow& win)
           configMapHeight(15),
           configEnemyCount(3)
 {
-    // Ініціалізуємо ігрову камеру
     gameView.setSize(static_cast<float>(window.getSize().x), static_cast<float>(window.getSize().y));
     gameView.setCenter(window.getSize().x / 2.f, window.getSize().y / 2.f);
 
@@ -35,27 +35,28 @@ void Game::loadAssets() {
     LOG_INFO("Loading assets...");
     bool errorOccurred = false;
 
-    if (!font.loadFromFile("assets/3Dumb.ttf") && !font.loadFromFile("3Dumb.ttf")) {
+    // Сначала ищем файл рядом с exe, если нет — в папке assets/
+    if (!font.loadFromFile("3Dumb.ttf") && !font.loadFromFile("assets/3Dumb.ttf")) {
         LOG_ERR("CRITICAL: Could not load font '3Dumb.ttf'");
         errorOccurred = true;
     }
-    if (!playerTexture.loadFromFile("assets/player.png") && !playerTexture.loadFromFile("player.png")) {
+    if (!playerTexture.loadFromFile("player.png") && !playerTexture.loadFromFile("assets/player.png")) {
         LOG_ERR("Error loading player.png");
         errorOccurred = true;
     }
-    if (!zombieTexture.loadFromFile("assets/zombie.png") && !zombieTexture.loadFromFile("zombie.png")) {
+    if (!zombieTexture.loadFromFile("zombie.png") && !zombieTexture.loadFromFile("assets/zombie.png")) {
         LOG_ERR("Error loading zombie.png");
         errorOccurred = true;
     }
-    if (!bossTexture.loadFromFile("assets/boss.png") && !bossTexture.loadFromFile("boss.png"))   {
+    if (!bossTexture.loadFromFile("boss.png") && !bossTexture.loadFromFile("assets/boss.png"))   {
         LOG_ERR("Error loading boss.png");
         errorOccurred = true;
     }
-    if (!wallTexture.loadFromFile("assets/wall.png") && !wallTexture.loadFromFile("wall.png"))     {
+    if (!wallTexture.loadFromFile("wall.png") && !wallTexture.loadFromFile("assets/wall.png"))     {
         LOG_ERR("Error loading wall.png");
         errorOccurred = true;
     }
-    if (!floorTexture.loadFromFile("assets/floor.png") && !floorTexture.loadFromFile("floor.png"))   {
+    if (!floorTexture.loadFromFile("floor.png") && !floorTexture.loadFromFile("assets/floor.png"))   {
         LOG_ERR("Error loading floor.png");
         errorOccurred = true;
     }
@@ -68,7 +69,6 @@ void Game::loadAssets() {
 }
 
 void Game::setupUI() {
-    // ... (Код налаштування UI залишається без змін, він не потребує логування) ...
     float centerX = window.getSize().x / 2.0f;
     float buttonWidth = 200.f;
     float buttonHeight = 50.f;
@@ -117,7 +117,7 @@ void Game::setupUI() {
     float labelY_Enemies = labelY_MapHeight + 100.0f;
     sf::Color smallButtonColor(70, 70, 70);
 
-    // Map Width
+    // UI Elements for Config
     mapWidthText.setFont(font);
     mapWidthText.setCharacterSize(charSize);
     mapWidthText.setFillColor(textColor);
@@ -139,7 +139,6 @@ void Game::setupUI() {
     centerTextOrigin(mapWidthIncreaseText);
     mapWidthIncreaseText.setPosition(mapWidthIncreaseButton.getPosition());
 
-    // Map Height
     mapHeightText = mapWidthText;
     mapHeightText.setPosition(centerX, labelY_MapHeight);
     mapHeightDecreaseButton = mapWidthDecreaseButton;
@@ -151,7 +150,6 @@ void Game::setupUI() {
     mapHeightIncreaseText = mapWidthIncreaseText;
     mapHeightIncreaseText.setPosition(mapHeightIncreaseButton.getPosition());
 
-    // Enemy Count
     enemyCountText = mapWidthText;
     enemyCountText.setPosition(centerX, labelY_Enemies);
     enemyCountDecreaseButton = mapWidthDecreaseButton;
@@ -163,7 +161,6 @@ void Game::setupUI() {
     enemyCountIncreaseText = mapWidthIncreaseText;
     enemyCountIncreaseText.setPosition(enemyCountIncreaseButton.getPosition());
 
-    // Config Start/Back Buttons
     configStartButton = playButton;
     configStartButton.setPosition(centerX, window.getSize().y - 100.f);
     configStartButtonText = playButtonText;
@@ -244,6 +241,12 @@ void Game::setupUI() {
     scoreText.setFillColor(textColor);
     scoreText.setPosition(10.f, 30.f);
 
+    // Текст патронів
+    ammoText.setFont(font);
+    ammoText.setCharacterSize(18);
+    ammoText.setFillColor(sf::Color::Yellow);
+    ammoText.setPosition(10.f, 80.f);
+
     healthBarBackground.setSize({100.f, 15.f});
     healthBarBackground.setFillColor(sf::Color(50, 50, 50));
     healthBarBackground.setPosition(10.f, 50.f);
@@ -259,9 +262,6 @@ void Game::resetGame() {
              ", Enemies=" + to_string(configEnemyCount));
 
     map = Map(configMapWidth, configMapHeight, 20);
-
-    // Логуємо згенеровану карту в файл (для відладки)
-    map.render(player, enemies.getAllRaw());
 
     player.reset(1, 1);
     player.chooseWeapon(1);
@@ -353,21 +353,18 @@ void Game::processConfigSelectionEvents(sf::Event& event) {
     if (event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left) {
         sf::Vector2f mousePos = window.mapPixelToCoords({event.mouseButton.x, event.mouseButton.y});
 
-        // --- Map Width ---
         if (mapWidthDecreaseButton.getGlobalBounds().contains(mousePos)) {
             if (configMapWidth > 15) configMapWidth--;
         }
         if (mapWidthIncreaseButton.getGlobalBounds().contains(mousePos)) {
             if (configMapWidth < 30) configMapWidth++;
         }
-        // --- Map Height ---
         if (mapHeightDecreaseButton.getGlobalBounds().contains(mousePos)) {
             if (configMapHeight > 15) configMapHeight--;
         }
         if (mapHeightIncreaseButton.getGlobalBounds().contains(mousePos)) {
             if (configMapHeight < 30) configMapHeight++;
         }
-        // --- Enemy Count ---
         if (enemyCountDecreaseButton.getGlobalBounds().contains(mousePos)) {
             if (configEnemyCount > 1) configEnemyCount--;
         }
@@ -375,7 +372,6 @@ void Game::processConfigSelectionEvents(sf::Event& event) {
             if (configEnemyCount < 10) configEnemyCount++;
         }
 
-        // --- Start/Back ---
         if (configStartButton.getGlobalBounds().contains(mousePos)) {
             LOG_INFO("Configuration confirmed. Starting game.");
             resetGame();
@@ -401,7 +397,7 @@ void Game::processPlayingEvents(sf::Event& event) {
         }
 
         if (actionTaken && player.isAlive()) {
-            isPlayerTurn = false; // Передача ходу ворогам
+            isPlayerTurn = false;
         }
     }
 }
@@ -455,7 +451,7 @@ void Game::centerTextOrigin(sf::Text& text) {
 
 void Game::updatePlaying() {
 
-    // Перевірка умови перемоги
+    // 1. Перевірка умови перемоги
     if (currentState == GameState::Playing && enemies.size() == 0) {
         LOG_INFO("VICTORY! All enemies defeated.");
         currentState = GameState::GameOver;
@@ -465,10 +461,25 @@ void Game::updatePlaying() {
         return;
     }
 
+    // --- ПОДБОР ПРЕДМЕТОВ ---
+    int tileType = map.getGrid()[player.getY()][player.getX()];
+
+    if (tileType == 2) { // Зелье
+        LOG_INFO("Picked up Health Potion");
+        player.heal(25);
+        map.clearTile(player.getX(), player.getY());
+        addLogMessage("Health Potion (+25 HP)");
+    }
+    else if (tileType == 3) { // Патроны
+        LOG_INFO("Picked up Ammo Pack");
+        player.addAmmo(5);
+        map.clearTile(player.getX(), player.getY());
+        addLogMessage("Ammo Pack (+5 Ammo)");
+    }
+    // -----------------------
+
+    // 2. Логіка ходу ворогів
     if (!isPlayerTurn && player.isAlive()) {
-        LOG_DEBUG("--- Enemy Turn Start ---");
-
-
         const auto& allEnemiesRaw = enemies.getAllRaw();
 
         for (auto* e : allEnemiesRaw) {
@@ -476,11 +487,11 @@ void Game::updatePlaying() {
                 int dx = abs(z->getX() - player.getX());
                 int dy = abs(z->getY() - player.getY());
 
-
+                // Атака, если рядом
                 if (dx + dy == 1) {
                     int damage = dynamic_cast<Boss*>(z) ? 20 : 10;
                     z->attack(player);
-                    addLogMessage(z->getName() + " hits player!");
+                    addLogMessage(z->getName() + " hits player for " + std::to_string(damage) + "!");
 
                     if (!player.isAlive()) {
                         LOG_INFO("DEFEAT. Player killed by " + z->getName());
@@ -492,19 +503,19 @@ void Game::updatePlaying() {
                     }
                 }
                 else {
+                    // Движение к игроку
                     z->moveTowards(player.getX(), player.getY(), map.getGrid(), allEnemiesRaw);
                 }
             }
             if (currentState == GameState::GameOver) break;
         }
-
-        LOG_DEBUG("--- Enemy Turn End ---");
         isPlayerTurn = true;
     }
 
     // 4. Оновлення HUD
     healthText.setString("Health: " + std::to_string(player.getHealth()));
     scoreText.setString("Score: " + std::to_string(player.getScore()));
+    ammoText.setString("Ammo: " + std::to_string(player.getAmmo()));
 
     float hpPercent = static_cast<float>(player.getHealth()) / playerMaxHealth;
     if (hpPercent < 0) hpPercent = 0;
@@ -571,17 +582,44 @@ void Game::renderConfigSelection() {
 }
 
 void Game::renderPlaying() {
-    const int TILE_SIZE = 32;
+    const int TILE_SIZE = 32; // Размер тайла для масштабирования
 
-    // --- 1. Рендер ігрового світу ---
     window.setView(gameView);
 
+    // Малюємо карту
     for (int y = 0; y < configMapHeight; ++y) {
         for (int x = 0; x < configMapWidth; ++x) {
+            int tileType = map.getGrid()[y][x];
+
             sf::Sprite tileSprite;
-            tileSprite.setTexture((map.getGrid()[y][x] == 1) ? wallTexture : floorTexture);
+            tileSprite.setTexture((tileType == 1) ? wallTexture : floorTexture);
+
+            // Масштабируем спрайт под размер 32x32
+            sf::FloatRect bounds = tileSprite.getLocalBounds();
+            tileSprite.setScale(
+                static_cast<float>(TILE_SIZE) / bounds.width,
+                static_cast<float>(TILE_SIZE) / bounds.height
+            );
+
             tileSprite.setPosition(static_cast<float>(x * TILE_SIZE), static_cast<float>(y * TILE_SIZE));
             window.draw(tileSprite);
+
+            // Зелье (2)
+            if (tileType == 2) {
+                sf::CircleShape potion(10.f);
+                potion.setFillColor(sf::Color::Green);
+                potion.setPosition(static_cast<float>(x * TILE_SIZE) + 6.f, static_cast<float>(y * TILE_SIZE) + 6.f);
+                window.draw(potion);
+            }
+            // Патроны (3)
+            else if (tileType == 3) {
+                sf::RectangleShape ammoBox({14.f, 14.f});
+                ammoBox.setFillColor(sf::Color::Yellow);
+                ammoBox.setOutlineColor(sf::Color::Black);
+                ammoBox.setOutlineThickness(1.f);
+                ammoBox.setPosition(static_cast<float>(x * TILE_SIZE) + 9.f, static_cast<float>(y * TILE_SIZE) + 9.f);
+                window.draw(ammoBox);
+            }
         }
     }
 
@@ -589,12 +627,28 @@ void Game::renderPlaying() {
         if (auto* z = dynamic_cast<Zombie*>(e)) {
             sf::Sprite enemySprite;
             enemySprite.setTexture(dynamic_cast<Boss*>(z) ? bossTexture : zombieTexture);
+
+            // Масштабируем врага
+            sf::FloatRect bounds = enemySprite.getLocalBounds();
+            enemySprite.setScale(
+                static_cast<float>(TILE_SIZE) / bounds.width,
+                static_cast<float>(TILE_SIZE) / bounds.height
+            );
+
             enemySprite.setPosition(static_cast<float>(z->getX() * TILE_SIZE), static_cast<float>(z->getY() * TILE_SIZE));
             window.draw(enemySprite);
         }
     }
 
     sf::Sprite playerSprite(playerTexture);
+
+    // Масштабируем игрока
+    sf::FloatRect pBounds = playerSprite.getLocalBounds();
+    playerSprite.setScale(
+        static_cast<float>(TILE_SIZE) / pBounds.width,
+        static_cast<float>(TILE_SIZE) / pBounds.height
+    );
+
     playerSprite.setPosition(static_cast<float>(player.getX() * TILE_SIZE), static_cast<float>(player.getY() * TILE_SIZE));
     window.draw(playerSprite);
 
@@ -603,6 +657,7 @@ void Game::renderPlaying() {
 
     window.draw(healthText);
     window.draw(scoreText);
+    window.draw(ammoText); // Рисуем патроны
     window.draw(healthBarBackground);
     window.draw(healthBarForeground);
 
@@ -648,17 +703,27 @@ void Game::renderGameOver() {
 
 void Game::handlePlayerAttack() {
     bool attacked = false;
+    int weaponRange = player.getWeaponRange();
+
     for (size_t i = 0; i < enemies.size(); ++i) {
         if (auto* z = dynamic_cast<Zombie*>(enemies.get(i))) {
+
             int dx = abs(z->getX() - player.getX());
             int dy = abs(z->getY() - player.getY());
-            if (dx + dy == 1) { // Ворог у зоні досяжності
+            int dist = dx + dy;
+
+            if (dist <= weaponRange) {
+
+                if (!player.canAttack()) {
+                    addLogMessage("Click! No Ammo!");
+                    continue;
+                }
 
                 LOG_DEBUG("Player engaged enemy: " + z->getName());
 
                 int damage = 20;
-                player.attack(*z); // LOG_INFO про атаку вже всередині player.attack
-                addLogMessage("Player hits " + z->getName() + " for " + std::to_string(damage) + "!");
+                player.attack(*z);
+                addLogMessage("Player hits " + z->getName() + "!");
 
                 if (!player.isAlive()) {
                     LOG_INFO("Player died during attack phase.");
@@ -680,8 +745,13 @@ void Game::handlePlayerAttack() {
             }
         }
     }
+
     if (!attacked) {
-        addLogMessage("No enemy in range!");
+        if (player.getAmmo() <= 0 && player.getWeaponRange() > 1) {
+             // Ничего не делаем, сообщение "Click! No Ammo!" уже было, если враг был в прицеле
+        } else {
+             addLogMessage("No enemy in range!");
+        }
     }
 }
 
@@ -693,6 +763,6 @@ void Game::addLogMessage(const std::string& message) {
     newLog.setFont(font);
     newLog.setString(message);
     newLog.setCharacterSize(14);
-    newLog.setFillColor(sf::Color::Green); // Змінив на зелений для стилю
+    newLog.setFillColor(sf::Color::Green);
     logMessages.push_back(newLog);
 }
