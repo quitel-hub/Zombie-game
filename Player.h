@@ -46,22 +46,37 @@ public:
         LOG_INFO("Player healed. HP: " + to_string(health));
     }
 
-
     void addAmmo(int amount) {
         ammo += amount;
-        LOG_INFO("Ammo collected: +" + to_string(amount) + ". Total: " + to_string(ammo));
+        LOG_INFO("Ammo collected: +" + to_string(amount));
     }
 
     int getAmmo() const { return ammo; }
 
+
+    void swapWeapon() {
+
+        if (weapon && weapon->getName() == "Sword") {
+            weapon = make_unique<Gun>();
+        }
+
+        else {
+            weapon = make_unique<Sword>();
+        }
+        LOG_INFO("Swapped weapon to: " + weapon->getName());
+    }
+
+    string getWeaponName() const {
+        return weapon ? weapon->getName() : "None";
+    }
+
+
     void chooseWeapon(int choice) {
-        if (weaponChosen) return;
         if (choice == 1) weapon = make_unique<Sword>();
         else weapon = make_unique<Gun>();
         weaponChosen = true;
         LOG_INFO(L10N.getFormattedString("player_equipped", name, weapon->getName()));
     }
-
 
     bool canAttack() const {
         if (!weapon) return false;
@@ -72,13 +87,11 @@ public:
     void attack(Entity& target) override {
         if (!weapon) return;
 
-
         if (weapon->isRanged()) {
             if (ammo > 0) {
                 ammo--;
                 LOG_INFO("Shot fired! Ammo left: " + to_string(ammo));
             } else {
-                LOG_WARN("Click! No ammo!");
                 return;
             }
         }
@@ -93,7 +106,6 @@ public:
     int getScore() const { return score; }
     int getX() const { return x; }
     int getY() const { return y; }
-
 
     int getWeaponRange() const {
         return weapon ? weapon->getRange() : 1;

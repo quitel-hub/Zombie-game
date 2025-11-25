@@ -24,8 +24,6 @@ public:
     virtual char getSymbol() const = 0;
 
     void takeDamage(int dmg) {
-        // ЗАМЕНА: cout -> LOG_INFO
-        // Используем форматированную строку из L10N для красоты, или просто текст
         LOG_INFO(L10N.getFormattedString("entity_takes_damage", name, dmg));
 
         health -= dmg;

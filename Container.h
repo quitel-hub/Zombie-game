@@ -16,11 +16,11 @@ class Container {
 public:
     Container() = default;
 
-    // --- Заборона копіювання (оскільки unique_ptr не можна копіювати) ---
+
     Container(const Container&) = delete;
     Container& operator=(const Container&) = delete;
 
-    // --- Дозвіл переміщення ---
+
     Container(Container&&) = default;
     Container& operator=(Container&&) = default;
 

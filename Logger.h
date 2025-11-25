@@ -8,7 +8,7 @@
 #include <iomanip>
 #include <sstream>
 
-// Змінюємо назви (Info, Error...), щоб уникнути конфлікту з макросами Windows (INFO, ERROR...)
+
 enum class LogLevel {
     Info,
     Warning,
@@ -58,7 +58,7 @@ public:
         std::string colorCode = "";
         std::string resetCode = "\033[0m";
 
-        // Оновлюємо switch для нових назв
+
         switch(level) {
             case LogLevel::Info:
                 levelStr = "[INFO]";
@@ -92,7 +92,6 @@ public:
     }
 };
 
-// Макроси залишаємо такими ж, але всередині викликаємо нові імена з enum
 #define LOG_INFO(msg) Logger::getInstance().log(LogLevel::Info, msg)
 #define LOG_WARN(msg) Logger::getInstance().log(LogLevel::Warning, msg)
 #define LOG_ERR(msg)  Logger::getInstance().log(LogLevel::Error, msg)

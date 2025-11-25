@@ -107,7 +107,6 @@ private:
     bool isPlayerTurn = true;
 
 
-    // --- Приватні методи ---
 
     void loadAssets();
     void setupUI();

@@ -4,7 +4,7 @@
 #include "Logger.h"
 #include <iostream>
 #include <string>
-#include <algorithm>
+#include <cmath>
 
 // Конструктор
 Game::Game(sf::RenderWindow& win)
@@ -17,7 +17,8 @@ Game::Game(sf::RenderWindow& win)
           configMapHeight(15),
           configEnemyCount(3)
 {
-    gameView.setSize(static_cast<float>(window.getSize().x), static_cast<float>(window.getSize().y));
+
+    gameView.setSize(800.f, 600.f);
     gameView.setCenter(window.getSize().x / 2.f, window.getSize().y / 2.f);
 
     LOG_INFO("Game engine initialized. Window size: " +
@@ -35,7 +36,6 @@ void Game::loadAssets() {
     LOG_INFO("Loading assets...");
     bool errorOccurred = false;
 
-    // Сначала ищем файл рядом с exe, если нет — в папке assets/
     if (!font.loadFromFile("3Dumb.ttf") && !font.loadFromFile("assets/3Dumb.ttf")) {
         LOG_ERR("CRITICAL: Could not load font '3Dumb.ttf'");
         errorOccurred = true;
@@ -70,6 +70,8 @@ void Game::loadAssets() {
 
 void Game::setupUI() {
     float centerX = window.getSize().x / 2.0f;
+    float centerY = window.getSize().y / 2.0f; // Центр по Y
+
     float buttonWidth = 200.f;
     float buttonHeight = 50.f;
     sf::Color buttonColor(100, 100, 100);
@@ -77,18 +79,18 @@ void Game::setupUI() {
     unsigned int charSize = 24;
     unsigned int titleCharSize = 50;
 
-    // --- Головне меню ---
+    // --- Головне меню (Центруємо відносно екрану) ---
     menuTitleText.setFont(font);
     menuTitleText.setString("Zombie Survival");
     menuTitleText.setCharacterSize(titleCharSize);
     menuTitleText.setFillColor(sf::Color::Green);
     centerTextOrigin(menuTitleText);
-    menuTitleText.setPosition(centerX, window.getSize().y / 4.0f);
+    menuTitleText.setPosition(centerX, centerY - 150.f);
 
     playButton.setSize({buttonWidth, buttonHeight});
     playButton.setFillColor(buttonColor);
     playButton.setOrigin(buttonWidth / 2.0f, buttonHeight / 2.0f);
-    playButton.setPosition(centerX, window.getSize().y / 2.0f);
+    playButton.setPosition(centerX, centerY);
 
     playButtonText.setFont(font);
     playButtonText.setString("New Game");
@@ -109,15 +111,15 @@ void Game::setupUI() {
     configTitleText.setString("Game Configuration");
     configTitleText.setCharacterSize(40);
     centerTextOrigin(configTitleText);
-    configTitleText.setPosition(centerX, window.getSize().y / 20.0f);
+    configTitleText.setPosition(centerX, centerY - 200.f);
 
     float buttonSize = 40.f;
-    float labelY_MapWidth = window.getSize().y / 3.0f;
+    float labelY_MapWidth = centerY - 50.f;
     float labelY_MapHeight = labelY_MapWidth + 80.f;
-    float labelY_Enemies = labelY_MapHeight + 100.0f;
+    float labelY_Enemies = labelY_MapHeight + 80.f;
     sf::Color smallButtonColor(70, 70, 70);
 
-    // UI Elements for Config
+    // Config UI
     mapWidthText.setFont(font);
     mapWidthText.setCharacterSize(charSize);
     mapWidthText.setFillColor(textColor);
@@ -162,7 +164,7 @@ void Game::setupUI() {
     enemyCountIncreaseText.setPosition(enemyCountIncreaseButton.getPosition());
 
     configStartButton = playButton;
-    configStartButton.setPosition(centerX, window.getSize().y - 100.f);
+    configStartButton.setPosition(centerX, centerY + 150.f);
     configStartButtonText = playButtonText;
     configStartButtonText.setString("Start Game");
     centerTextOrigin(configStartButtonText);
@@ -178,10 +180,10 @@ void Game::setupUI() {
     pauseTitleText = menuTitleText;
     pauseTitleText.setString("Paused");
     centerTextOrigin(pauseTitleText);
-    pauseTitleText.setPosition(centerX, window.getSize().y / 4.0f);
+    pauseTitleText.setPosition(centerX, centerY - 100.f);
 
     resumeButton = playButton;
-    resumeButton.setPosition(centerX, window.getSize().y / 2.0f - 35.f);
+    resumeButton.setPosition(centerX, centerY);
     resumeButtonText = playButtonText;
     resumeButtonText.setString("Resume");
     centerTextOrigin(resumeButtonText);
@@ -212,14 +214,14 @@ void Game::setupUI() {
     gameOverTitleText = menuTitleText;
     gameOverTitleText.setString("Game Over");
     centerTextOrigin(gameOverTitleText);
-    gameOverTitleText.setPosition(centerX, window.getSize().y / 4.0f);
+    gameOverTitleText.setPosition(centerX, centerY - 100.f);
 
     finalScoreText.setFont(font);
     finalScoreText.setCharacterSize(charSize);
     finalScoreText.setFillColor(textColor);
 
     restartButton = playButton;
-    restartButton.setPosition(centerX, window.getSize().y / 2.0f + 30.f);
+    restartButton.setPosition(centerX, centerY + 50.f);
     restartButtonText = playButtonText;
     restartButtonText.setString("Restart");
     centerTextOrigin(restartButtonText);
@@ -241,7 +243,6 @@ void Game::setupUI() {
     scoreText.setFillColor(textColor);
     scoreText.setPosition(10.f, 30.f);
 
-    // Текст патронів
     ammoText.setFont(font);
     ammoText.setCharacterSize(18);
     ammoText.setFillColor(sf::Color::Yellow);
@@ -258,35 +259,62 @@ void Game::setupUI() {
 
 void Game::resetGame() {
     LOG_INFO("Resetting game state...");
-    LOG_INFO("Configuration: Map=" + to_string(configMapWidth) + "x" + to_string(configMapHeight) +
-             ", Enemies=" + to_string(configEnemyCount));
 
+    // Генерируем новую карту
     map = Map(configMapWidth, configMapHeight, 20);
 
+    // Сбрасываем игрока в точку (1, 1)
     player.reset(1, 1);
     player.chooseWeapon(1);
     enemies.clear();
 
+
     if (configEnemyCount > 0) {
-        enemies.add(make_unique<Boss>("BOSS", 120, 20, configMapWidth - 2, configMapHeight - 2, 7));
-        LOG_INFO("Boss enemy spawned.");
+
+        int bossX = configMapWidth - 2;
+        int bossY = configMapHeight - 2;
+        if (map.getGrid()[bossY][bossX] == 1) { bossX--; }
+
+        enemies.add(make_unique<Boss>("BOSS", 120, 20, bossX, bossY, 7));
+        LOG_INFO("Boss spawned at (" + to_string(bossX) + "," + to_string(bossY) + ")");
     }
+
+
     for (int i = 0; i < configEnemyCount - 1; ++i) {
-        int z_x = 3 + (i % (configMapWidth - 4));
-        int z_y = 3 + (i / (configMapWidth - 4));
-        if (z_y >= configMapHeight - 2) {
-            z_x = 5;
-            z_y = 5;
+        int z_x, z_y;
+        bool validSpot = false;
+        int attempts = 0;
+
+
+        while (!validSpot && attempts < 50) {
+
+            z_x = 1 + rand() % (configMapWidth - 2);
+            z_y = 1 + rand() % (configMapHeight - 2);
+
+
+            int distToPlayer = abs(z_x - player.getX()) + abs(z_y - player.getY());
+
+            if (map.getGrid()[z_y][z_x] != 1 && distToPlayer > 3) {
+                validSpot = true;
+            }
+            attempts++;
         }
+
+        if (!validSpot) {
+            z_x = configMapWidth - 2;
+            z_y = configMapHeight - 2;
+        }
+
         enemies.add(make_unique<Zombie>("Zombie " + std::to_string(i + 1), 50, 10, z_x, z_y));
     }
+
+
     LOG_INFO("Total enemies active: " + to_string(enemies.size()));
 
     isPlayerTurn = true;
     logMessages.clear();
-    addLogMessage("Game started!");
+    addLogMessage("Game started! Press 'Q' to swap weapon.");
 }
-
 void Game::runGameLoop() {
     LOG_INFO("Entering main game loop.");
     while (window.isOpen()) {
@@ -391,6 +419,16 @@ void Game::processPlayingEvents(sf::Event& event) {
         if (event.key.code == sf::Keyboard::A) { player.move(-1, 0, map.getGrid()); actionTaken = true; }
         if (event.key.code == sf::Keyboard::D) { player.move(1, 0, map.getGrid()); actionTaken = true; }
         if (event.key.code == sf::Keyboard::F) { handlePlayerAttack(); actionTaken = true; }
+
+        // --- НОВОЕ: Смена оружия ---
+        if (event.key.code == sf::Keyboard::Q) {
+            player.swapWeapon();
+            addLogMessage("Swapped to " + player.getWeaponName());
+            // Смена оружия не тратит ход (actionTaken = false), или тратит?
+            // Давай сделаем, что не тратит, это удобно.
+        }
+        // ---------------------------
+
         if (event.key.code == sf::Keyboard::Escape) {
             LOG_INFO("Game paused by user.");
             currentState = GameState::Paused;
@@ -404,6 +442,10 @@ void Game::processPlayingEvents(sf::Event& event) {
 
 void Game::processPausedEvents(sf::Event& event) {
     if (event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left) {
+        // В меню паузи використовуємо DefaultView, тому mapPixelToCoords треба робити обережно
+        // Але ми малюємо поверх RenderPlaying, який ставить свою камеру.
+        // Тому тут краще тимчасово скинути камеру для перевірки кліків
+        window.setView(window.getDefaultView());
         sf::Vector2f mousePos = window.mapPixelToCoords({event.mouseButton.x, event.mouseButton.y});
 
         if (resumeButton.getGlobalBounds().contains(mousePos)) {
@@ -515,7 +557,7 @@ void Game::updatePlaying() {
     // 4. Оновлення HUD
     healthText.setString("Health: " + std::to_string(player.getHealth()));
     scoreText.setString("Score: " + std::to_string(player.getScore()));
-    ammoText.setString("Ammo: " + std::to_string(player.getAmmo()));
+    ammoText.setString("Ammo: " + std::to_string(player.getAmmo()) + " | Weapon: " + player.getWeaponName());
 
     float hpPercent = static_cast<float>(player.getHealth()) / playerMaxHealth;
     if (hpPercent < 0) hpPercent = 0;
@@ -526,14 +568,7 @@ void Game::updatePlaying() {
     float viewX = static_cast<float>(player.getX() * TILE_SIZE);
     float viewY = static_cast<float>(player.getY() * TILE_SIZE);
 
-    float halfViewX = gameView.getSize().x / 2.f;
-    float halfViewY = gameView.getSize().y / 2.f;
-    float mapPixelWidth = static_cast<float>(configMapWidth * TILE_SIZE);
-    float mapPixelHeight = static_cast<float>(configMapHeight * TILE_SIZE);
-
-    viewX = std::clamp(viewX, halfViewX, mapPixelWidth - halfViewX);
-    viewY = std::clamp(viewY, halfViewY, mapPixelHeight - halfViewY);
-
+    // Центрируем камеру на игроке
     gameView.setCenter(viewX, viewY);
 }
 
@@ -582,7 +617,7 @@ void Game::renderConfigSelection() {
 }
 
 void Game::renderPlaying() {
-    const int TILE_SIZE = 32; // Размер тайла для масштабирования
+    const int TILE_SIZE = 32;
 
     window.setView(gameView);
 
@@ -594,7 +629,6 @@ void Game::renderPlaying() {
             sf::Sprite tileSprite;
             tileSprite.setTexture((tileType == 1) ? wallTexture : floorTexture);
 
-            // Масштабируем спрайт под размер 32x32
             sf::FloatRect bounds = tileSprite.getLocalBounds();
             tileSprite.setScale(
                 static_cast<float>(TILE_SIZE) / bounds.width,
@@ -628,7 +662,6 @@ void Game::renderPlaying() {
             sf::Sprite enemySprite;
             enemySprite.setTexture(dynamic_cast<Boss*>(z) ? bossTexture : zombieTexture);
 
-            // Масштабируем врага
             sf::FloatRect bounds = enemySprite.getLocalBounds();
             enemySprite.setScale(
                 static_cast<float>(TILE_SIZE) / bounds.width,
@@ -642,7 +675,6 @@ void Game::renderPlaying() {
 
     sf::Sprite playerSprite(playerTexture);
 
-    // Масштабируем игрока
     sf::FloatRect pBounds = playerSprite.getLocalBounds();
     playerSprite.setScale(
         static_cast<float>(TILE_SIZE) / pBounds.width,
@@ -657,7 +689,7 @@ void Game::renderPlaying() {
 
     window.draw(healthText);
     window.draw(scoreText);
-    window.draw(ammoText); // Рисуем патроны
+    window.draw(ammoText);
     window.draw(healthBarBackground);
     window.draw(healthBarForeground);
 
@@ -673,6 +705,8 @@ void Game::renderPaused() {
     renderPlaying();
     sf::RectangleShape overlay({(float)window.getSize().x, (float)window.getSize().y});
     overlay.setFillColor(sf::Color(0, 0, 0, 150));
+
+    window.setView(window.getDefaultView()); // Меню малюємо в координатах вікна
     window.draw(overlay);
 
     window.draw(pauseTitleText);
@@ -748,7 +782,7 @@ void Game::handlePlayerAttack() {
 
     if (!attacked) {
         if (player.getAmmo() <= 0 && player.getWeaponRange() > 1) {
-             // Ничего не делаем, сообщение "Click! No Ammo!" уже было, если враг был в прицеле
+             // Повідомлення "Click! No Ammo!" вже було
         } else {
              addLogMessage("No enemy in range!");
         }

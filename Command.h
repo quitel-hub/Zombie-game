@@ -1,11 +1,11 @@
 #pragma once
 
-class Game; // Попереднє оголошення
+class Game;
 
 #include "Game.h"
 #include "Player.h"
 #include "Map.h"
-#include "LocalizationManager.h"
+
 
 
 class Command {
@@ -16,7 +16,7 @@ public:
     virtual void execute(Game& game) = 0;
 };
 
-// --- Конкретні команди ---
+
 
 class MoveCommand : public Command {
 private:

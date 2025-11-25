@@ -32,18 +32,18 @@ public:
         string filename = lang_code + ".json";
         ifstream file(filename);
         if (!file.is_open()) {
-            // ЗАМЕНА: cerr -> LOG_ERR
+
             LOG_ERR("Could not open language file: " + filename);
             return false;
         }
         try {
             translations = nlohmann::json::parse(file);
         } catch (json::parse_error& e) {
-            // ЗАМЕНА: cerr -> LOG_ERR
+
             LOG_ERR("Error parsing JSON: " + string(e.what()));
             return false;
         }
-        // ЗАМЕНА: cout -> LOG_INFO (опционально)
+
         LOG_INFO("Language loaded: " + lang_code);
         return true;
     }
