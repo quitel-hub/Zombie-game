@@ -1,39 +1,26 @@
-#include<iostream>
 #pragma once
+#include <iostream>
 using namespace std;
 
 #ifndef UNTITLED23_WEAPON_H
 #define UNTITLED23_WEAPON_H
+#endif
 
-#endif //UNTITLED23_WEAPON_H
-/**
- * @brief Базовий клас для всієї зброї.
- *
- * Визначає основні властивості зброї: ім'я та шкоду.
- */
 class Weapon {
 protected:
     string name;
     int damage;
+    int range;
+
 public:
-    /**
-     * @brief Конструктор зброї.
-     * @param n Назва зброї.
-     * @param d Шкода від зброї.
-     */
-    Weapon(string n, int d) : name(n), damage(d) {}
-    /**
-     * @brief Віртуальний деструктор.
-     */
+    Weapon(string n, int d, int r = 1) : name(n), damage(d), range(r) {}
+
     virtual ~Weapon() {}
-    /**
-     * @brief Отримує шкоду зброї.
-     * @return int шкода.
-     */
+
     virtual int getDamage() const { return damage; }
-    /**
-     * @brief Отримує шкоду зброї.
-     * @return int шкода.
-     */
     virtual string getName() const { return name; }
+    virtual int getRange() const { return range; }
+
+
+    virtual bool isRanged() const { return false; }
 };

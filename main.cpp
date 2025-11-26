@@ -1,20 +1,22 @@
+#define NOMINMAX
+#include <windows.h>
+
 #include <SFML/Graphics.hpp>
+#include <ctime>
 #include "Game.h"
-#include "LocalizationManager.h"
-/**
- * @file main.cpp
- * @brief Головна точка входу в програму.
- *
- * Створює вікно SFML, ініціалізує менеджер локалізації,
- * створює головний об'єкт Game та запускає ігровий цикл.
- */
+
 int main() {
 
+    SetConsoleOutputCP(CP_UTF8);
 
-    L10N.loadLanguage("ukr"); //
+
+    srand(static_cast<unsigned int>(time(0)));
 
 
-    sf::RenderWindow window(sf::VideoMode(480, 480), "Zombie Survival");
+    sf::VideoMode desktop = sf::VideoMode::getDesktopMode();
+
+
+    sf::RenderWindow window(desktop, "Zombie Survival", sf::Style::Fullscreen);
     window.setFramerateLimit(60);
 
 

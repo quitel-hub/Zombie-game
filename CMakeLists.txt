@@ -4,8 +4,8 @@ project(Zombie-game)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(SFML_DIR "C:/Users/quitel/CLionProjects/Zombie game/Zombie-game/libs/SFML-2.6.1/lib/cmake/SFML")
-find_package(SFML 2.6.1 COMPONENTS graphics window system REQUIRED)
+set(SFML_DIR "F:/Zombie-game/libs/SFML-2.6.1/lib/cmake/SFML")
+find_package(SFML 2.6.1 COMPONENTS graphics window system audio REQUIRED)
 
 
 add_library(GameLogic
@@ -23,15 +23,14 @@ add_library(GameLogic
         Container.h
         LocalizationManager.h
         Command.h
+        Logger.h
 
 )
 
 
 target_include_directories(GameLogic PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 add_executable(Zombie-game main.cpp)
-target_link_libraries(GameLogic PRIVATE sfml-graphics sfml-window sfml-system)
-
-
+target_link_libraries(GameLogic PRIVATE sfml-graphics sfml-window sfml-system sfml-audio)
 
 
 set(SFML_BIN_DIR "${CMAKE_CURRENT_SOURCE_DIR}/libs/SFML-2.6.1/bin")
@@ -45,15 +44,3 @@ target_link_libraries(Zombie-game PRIVATE GameLogic sfml-graphics sfml-window sf
 
 
 
-enable_testing()
-
-
-include(FetchContent)
-FetchContent_Declare(
-        googletest
-        URL https://github.com/google/googletest/archive/refs/tags/v1.14.0.zip
-)
-FetchContent_MakeAvailable(googletest)
-
-
-add_subdirectory(tests)
