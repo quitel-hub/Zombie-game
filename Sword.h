@@ -7,7 +7,10 @@ using namespace std;
 
 #endif //UNTITLED23_SWORD_H
 
-
+/**
+ * @brief Холодна зброя (Меч).
+ * Б'є лише на сусідню клітинку, патронів не потребує.
+ */
 class Sword : public Weapon {
 public:
 

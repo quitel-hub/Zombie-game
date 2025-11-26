@@ -11,7 +11,9 @@ using namespace std;
 #ifndef UNTITLED23_ZOMBIE_H
 #define UNTITLED23_ZOMBIE_H
 #endif
-
+/**
+ * @brief Клас ворога-зомбі.
+ */
 class Zombie : public Entity {
     int x, y;
 
@@ -30,7 +32,15 @@ public:
         LOG_INFO(L10N.getFormattedString("target_hp_remaining", target.getName(), target.getHealth()));
     }
 
-
+    /**
+     * @brief Розумне пересування до цілі.
+     * * Зомби намагається скоротити дистанцію до гравця, обходячи стіни (1).
+     * Також перевіряє, чи не зайнята клітинка іншим зомбі.
+     * @param targetX Координата X цілі.
+     * @param targetY Координата Y цілі.
+     * @param mapGrid Карта.
+     * @param allEnemies Список усіх ворогів (для уникнення колізій).
+     */
     void moveTowards(int targetX, int targetY, const vector<vector<int>>& mapGrid, const vector<Entity*>& allEnemies) {
         int dx = targetX - x;
         int dy = targetY - y;
@@ -45,7 +55,7 @@ public:
         } else {
             nextY += (dy > 0) ? 1 : -1;
         }
-
+        // Перевірка на стіни (1 - це стіна)
         if (nextX < 0 || nextX >= (int)mapGrid[0].size() || nextY < 0 || nextY >= (int)mapGrid.size() || mapGrid[nextY][nextX] != 0) {
             LOG_DEBUG(name + " hit a wall at (" + to_string(nextX) + "," + to_string(nextY) + "). Trying alternative path.");
 
@@ -64,7 +74,7 @@ public:
             }
         }
 
-
+        // Перевірка на інших зомбі
         for (const auto* enemy : allEnemies) {
             if (const auto* z = dynamic_cast<const Zombie*>(enemy)) {
                 if (z == this) continue;

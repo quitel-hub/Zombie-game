@@ -8,7 +8,10 @@
 #include "LocalizationManager.h"
 
 class Command;
-
+/**
+ * @brief Головний клас двигуна гри.
+ * Керує станами гри (меню, гра, пауза), рендерингом та обробкою подій.
+ */
 class Game {
 public:
 

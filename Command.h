@@ -7,12 +7,18 @@ class Game;
 #include "Map.h"
 
 
-
+/**
+ * @brief Абстрактний базовий клас для патерну Command.
+ * @details Використовується для інкапсуляції дій гравця (якщо планується система Replay або Undo).
+ */
 class Command {
 public:
     virtual ~Command() = default;
 
-
+    /**
+     * @brief Виконує команду над грою.
+     * @param game Посилання на об'єкт гри.
+     */
     virtual void execute(Game& game) = 0;
 };
 
