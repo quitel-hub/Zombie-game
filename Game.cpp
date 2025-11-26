@@ -61,11 +61,45 @@ void Game::loadAssets() {
         errorOccurred = true;
     }
 
+    if (!shootBuffer.loadFromFile("shoot.wav") && !shootBuffer.loadFromFile("assets/shoot.wav")) {
+        LOG_ERR("Failed to load shoot.wav");
+    }
+    if (!hitBuffer.loadFromFile("hit.wav") && !hitBuffer.loadFromFile("assets/hit.wav")) {
+        LOG_ERR("Failed to load hit.wav");
+    }
+    if (!pickupBuffer.loadFromFile("pickup.wav") && !pickupBuffer.loadFromFile("assets/pickup.wav")) {
+        LOG_ERR("Failed to load pickup.wav");
+    }
+    if (!zombieBuffer.loadFromFile("zombie.wav") && !zombieBuffer.loadFromFile("assets/zombie.wav")) {
+        LOG_ERR("Failed to load zombie.wav");
+    }
+
+
+    shootSound.setBuffer(shootBuffer);
+    hitSound.setBuffer(hitBuffer);
+    pickupSound.setBuffer(pickupBuffer);
+    zombieSound.setBuffer(zombieBuffer);
+
+
+    shootSound.setVolume(50);
+
+    if (!bgMusic.openFromFile("music.ogg") && !bgMusic.openFromFile("assets/music.ogg")) {
+        LOG_ERR("Failed to open music.ogg");
+    } else {
+        bgMusic.setLoop(true);
+        bgMusic.setVolume(30);
+        bgMusic.play();
+        LOG_INFO("Background music started.");
+    }
+
+
     if (!errorOccurred) {
         LOG_INFO("All assets loaded successfully.");
     } else {
         LOG_WARN("Some assets failed to load. Game may look incorrect.");
     }
+
+
 }
 
 void Game::setupUI() {
@@ -176,7 +210,7 @@ void Game::setupUI() {
     centerTextOrigin(configBackButtonText);
     configBackButtonText.setPosition(configBackButton.getPosition());
 
-    // --- Меню паузи ---
+    // Меню паузи
     pauseTitleText = menuTitleText;
     pauseTitleText.setString("Paused");
     centerTextOrigin(pauseTitleText);
@@ -210,7 +244,7 @@ void Game::setupUI() {
     centerTextOrigin(pauseExitDesktopButtonText);
     pauseExitDesktopButtonText.setPosition(pauseExitDesktopButton.getPosition());
 
-    // --- Екран кінця гри ---
+    //Екран кінця гри
     gameOverTitleText = menuTitleText;
     gameOverTitleText.setString("Game Over");
     centerTextOrigin(gameOverTitleText);
@@ -232,7 +266,7 @@ void Game::setupUI() {
     gameOverExitButtonText = pauseToMenuButtonText;
     gameOverExitButtonText.setPosition(gameOverExitButton.getPosition());
 
-    // --- Ігровий HUD ---
+    //Ігровий HUD
     healthText.setFont(font);
     healthText.setCharacterSize(18);
     healthText.setFillColor(textColor);
@@ -260,10 +294,10 @@ void Game::setupUI() {
 void Game::resetGame() {
     LOG_INFO("Resetting game state...");
 
-    // Генерируем новую карту
+
     map = Map(configMapWidth, configMapHeight, 20);
 
-    // Сбрасываем игрока в точку (1, 1)
+
     player.reset(1, 1);
     player.chooseWeapon(1);
     enemies.clear();
@@ -442,9 +476,6 @@ void Game::processPlayingEvents(sf::Event& event) {
 
 void Game::processPausedEvents(sf::Event& event) {
     if (event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left) {
-        // В меню паузи використовуємо DefaultView, тому mapPixelToCoords треба робити обережно
-        // Але ми малюємо поверх RenderPlaying, який ставить свою камеру.
-        // Тому тут краще тимчасово скинути камеру для перевірки кліків
         window.setView(window.getDefaultView());
         sf::Vector2f mousePos = window.mapPixelToCoords({event.mouseButton.x, event.mouseButton.y});
 
@@ -503,24 +534,26 @@ void Game::updatePlaying() {
         return;
     }
 
-    // --- ПОДБОР ПРЕДМЕТОВ ---
+    //ПІДБІР ПРЕДМЕТІВ
     int tileType = map.getGrid()[player.getY()][player.getX()];
 
-    if (tileType == 2) { // Зелье
+    if (tileType == 2) { //Зілля
         LOG_INFO("Picked up Health Potion");
         player.heal(25);
         map.clearTile(player.getX(), player.getY());
         addLogMessage("Health Potion (+25 HP)");
+        pickupSound.play();
     }
-    else if (tileType == 3) { // Патроны
+    else if (tileType == 3) { // Патрони
         LOG_INFO("Picked up Ammo Pack");
         player.addAmmo(5);
         map.clearTile(player.getX(), player.getY());
         addLogMessage("Ammo Pack (+5 Ammo)");
+        pickupSound.play();
     }
     // -----------------------
 
-    // 2. Логіка ходу ворогів
+    //Логіка ходу ворогів
     if (!isPlayerTurn && player.isAlive()) {
         const auto& allEnemiesRaw = enemies.getAllRaw();
 
@@ -529,10 +562,12 @@ void Game::updatePlaying() {
                 int dx = abs(z->getX() - player.getX());
                 int dy = abs(z->getY() - player.getY());
 
-                // Атака, если рядом
+                //Атака, если рядом
                 if (dx + dy == 1) {
                     int damage = dynamic_cast<Boss*>(z) ? 20 : 10;
                     z->attack(player);
+                    hitSound.setPitch(0.8);
+                    hitSound.play();
                     addLogMessage(z->getName() + " hits player for " + std::to_string(damage) + "!");
 
                     if (!player.isAlive()) {
@@ -545,7 +580,6 @@ void Game::updatePlaying() {
                     }
                 }
                 else {
-                    // Движение к игроку
                     z->moveTowards(player.getX(), player.getY(), map.getGrid(), allEnemiesRaw);
                 }
             }
@@ -568,7 +602,7 @@ void Game::updatePlaying() {
     float viewX = static_cast<float>(player.getX() * TILE_SIZE);
     float viewY = static_cast<float>(player.getY() * TILE_SIZE);
 
-    // Центрируем камеру на игроке
+
     gameView.setCenter(viewX, viewY);
 }
 
@@ -621,7 +655,7 @@ void Game::renderPlaying() {
 
     window.setView(gameView);
 
-    // Малюємо карту
+    //Малюємо карту
     for (int y = 0; y < configMapHeight; ++y) {
         for (int x = 0; x < configMapWidth; ++x) {
             int tileType = map.getGrid()[y][x];
@@ -638,14 +672,14 @@ void Game::renderPlaying() {
             tileSprite.setPosition(static_cast<float>(x * TILE_SIZE), static_cast<float>(y * TILE_SIZE));
             window.draw(tileSprite);
 
-            // Зелье (2)
+            // Зілля (2)
             if (tileType == 2) {
                 sf::CircleShape potion(10.f);
                 potion.setFillColor(sf::Color::Green);
                 potion.setPosition(static_cast<float>(x * TILE_SIZE) + 6.f, static_cast<float>(y * TILE_SIZE) + 6.f);
                 window.draw(potion);
             }
-            // Патроны (3)
+            // Патрони (3)
             else if (tileType == 3) {
                 sf::RectangleShape ammoBox({14.f, 14.f});
                 ammoBox.setFillColor(sf::Color::Yellow);
@@ -684,7 +718,7 @@ void Game::renderPlaying() {
     playerSprite.setPosition(static_cast<float>(player.getX() * TILE_SIZE), static_cast<float>(player.getY() * TILE_SIZE));
     window.draw(playerSprite);
 
-    // --- 2. Рендер HUD ---
+    //Рендер HUD
     window.setView(window.getDefaultView());
 
     window.draw(healthText);
@@ -706,7 +740,7 @@ void Game::renderPaused() {
     sf::RectangleShape overlay({(float)window.getSize().x, (float)window.getSize().y});
     overlay.setFillColor(sf::Color(0, 0, 0, 150));
 
-    window.setView(window.getDefaultView()); // Меню малюємо в координатах вікна
+    window.setView(window.getDefaultView());
     window.draw(overlay);
 
     window.draw(pauseTitleText);
@@ -752,6 +786,12 @@ void Game::handlePlayerAttack() {
                     addLogMessage("Click! No Ammo!");
                     continue;
                 }
+                if (player.getWeaponName() == "Gun") {
+                    shootSound.play();
+                } else {
+                    hitSound.setPitch(1.5);
+                    hitSound.play();
+                }
 
                 LOG_DEBUG("Player engaged enemy: " + z->getName());
 
@@ -774,6 +814,7 @@ void Game::handlePlayerAttack() {
                     addLogMessage(z->getName() + " defeated!");
                     player.addScore(50);
                     enemies.remove(i);
+                    zombieSound.play();
                 }
                 break;
             }
@@ -782,7 +823,6 @@ void Game::handlePlayerAttack() {
 
     if (!attacked) {
         if (player.getAmmo() <= 0 && player.getWeaponRange() > 1) {
-             // Повідомлення "Click! No Ammo!" вже було
         } else {
              addLogMessage("No enemy in range!");
         }

@@ -1,5 +1,6 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include <deque>
 #include "Player.h"
 #include "Map.h"
@@ -107,6 +108,18 @@ private:
     bool isPlayerTurn = true;
 
 
+    // Звуки
+    sf::SoundBuffer shootBuffer;
+    sf::SoundBuffer hitBuffer;
+    sf::SoundBuffer pickupBuffer;
+    sf::SoundBuffer zombieBuffer;
+
+    sf::Sound shootSound;
+    sf::Sound hitSound;
+    sf::Sound pickupSound;
+    sf::Sound zombieSound;
+
+    sf::Music bgMusic;
 
     void loadAssets();
     void setupUI();
