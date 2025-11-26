@@ -14,7 +14,9 @@ using namespace std;
 #ifndef UNTITLED23_PLAYER_H
 #define UNTITLED23_PLAYER_H
 #endif
-
+/**
+ * @brief Клас гравця, яким керує користувач.
+ */
 class Player : public Entity {
     int score;
     int x, y;
@@ -28,7 +30,11 @@ public:
             : Entity(n, h, d), weapon(nullptr), score(0), x(sx), y(sy), weaponChosen(false) {}
 
     ~Player() {}
-
+    /**
+     * @brief Скидає стан гравця до початкового для нової гри.
+     * @param startX Початкова позиція X.
+     * @param startY Початкова позиція Y.
+     */
     void reset(int startX, int startY) {
         health = 100;
         score = 0;
@@ -39,13 +45,19 @@ public:
         weaponChosen = false;
         LOG_INFO("Player stats reset.");
     }
-
+    /**
+     * @brief Відновлює здоров'я гравця.
+     * @param amount Кількість HP. Не перевищує maxHealth.
+     */
     void heal(int amount) {
         health += amount;
         if (health > maxHealth) health = maxHealth;
         LOG_INFO("Player healed. HP: " + to_string(health));
     }
-
+    /**
+     * @brief Додає патрони до інвентаря.
+     * @param amount Кількість патронів.
+     */
     void addAmmo(int amount) {
         ammo += amount;
         LOG_INFO("Ammo collected: +" + to_string(amount));
@@ -53,7 +65,10 @@ public:
 
     int getAmmo() const { return ammo; }
 
-
+    /**
+     * @brief Змінює зброю (Інвентар).
+     * * Перемикає між Мечем та Пістолетом.
+     */
     void swapWeapon() {
 
         if (weapon && weapon->getName() == "Sword") {
@@ -77,7 +92,10 @@ public:
         weaponChosen = true;
         LOG_INFO(L10N.getFormattedString("player_equipped", name, weapon->getName()));
     }
-
+    /**
+     * @brief Перевіряє, чи може гравець атакувати.
+     * @return true, якщо є зброя і патрони (для стрілецької зброї).
+     */
     bool canAttack() const {
         if (!weapon) return false;
         if (weapon->isRanged() && ammo <= 0) return false;

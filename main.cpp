@@ -1,3 +1,9 @@
+/**
+ * @file main.cpp
+ * @brief Точка входу в програму.
+ * @details Ініціалізує вікно, налаштовує кодування та запускає головний цикл гри.
+ */
+
 #define NOMINMAX
 #include <windows.h>
 
