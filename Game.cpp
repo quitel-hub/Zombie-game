@@ -47,7 +47,7 @@ void Game::loadAssets() {
     LOG_INFO("Loading assets...");
     bool errorOccurred = false;
 
-    if (!font.loadFromFile("3Dumb.ttf") && !font.loadFromFile("assets/3Dumb.ttf")) {
+    if (!font.loadFromFile("DS Stamper.ttf") && !font.loadFromFile("assets/DS Stamper.ttf")) {
         LOG_ERR("CRITICAL: Could not load font '3Dumb.ttf'");
         errorOccurred = true;
     }
@@ -300,6 +300,42 @@ void Game::setupUI() {
     healthBarForeground.setSize({100.f, 15.f});
     healthBarForeground.setFillColor(sf::Color(220, 0, 0));
     healthBarForeground.setPosition(10.f, 50.f);
+
+    float langBtnSize = 60.f;
+
+    // EN Button
+    langEnButton.setSize({langBtnSize, langBtnSize});
+    langEnButton.setFillColor(sf::Color(70, 70, 70));
+    langEnButton.setOutlineThickness(2);
+    langEnButton.setOutlineColor(sf::Color::White);
+    langEnButton.setPosition(window.getSize().x - 150.f, 20.f); // Правий верхній кут
+
+    langEnText.setFont(font);
+    langEnText.setString("EN");
+    langEnText.setCharacterSize(20);
+    langEnText.setFillColor(sf::Color::White);
+    centerTextOrigin(langEnText);
+    langEnText.setPosition(
+            langEnButton.getPosition().x + langBtnSize/2,
+            langEnButton.getPosition().y + langBtnSize/2
+    );
+
+    // UKR Button
+    langUkrButton = langEnButton;
+    langUkrButton.setPosition(window.getSize().x - 70.f, 20.f);
+
+    langUkrText = langEnText;
+    langUkrText.setString("UA");
+    centerTextOrigin(langUkrText);
+    langUkrText.setPosition(
+            langUkrButton.getPosition().x + langBtnSize/2,
+            langUkrButton.getPosition().y + langBtnSize/2
+    );
+
+    // Завантажуємо початкову мову (наприклад, EN)
+    L10N.loadLanguage("en");
+    updateUITexts(); // Оновлюємо тексти відразу
+
 }
 
 
@@ -414,7 +450,10 @@ void Game::render() {
 
 void Game::processMainMenuEvents(sf::Event& event) {
     if (event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left) {
-        sf::Vector2f mousePos = window.mapPixelToCoords({event.mouseButton.x, event.mouseButton.y});
+        sf::Vector2f mousePos = window.mapPixelToCoords(
+                {event.mouseButton.x, event.mouseButton.y},
+                window.getDefaultView()
+        );
         if (playButton.getGlobalBounds().contains(mousePos)) {
             LOG_INFO("User selected New Game.");
             currentState = GameState::ConfigSelection;
@@ -423,12 +462,26 @@ void Game::processMainMenuEvents(sf::Event& event) {
             LOG_INFO("User selected Exit.");
             window.close();
         }
+        if (langEnButton.getGlobalBounds().contains(mousePos)) {
+            LOG_INFO("Language switched to English");
+            L10N.loadLanguage("en");
+            updateUITexts(); // Миттєве оновлення інтерфейсу
+        }
+
+        if (langUkrButton.getGlobalBounds().contains(mousePos)) {
+            LOG_INFO("Language switched to Ukrainian");
+            L10N.loadLanguage("ukr");
+            updateUITexts(); // Миттєве оновлення інтерфейсу
+        }
     }
 }
 
 void Game::processConfigSelectionEvents(sf::Event& event) {
     if (event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left) {
-        sf::Vector2f mousePos = window.mapPixelToCoords({event.mouseButton.x, event.mouseButton.y});
+        sf::Vector2f mousePos = window.mapPixelToCoords(
+                {event.mouseButton.x, event.mouseButton.y},
+                window.getDefaultView()
+        );
 
         if (mapWidthDecreaseButton.getGlobalBounds().contains(mousePos)) {
             if (configMapWidth > 15) configMapWidth--;
@@ -629,6 +682,11 @@ void Game::renderMainMenu() {
     window.draw(playButtonText);
     window.draw(exitButton);
     window.draw(exitButtonText);
+
+    window.draw(langEnButton);
+    window.draw(langEnText);
+    window.draw(langUkrButton);
+    window.draw(langUkrText);
 }
 
 void Game::renderConfigSelection() {
@@ -636,15 +694,15 @@ void Game::renderConfigSelection() {
 
     window.draw(configTitleText);
 
-    mapWidthText.setString("Map Width: " + std::to_string(configMapWidth));
+    mapWidthText.setString(L10N.getFormattedString("config_map_width", configMapWidth));
     centerTextOrigin(mapWidthText);
     window.draw(mapWidthText);
 
-    mapHeightText.setString("Map Height: " + std::to_string(configMapHeight));
+    mapHeightText.setString(L10N.getFormattedString("config_map_height", configMapHeight));
     centerTextOrigin(mapHeightText);
     window.draw(mapHeightText);
 
-    enemyCountText.setString("Enemies: " + std::to_string(configEnemyCount));
+    enemyCountText.setString(L10N.getFormattedString("config_enemies", configEnemyCount));
     centerTextOrigin(enemyCountText);
     window.draw(enemyCountText);
 
@@ -855,4 +913,44 @@ void Game::addLogMessage(const std::string& message) {
     newLog.setCharacterSize(14);
     newLog.setFillColor(sf::Color::Green);
     logMessages.push_back(newLog);
+}
+
+void Game::updateUITexts() {
+    // Головне меню
+    menuTitleText.setString(L10N.getString("game_title"));
+    centerTextOrigin(menuTitleText);
+
+    playButtonText.setString(L10N.getString("menu_new_game"));
+    centerTextOrigin(playButtonText);
+
+    exitButtonText.setString(L10N.getString("menu_exit"));
+    centerTextOrigin(exitButtonText);
+
+    // Конфігурація
+    configTitleText.setString(L10N.getString("config_title"));
+    centerTextOrigin(configTitleText);
+    configStartButtonText.setString(L10N.getString("config_start"));
+    centerTextOrigin(configStartButtonText);
+    configBackButtonText.setString(L10N.getString("config_back"));
+    centerTextOrigin(configBackButtonText);
+
+    // Пауза
+    pauseTitleText.setString(L10N.getString("paused"));
+    centerTextOrigin(pauseTitleText);
+    resumeButtonText.setString(L10N.getString("resume"));
+    centerTextOrigin(resumeButtonText);
+    pauseRestartButtonText.setString(L10N.getString("restart"));
+    centerTextOrigin(pauseRestartButtonText);
+    pauseToMenuButtonText.setString(L10N.getString("to_menu"));
+    centerTextOrigin(pauseToMenuButtonText);
+    pauseExitDesktopButtonText.setString(L10N.getString("to_desktop"));
+    centerTextOrigin(pauseExitDesktopButtonText);
+
+    // Game Over
+    if (currentState == GameState::GameOver) {
+        restartButtonText.setString(L10N.getString("restart"));
+        centerTextOrigin(restartButtonText);
+        gameOverExitButtonText.setString(L10N.getString("to_menu"));
+        centerTextOrigin(gameOverExitButtonText);
+    }
 }

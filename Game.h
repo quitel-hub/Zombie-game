@@ -124,6 +124,14 @@ private:
 
     sf::Music bgMusic;
 
+
+    // --- Кнопки мови ---
+    sf::RectangleShape langEnButton;
+    sf::Text langEnText;
+    sf::RectangleShape langUkrButton;
+    sf::Text langUkrText;
+
+
     void loadAssets();
     void setupUI();
     void processEvents();
@@ -143,6 +151,7 @@ private:
     void handlePlayerAttack();
     void addLogMessage(const std::string& message);
     void resetGame();
+    void updateUITexts();
 
 public:
     Game(sf::RenderWindow& win);

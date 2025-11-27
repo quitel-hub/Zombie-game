@@ -1,34 +1,36 @@
 {
-  "game_start": "=== ПОЧАТОК ГРИ ===",
+  "game_title": "Зомбі Виживання",
+  "menu_new_game": "Нова Гра",
+  "menu_exit": "Вихід",
+  "menu_config": "Налаштування",
+  "config_title": "Конфігурація",
+  "config_start": "Почати Гру",
+  "config_back": "Назад",
+  "game_over": "Кінець Гри",
+  "victory": "Перемога!",
+  "restart": "Рестарт",
+  "paused": "Пауза",
+  "resume": "Продовжити",
+  "to_menu": "Головне Меню",
+  "to_desktop": "Вихід з гри",
+
   "choose_weapon": "Оберіть зброю:\n1 - Меч\n2 - Пістолет",
-  "invalid_weapon_choice": "Неправильний вибір! Обираємо Меч.",
-  "weapon_already_chosen": "Зброю вже обрано: {0}",
+  "weapon_already_chosen": "Зброя вже обрана: {0}",
   "player_equipped": "{0} екіпірував {1}",
-
   "entity_takes_damage": "{0} отримує {1} шкоди!",
-  "target_hp_remaining": "У {0} тепер {1} HP",
-  "enemy_defeated": "{0} переможений!",
-
+  "target_hp_remaining": "У {0} залишилось {1} HP",
   "player_attack_header": "\n[АТАКА ГРАВЦЯ]",
   "zombie_attack_header": "\n[АТАКА ЗОМБІ]",
   "boss_attack_header": "\n[АТАКА БОСА]",
-
   "player_attacks_target": "{0} ({1} HP) атакує {2} ({3} HP)",
   "zombie_bites_target": "{0} ({1} HP) кусає {2} ({3} HP)",
   "boss_attacks_target": "{0} у люті! ({1} HP) атакує {2} ({3} HP)",
-
-  "player_deals_damage": ">>> Наносить {0} шкоди з {1}",
-  "player_no_weapon": "У {0} немає зброї!",
-  "cant_move_wall": "Туди не можна йти (стіна).",
-  "no_enemy_in_range": "Немає ворогів у зоні досяжності!",
-
-  "health_score_hud": "\nЗдоров'я: {0} | Рахунок: {1}",
-  "player_turn_header": "\n--- ХІД ГРАВЦЯ ---",
-  "enemy_turn_header": "\n--- ХІД ВОРОГА ---",
-  "player_turn_prompt": "W/A/S/D для руху, F для атаки, Q для виходу: ",
-
-  "player_fallen": "Гравця переможено!",
-  "victory": "\n=== Перемога! Всіх ворогів знищено! ===",
-  "defeat": "\n=== Поразка... ===",
-  "final_score": "Фінальний рахунок: {0}"
+  "player_deals_damage": ">>> Завдає {0} шкоди використовуючи {1}",
+  "player_no_weapon": "{0} не має зброї!",
+  "cant_move_wall": "Туди не можна (стіна).",
+  "invalid_weapon_choice": "Невірний вибір!",
+  "no_enemy_in_range": "Немає ворогів у радіусі атаки!",
+  "config_map_width": "Ширина карти: {0}",
+  "config_map_height": "Висота карти: {0}",
+  "config_enemies": "Кількість ворогів: {0}"
 }
