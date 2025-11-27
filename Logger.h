@@ -8,14 +8,20 @@
 #include <iomanip>
 #include <sstream>
 
-
+/**
+ * @brief Рівні важливості повідомлень логування.
+ * Використовується PascalCase для уникнення конфліктів з макросами Windows.h.
+ */
 enum class LogLevel {
-    Info,
-    Warning,
-    Error,
-    Debug
+    Info, ///< Звичайна інформаційна подія
+    Warning, ///< Попередження (гра продовжується, але щось не так)
+    Error, ///< Критична помилка
+    Debug ///< Технічна інформація для відладки
 };
-
+/**
+ * @brief Клас для запису логів гри у файл та консоль.
+ * @details Реалізований як Thread-safe Singleton.
+ */
 class Logger {
 private:
     std::ofstream logFile;
@@ -37,12 +43,19 @@ private:
 public:
     Logger(const Logger&) = delete;
     Logger& operator=(const Logger&) = delete;
-
+    /**
+     * @brief Отримує єдиний екземпляр логера.
+     * @return Посилання на об'єкт Logger.
+     */
     static Logger& getInstance() {
         static Logger instance;
         return instance;
     }
-
+    /**
+     * @brief Записує повідомлення у лог.
+     * @param level Рівень важливості повідомлення.
+     * @param message Текст повідомлення.
+     */
     void log(LogLevel level, const std::string& message) {
         std::lock_guard<std::mutex> lock(logMutex);
 
@@ -91,7 +104,7 @@ public:
         std::cout << colorCode << finalLog << resetCode << std::endl;
     }
 };
-
+// Макроси для зручного виклику
 #define LOG_INFO(msg) Logger::getInstance().log(LogLevel::Info, msg)
 #define LOG_WARN(msg) Logger::getInstance().log(LogLevel::Warning, msg)
 #define LOG_ERR(msg)  Logger::getInstance().log(LogLevel::Error, msg)

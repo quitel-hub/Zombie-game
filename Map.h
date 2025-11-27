@@ -14,15 +14,24 @@ using namespace std;
 #define UNTITLED23_MAP_H
 #endif
 
-const int TILE_FLOOR = 0;
-const int TILE_WALL = 1;
-const int TILE_POTION = 2;
-const int TILE_AMMO = 3;
-
+const int TILE_FLOOR = 0; ///< Пуста підлога
+const int TILE_WALL = 1;  ///< Стіна
+const int TILE_POTION = 2;  ///< Зілля здоров'я
+const int TILE_AMMO = 3;    ///< Коробка з патронами
+/**
+ * @brief Клас ігрової карти.
+ * Відповідає за генерацію лабіринту та розміщення предметів.
+ */
 class Map {
     int width, height;
     vector<vector<int>> grid;
 public:
+    /**
+     * @brief Конструктор, що генерує карту.
+     * @param w Ширина.
+     * @param h Висота.
+     * @param wallPercent Відсоток стін.
+     */
     Map(int w, int h, int wallPercent) : width(w), height(h) {
         grid = vector<vector<int>>(h, vector<int>(w, TILE_FLOOR));
 
@@ -46,7 +55,10 @@ public:
         }
         LOG_INFO("Map generated with Potions and Ammo.");
     }
-
+    /**
+     * @brief Очищує клітинку (перетворює на підлогу).
+     * Використовується, коли гравець підбирає предмет.
+     */
     void clearTile(int x, int y) {
         if (x >= 0 && x < width && y >= 0 && y < height) {
             grid[y][x] = TILE_FLOOR;

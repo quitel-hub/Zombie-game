@@ -1,3 +1,9 @@
+/**
+ * @file Game.cpp
+ * @brief Реалізація основної логіки гри.
+ * @details Містить головний цикл, обробку подій, оновлення стану гри (Update)
+ * та відображення (Render). Також відповідає за управління ресурсами (звуки, текстури).
+ */
 #include "Game.h"
 #include "Zombie.h"
 #include "Boss.h"
@@ -7,6 +13,11 @@
 #include <cmath>
 
 // Конструктор
+/**
+ * @brief Конструктор гри.
+ * @details Ініціалізує вікно, гравця, карту та налаштування камери.
+ * Також запускає завантаження ресурсів.
+ */
 Game::Game(sf::RenderWindow& win)
         : window(win),
           currentState(GameState::MainMenu),
@@ -101,7 +112,7 @@ void Game::loadAssets() {
 
 
 }
-
+// --- НАЛАШТУВАННЯ ІНТЕРФЕЙСУ ---
 void Game::setupUI() {
     float centerX = window.getSize().x / 2.0f;
     float centerY = window.getSize().y / 2.0f; // Центр по Y
@@ -291,6 +302,8 @@ void Game::setupUI() {
     healthBarForeground.setPosition(10.f, 50.f);
 }
 
+
+// --- ЛОГІКА ГРИ ---
 void Game::resetGame() {
     LOG_INFO("Resetting game state...");
 
@@ -302,7 +315,7 @@ void Game::resetGame() {
     player.chooseWeapon(1);
     enemies.clear();
 
-
+// Спавн Боса у дальньому куті
     if (configEnemyCount > 0) {
 
         int bossX = configMapWidth - 2;
@@ -313,13 +326,13 @@ void Game::resetGame() {
         LOG_INFO("Boss spawned at (" + to_string(bossX) + "," + to_string(bossY) + ")");
     }
 
-
+// Випадковий спавн зомбі на вільних клітинах
     for (int i = 0; i < configEnemyCount - 1; ++i) {
         int z_x, z_y;
         bool validSpot = false;
         int attempts = 0;
 
-
+        // Шукаємо вільне місце (до 50 спроб)
         while (!validSpot && attempts < 50) {
 
             z_x = 1 + rand() % (configMapWidth - 2);
@@ -327,7 +340,7 @@ void Game::resetGame() {
 
 
             int distToPlayer = abs(z_x - player.getX()) + abs(z_y - player.getY());
-
+            // Перевірка: не стіна і не занадто близько до гравця
             if (map.getGrid()[z_y][z_x] != 1 && distToPlayer > 3) {
                 validSpot = true;
             }
@@ -359,6 +372,8 @@ void Game::runGameLoop() {
     LOG_INFO("Exiting main game loop.");
 }
 
+
+// --- ОБРОБКА ПОДІЙ ---
 void Game::processEvents() {
     sf::Event event;
     while (window.pollEvent(event)) {
@@ -454,14 +469,11 @@ void Game::processPlayingEvents(sf::Event& event) {
         if (event.key.code == sf::Keyboard::D) { player.move(1, 0, map.getGrid()); actionTaken = true; }
         if (event.key.code == sf::Keyboard::F) { handlePlayerAttack(); actionTaken = true; }
 
-        // --- НОВОЕ: Смена оружия ---
+
         if (event.key.code == sf::Keyboard::Q) {
             player.swapWeapon();
             addLogMessage("Swapped to " + player.getWeaponName());
-            // Смена оружия не тратит ход (actionTaken = false), или тратит?
-            // Давай сделаем, что не тратит, это удобно.
         }
-        // ---------------------------
 
         if (event.key.code == sf::Keyboard::Escape) {
             LOG_INFO("Game paused by user.");
@@ -522,9 +534,11 @@ void Game::centerTextOrigin(sf::Text& text) {
     text.setOrigin(bounds.left + bounds.width / 2.0f, bounds.top + bounds.height / 2.0f);
 }
 
+
+// --- ОНОВЛЕННЯ СТАНУ ГРИ ---
 void Game::updatePlaying() {
 
-    // 1. Перевірка умови перемоги
+    //Перевірка умови перемоги
     if (currentState == GameState::Playing && enemies.size() == 0) {
         LOG_INFO("VICTORY! All enemies defeated.");
         currentState = GameState::GameOver;
@@ -551,7 +565,7 @@ void Game::updatePlaying() {
         addLogMessage("Ammo Pack (+5 Ammo)");
         pickupSound.play();
     }
-    // -----------------------
+
 
     //Логіка ходу ворогів
     if (!isPlayerTurn && player.isAlive()) {
@@ -562,7 +576,7 @@ void Game::updatePlaying() {
                 int dx = abs(z->getX() - player.getX());
                 int dy = abs(z->getY() - player.getY());
 
-                //Атака, если рядом
+
                 if (dx + dy == 1) {
                     int damage = dynamic_cast<Boss*>(z) ? 20 : 10;
                     z->attack(player);
@@ -606,6 +620,8 @@ void Game::updatePlaying() {
     gameView.setCenter(viewX, viewY);
 }
 
+
+// --- РЕНДЕРИНГ ---
 void Game::renderMainMenu() {
     window.setView(window.getDefaultView());
     window.draw(menuTitleText);
