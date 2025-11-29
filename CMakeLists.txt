@@ -4,7 +4,7 @@ project(Zombie-game)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(SFML_DIR "F:/Zombie-game/libs/SFML-2.6.1/lib/cmake/SFML")
+set(SFML_DIR "C:/Users/quitel/CLionProjects/Zombie-game/libs/SFML-2.6.1/lib/cmake/SFML")
 find_package(SFML 2.6.1 COMPONENTS graphics window system audio REQUIRED)
 
 
@@ -24,6 +24,7 @@ add_library(GameLogic
         LocalizationManager.h
         Command.h
         Logger.h
+        tests/Benchmarks.cpp
 
 )
 
@@ -42,5 +43,28 @@ file(COPY ${SFML_DLLS} DESTINATION ${CMAKE_BINARY_DIR})
 file(COPY assets/ DESTINATION ${CMAKE_BINARY_DIR})
 target_link_libraries(Zombie-game PRIVATE GameLogic sfml-graphics sfml-window sfml-system)
 
+
+# --- Google Benchmark Setup ---
+include(FetchContent)
+FetchContent_Declare(
+        googlebenchmark
+        GIT_REPOSITORY https://github.com/google/benchmark.git
+        GIT_TAG v1.8.3
+)
+
+set(BENCHMARK_ENABLE_TESTING OFF CACHE BOOL "" FORCE)
+FetchContent_MakeAvailable(googlebenchmark)
+
+
+add_executable(game_benchmarks
+        tests/Benchmarks.cpp
+
+)
+
+target_link_libraries(game_benchmarks PRIVATE
+        benchmark::benchmark
+        benchmark::benchmark_main
+        sfml-graphics sfml-window sfml-system sfml-audio
+)
 
 
