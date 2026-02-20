@@ -1,0 +1,70 @@
+[2026-02-20 21:43:21] [INFO] Map generated with Potions and Ammo.
+[2026-02-20 21:43:22] [INFO] Game engine initialized. Window size: 1920x1080
+[2026-02-20 21:43:22] [INFO] Loading assets...
+[2026-02-20 21:43:22] [INFO] Background music started.
+[2026-02-20 21:43:22] [INFO] All assets loaded successfully.
+[2026-02-20 21:43:22] [INFO] Language loaded: en
+[2026-02-20 21:43:22] [INFO] Entering main game loop.
+[2026-02-20 21:43:23] [INFO] User selected New Game.
+[2026-02-20 21:43:25] [INFO] Configuration confirmed. Starting game.
+[2026-02-20 21:43:25] [INFO] Resetting game state...
+[2026-02-20 21:43:25] [INFO] Map generated with Potions and Ammo.
+[2026-02-20 21:43:25] [INFO] Player stats reset.
+[2026-02-20 21:43:25] [INFO] Player equipped Sword
+[2026-02-20 21:43:25] [INFO] Boss spawned at (13,13)
+[2026-02-20 21:43:25] [INFO] Total enemies active: 3
+[2026-02-20 21:43:26] [DEBUG] Boss hit a wall at (12,12). Trying alternative path.
+[2026-02-20 21:43:26] [DEBUG] Zombie hit a wall at (11,3). Trying alternative path.
+[2026-02-20 21:43:26] [DEBUG] Boss hit a wall at (12,11). Trying alternative path.
+[2026-02-20 21:43:26] [DEBUG] Zombie hit a wall at (7,5). Trying alternative path.
+[2026-02-20 21:43:26] [DEBUG] Boss hit a wall at (12,10). Trying alternative path.
+[2026-02-20 21:43:26] [DEBUG] Zombie hit a wall at (10,2). Trying alternative path.
+[2026-02-20 21:43:26] [DEBUG] Zombie hit a wall at (6,4). Trying alternative path.
+[2026-02-20 21:43:27] [DEBUG] Player engaged enemy: Zombie
+[2026-02-20 21:43:27] [INFO] >>> Deals 60 damage with Sword
+[2026-02-20 21:43:27] [INFO] Zombie takes 60 damage!
+[2026-02-20 21:43:27] [INFO] Zombie has died.
+[2026-02-20 21:43:27] [INFO] Enemy neutralized: Zombie
+[2026-02-20 21:43:27] [DEBUG] Player engaged enemy: Zombie
+[2026-02-20 21:43:27] [INFO] >>> Deals 60 damage with Sword
+[2026-02-20 21:43:27] [INFO] Zombie takes 60 damage!
+[2026-02-20 21:43:27] [INFO] Zombie has died.
+[2026-02-20 21:43:27] [INFO] Enemy neutralized: Zombie
+[2026-02-20 21:43:28] [INFO] Swapped weapon to: Gun
+[2026-02-20 21:43:29] [INFO] 
+[BOSS ATTACK]
+[2026-02-20 21:43:29] [INFO] Boss in rage! (150 HP) attacks Player (100 HP)
+[2026-02-20 21:43:29] [INFO] Player takes 25 damage!
+[2026-02-20 21:43:29] [INFO] Player now has 75 HP
+[2026-02-20 21:43:29] [DEBUG] Player engaged enemy: Boss
+[2026-02-20 21:43:29] [INFO] Shot fired! Ammo left: 9
+[2026-02-20 21:43:29] [INFO] >>> Deals 45 damage with Gun
+[2026-02-20 21:43:29] [INFO] Boss takes 45 damage!
+[2026-02-20 21:43:29] [INFO] 
+[BOSS ATTACK]
+[2026-02-20 21:43:29] [INFO] Boss in rage! (105 HP) attacks Player (75 HP)
+[2026-02-20 21:43:29] [INFO] Player takes 25 damage!
+[2026-02-20 21:43:29] [INFO] Player now has 50 HP
+[2026-02-20 21:43:29] [DEBUG] Player engaged enemy: Boss
+[2026-02-20 21:43:29] [INFO] Shot fired! Ammo left: 8
+[2026-02-20 21:43:29] [INFO] >>> Deals 45 damage with Gun
+[2026-02-20 21:43:29] [INFO] Boss takes 45 damage!
+[2026-02-20 21:43:29] [INFO] 
+[BOSS ATTACK]
+[2026-02-20 21:43:29] [INFO] Boss in rage! (60 HP) attacks Player (50 HP)
+[2026-02-20 21:43:29] [INFO] Player takes 25 damage!
+[2026-02-20 21:43:29] [INFO] Player now has 25 HP
+[2026-02-20 21:43:30] [DEBUG] Player engaged enemy: Boss
+[2026-02-20 21:43:30] [INFO] Shot fired! Ammo left: 7
+[2026-02-20 21:43:30] [INFO] >>> Deals 45 damage with Gun
+[2026-02-20 21:43:30] [INFO] Boss takes 45 damage!
+[2026-02-20 21:43:30] [INFO] 
+[BOSS ATTACK]
+[2026-02-20 21:43:30] [INFO] Boss in rage! (15 HP) attacks Player (25 HP)
+[2026-02-20 21:43:30] [INFO] Player takes 25 damage!
+[2026-02-20 21:43:30] [INFO] Player has died.
+[2026-02-20 21:43:30] [INFO] Player now has 0 HP
+[2026-02-20 21:43:30] [INFO] DEFEAT. Player killed by Boss
+[2026-02-20 21:43:33] [INFO] User selected Exit.
+[2026-02-20 21:43:33] [INFO] Exiting main game loop.
+[2026-02-20 21:43:33] [INFO] Game session ended. Shutting down.

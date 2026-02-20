@@ -13,7 +13,7 @@ target_link_libraries(runTests PRIVATE GameLogic)
 include(GoogleTest)
 gtest_discover_tests(runTests)
 
-
+set(BENCHMARK_ENABLE_WERROR OFF CACHE BOOL "Disable Werror for benchmark" FORCE)
 # --- Google Benchmark Setup ---
 include(FetchContent)
 FetchContent_Declare(

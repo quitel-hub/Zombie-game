@@ -24,7 +24,7 @@ add_library(GameLogic
         LocalizationManager.h
         Command.h
         Logger.h
-        tests/Benchmarks.cpp
+        #tests/Benchmarks.cpp
 
 )
 

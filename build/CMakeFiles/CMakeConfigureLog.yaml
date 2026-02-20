@@ -1,0 +1,1547 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/CMakeDetermineSystem.cmake:205 (message)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      The system is: Windows - 10.0.19045 - AMD64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: C:/msys64/mingw64/bin/gcc.exe 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.exe"
+      
+      The C compiler identification is GNU, found in:
+        C:/Projects/Zombie-game/build/CMakeFiles/3.29.5-msvc4/CompilerIdC/a.exe
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: C:/msys64/mingw64/bin/g++.exe 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.exe"
+      
+      The CXX compiler identification is GNU, found in:
+        C:/Projects/Zombie-game/build/CMakeFiles/3.29.5-msvc4/CompilerIdCXX/a.exe
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:67 (try_compile)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-twwtih"
+      binary: "C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-twwtih"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-twwtih'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/mingw64/bin/mingw32-make.exe -f Makefile cmTC_e4633/fast
+        C:/msys64/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_e4633.dir\\build.make CMakeFiles/cmTC_e4633.dir/build
+        mingw32-make[1]: Entering directory 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-twwtih'
+        Building C object CMakeFiles/cmTC_e4633.dir/CMakeCCompilerABI.c.obj
+        C:\\msys64\\mingw64\\bin\\gcc.exe   -v -o CMakeFiles\\cmTC_e4633.dir\\CMakeCCompilerABI.c.obj -c "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.29\\Modules\\CMakeCCompilerABI.c"
+        Using built-in specs.
+        COLLECT_GCC=C:\\msys64\\mingw64\\bin\\gcc.exe
+        Target: x86_64-w64-mingw32
+        Configured with: ../gcc-15.2.0/configure --prefix=/mingw64 --with-local-prefix=/mingw64/local --with-native-system-header-dir=/mingw64/include --libexecdir=/mingw64/lib --enable-bootstrap --enable-checking=release --with-arch=nocona --with-tune=generic --enable-mingw-wildcard --enable-languages=c,lto,c++,fortran,ada,objc,obj-c++,jit --enable-shared --enable-static --enable-libatomic --enable-threads=posix --enable-graphite --enable-fully-dynamic-string --enable-libstdcxx-backtrace=yes --enable-libstdcxx-filesystem-ts --enable-libstdcxx-time --disable-libstdcxx-pch --enable-lto --enable-libgomp --disable-libssp --disable-multilib --disable-rpath --disable-win32-registry --disable-nls --disable-werror --disable-symvers --with-libiconv --with-system-zlib --with-gmp=/mingw64 --with-mpfr=/mingw64 --with-mpc=/mingw64 --with-isl=/mingw64 --with-pkgversion='Rev8, Built by MSYS2 project' --with-bugurl=https://github.com/msys2/MINGW-packages/issues --with-gnu-as --with-gnu-ld --with-libstdcxx-zoneinfo=yes --disable-libstdcxx-debug --enable-plugin --with-boot-ldflags=-static-libstdc++ --with-stage1-ldflags=-static-libstdc++
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 15.2.0 (Rev8, Built by MSYS2 project) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_e4633.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_e4633.dir\\'
+         C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/cc1.exe -quiet -v -iprefix C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/ -D_REENTRANT C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.29\\Modules\\CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles\\cmTC_e4633.dir\\ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=nocona -version -o C:\\Users\\quitel\\AppData\\Local\\Temp\\ccyjzAYN.s
+        GNU C23 (Rev8, Built by MSYS2 project) version 15.2.0 (x86_64-w64-mingw32)
+        	compiled by GNU C version 15.2.0, GMP version 6.3.0, MPFR version 4.2.2, MPC version 1.3.1, isl version isl-0.27-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring nonexistent directory "C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/include"
+        ignoring duplicate directory "C:/msys64/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/15.2.0/include"
+        ignoring nonexistent directory "D:/M/msys64/mingw64/include"
+        ignoring nonexistent directory "/mingw64/include"
+        ignoring duplicate directory "C:/msys64/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/15.2.0/include-fixed"
+        ignoring nonexistent directory "C:/msys64/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/include"
+        ignoring nonexistent directory "D:/M/msys64/mingw64/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/include
+         C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../include
+         C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/include-fixed
+        End of search list.
+        Compiler executable checksum: feaaa8b8d0ead308dc62d839201f7330
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_e4633.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_e4633.dir\\'
+         C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\\cmTC_e4633.dir\\CMakeCCompilerABI.c.obj C:\\Users\\quitel\\AppData\\Local\\Temp\\ccyjzAYN.s
+        GNU assembler version 2.45.1 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.45.1
+        COMPILER_PATH=C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/;C:/msys64/mingw64/bin/../lib/gcc/;C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/
+        LIBRARY_PATH=C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/;C:/msys64/mingw64/bin/../lib/gcc/;C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib/;C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/;C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/;C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_e4633.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_e4633.dir\\CMakeCCompilerABI.c.'
+        Linking C executable cmTC_e4633.exe
+        "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_e4633.dir\\link.txt --verbose=1
+        "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_e4633.dir/objects.a
+        C:\\msys64\\mingw64\\bin\\ar.exe qc CMakeFiles\\cmTC_e4633.dir/objects.a @CMakeFiles\\cmTC_e4633.dir\\objects1.rsp
+        C:\\msys64\\mingw64\\bin\\gcc.exe  -v -Wl,-v -Wl,--whole-archive CMakeFiles\\cmTC_e4633.dir/objects.a -Wl,--no-whole-archive -o cmTC_e4633.exe -Wl,--out-implib,libcmTC_e4633.dll.a -Wl,--major-image-version,0,--minor-image-version,0
+        Using built-in specs.
+        COLLECT_GCC=C:\\msys64\\mingw64\\bin\\gcc.exe
+        COLLECT_LTO_WRAPPER=C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe
+        Target: x86_64-w64-mingw32
+        Configured with: ../gcc-15.2.0/configure --prefix=/mingw64 --with-local-prefix=/mingw64/local --with-native-system-header-dir=/mingw64/include --libexecdir=/mingw64/lib --enable-bootstrap --enable-checking=release --with-arch=nocona --with-tune=generic --enable-mingw-wildcard --enable-languages=c,lto,c++,fortran,ada,objc,obj-c++,jit --enable-shared --enable-static --enable-libatomic --enable-threads=posix --enable-graphite --enable-fully-dynamic-string --enable-libstdcxx-backtrace=yes --enable-libstdcxx-filesystem-ts --enable-libstdcxx-time --disable-libstdcxx-pch --enable-lto --enable-libgomp --disable-libssp --disable-multilib --disable-rpath --disable-win32-registry --disable-nls --disable-werror --disable-symvers --with-libiconv --with-system-zlib --with-gmp=/mingw64 --with-mpfr=/mingw64 --with-mpc=/mingw64 --with-isl=/mingw64 --with-pkgversion='Rev8, Built by MSYS2 project' --with-bugurl=https://github.com/msys2/MINGW-packages/issues --with-gnu-as --with-gnu-ld --with-libstdcxx-zoneinfo=yes --disable-libstdcxx-debug --enable-plugin --with-boot-ldflags=-static-libstdc++ --with-stage1-ldflags=-static-libstdc++
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 15.2.0 (Rev8, Built by MSYS2 project) 
+        COMPILER_PATH=C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/;C:/msys64/mingw64/bin/../lib/gcc/;C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/
+        LIBRARY_PATH=C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/;C:/msys64/mingw64/bin/../lib/gcc/;C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib/;C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/;C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/;C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_e4633.exe' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_e4633.'
+         C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/collect2.exe -plugin C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.dll -plugin-opt=C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\quitel\\AppData\\Local\\Temp\\ccKfDkC4.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_e4633.exe C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/crt2.o C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0 -LC:/msys64/mingw64/bin/../lib/gcc -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_e4633.dir/objects.a --no-whole-archive --out-implib libcmTC_e4633.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/default-manifest.o C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o
+        collect2 version 15.2.0
+        C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe -plugin C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.dll -plugin-opt=C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\quitel\\AppData\\Local\\Temp\\ccKfDkC4.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_e4633.exe C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/crt2.o C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0 -LC:/msys64/mingw64/bin/../lib/gcc -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_e4633.dir/objects.a --no-whole-archive --out-implib libcmTC_e4633.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/default-manifest.o C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o
+        GNU ld (GNU Binutils) 2.45.1
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_e4633.exe' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_e4633.'
+        mingw32-make[1]: Leaving directory 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-twwtih'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:137 (message)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Parsed C implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/include]
+          add: [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../include]
+          add: [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/include-fixed]
+        end of search list found
+        collapse include dir [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/include] ==> [C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include]
+        collapse include dir [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../include] ==> [C:/msys64/mingw64/include]
+        collapse include dir [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/include-fixed] ==> [C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include-fixed]
+        implicit include dirs: [C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include;C:/msys64/mingw64/include;C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include-fixed]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:173 (message)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?))("|,| |$)]
+        ignore line: [Change Dir: 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-twwtih']
+        ignore line: []
+        ignore line: [Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/mingw64/bin/mingw32-make.exe -f Makefile cmTC_e4633/fast]
+        ignore line: [C:/msys64/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_e4633.dir\\build.make CMakeFiles/cmTC_e4633.dir/build]
+        ignore line: [mingw32-make[1]: Entering directory 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-twwtih']
+        ignore line: [Building C object CMakeFiles/cmTC_e4633.dir/CMakeCCompilerABI.c.obj]
+        ignore line: [C:\\msys64\\mingw64\\bin\\gcc.exe   -v -o CMakeFiles\\cmTC_e4633.dir\\CMakeCCompilerABI.c.obj -c "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.29\\Modules\\CMakeCCompilerABI.c"]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=C:\\msys64\\mingw64\\bin\\gcc.exe]
+        ignore line: [Target: x86_64-w64-mingw32]
+        ignore line: [Configured with: ../gcc-15.2.0/configure --prefix=/mingw64 --with-local-prefix=/mingw64/local --with-native-system-header-dir=/mingw64/include --libexecdir=/mingw64/lib --enable-bootstrap --enable-checking=release --with-arch=nocona --with-tune=generic --enable-mingw-wildcard --enable-languages=c,lto,c++,fortran,ada,objc,obj-c++,jit --enable-shared --enable-static --enable-libatomic --enable-threads=posix --enable-graphite --enable-fully-dynamic-string --enable-libstdcxx-backtrace=yes --enable-libstdcxx-filesystem-ts --enable-libstdcxx-time --disable-libstdcxx-pch --enable-lto --enable-libgomp --disable-libssp --disable-multilib --disable-rpath --disable-win32-registry --disable-nls --disable-werror --disable-symvers --with-libiconv --with-system-zlib --with-gmp=/mingw64 --with-mpfr=/mingw64 --with-mpc=/mingw64 --with-isl=/mingw64 --with-pkgversion='Rev8, Built by MSYS2 project' --with-bugurl=https://github.com/msys2/MINGW-packages/issues --with-gnu-as --with-gnu-ld --with-libstdcxx-zoneinfo=yes --disable-libstdcxx-debug --enable-plugin --with-boot-ldflags=-static-libstdc++ --with-stage1-ldflags=-static-libstdc++]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 15.2.0 (Rev8  Built by MSYS2 project) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_e4633.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_e4633.dir\\']
+        ignore line: [ C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/cc1.exe -quiet -v -iprefix C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/ -D_REENTRANT C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.29\\Modules\\CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles\\cmTC_e4633.dir\\ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=nocona -version -o C:\\Users\\quitel\\AppData\\Local\\Temp\\ccyjzAYN.s]
+        ignore line: [GNU C23 (Rev8  Built by MSYS2 project) version 15.2.0 (x86_64-w64-mingw32)]
+        ignore line: [	compiled by GNU C version 15.2.0  GMP version 6.3.0  MPFR version 4.2.2  MPC version 1.3.1  isl version isl-0.27-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring nonexistent directory "C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/include"]
+        ignore line: [ignoring duplicate directory "C:/msys64/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/15.2.0/include"]
+        ignore line: [ignoring nonexistent directory "D:/M/msys64/mingw64/include"]
+        ignore line: [ignoring nonexistent directory "/mingw64/include"]
+        ignore line: [ignoring duplicate directory "C:/msys64/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/15.2.0/include-fixed"]
+        ignore line: [ignoring nonexistent directory "C:/msys64/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/include"]
+        ignore line: [ignoring nonexistent directory "D:/M/msys64/mingw64/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/include]
+        ignore line: [ C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../include]
+        ignore line: [ C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/include-fixed]
+        ignore line: [End of search list.]
+        ignore line: [Compiler executable checksum: feaaa8b8d0ead308dc62d839201f7330]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_e4633.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_e4633.dir\\']
+        ignore line: [ C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\\cmTC_e4633.dir\\CMakeCCompilerABI.c.obj C:\\Users\\quitel\\AppData\\Local\\Temp\\ccyjzAYN.s]
+        ignore line: [GNU assembler version 2.45.1 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.45.1]
+        ignore line: [COMPILER_PATH=C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/]
+        ignore line: [C:/msys64/mingw64/bin/../lib/gcc/]
+        ignore line: [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/]
+        ignore line: [LIBRARY_PATH=C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/]
+        ignore line: [C:/msys64/mingw64/bin/../lib/gcc/]
+        ignore line: [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib/]
+        ignore line: [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/]
+        ignore line: [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/]
+        ignore line: [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_e4633.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_e4633.dir\\CMakeCCompilerABI.c.']
+        ignore line: [Linking C executable cmTC_e4633.exe]
+        ignore line: ["C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_e4633.dir\\link.txt --verbose=1]
+        ignore line: ["C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_e4633.dir/objects.a]
+        ignore line: [C:\\msys64\\mingw64\\bin\\ar.exe qc CMakeFiles\\cmTC_e4633.dir/objects.a @CMakeFiles\\cmTC_e4633.dir\\objects1.rsp]
+        ignore line: [C:\\msys64\\mingw64\\bin\\gcc.exe  -v -Wl -v -Wl --whole-archive CMakeFiles\\cmTC_e4633.dir/objects.a -Wl --no-whole-archive -o cmTC_e4633.exe -Wl --out-implib libcmTC_e4633.dll.a -Wl --major-image-version 0 --minor-image-version 0]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=C:\\msys64\\mingw64\\bin\\gcc.exe]
+        ignore line: [COLLECT_LTO_WRAPPER=C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe]
+        ignore line: [Target: x86_64-w64-mingw32]
+        ignore line: [Configured with: ../gcc-15.2.0/configure --prefix=/mingw64 --with-local-prefix=/mingw64/local --with-native-system-header-dir=/mingw64/include --libexecdir=/mingw64/lib --enable-bootstrap --enable-checking=release --with-arch=nocona --with-tune=generic --enable-mingw-wildcard --enable-languages=c,lto,c++,fortran,ada,objc,obj-c++,jit --enable-shared --enable-static --enable-libatomic --enable-threads=posix --enable-graphite --enable-fully-dynamic-string --enable-libstdcxx-backtrace=yes --enable-libstdcxx-filesystem-ts --enable-libstdcxx-time --disable-libstdcxx-pch --enable-lto --enable-libgomp --disable-libssp --disable-multilib --disable-rpath --disable-win32-registry --disable-nls --disable-werror --disable-symvers --with-libiconv --with-system-zlib --with-gmp=/mingw64 --with-mpfr=/mingw64 --with-mpc=/mingw64 --with-isl=/mingw64 --with-pkgversion='Rev8, Built by MSYS2 project' --with-bugurl=https://github.com/msys2/MINGW-packages/issues --with-gnu-as --with-gnu-ld --with-libstdcxx-zoneinfo=yes --disable-libstdcxx-debug --enable-plugin --with-boot-ldflags=-static-libstdc++ --with-stage1-ldflags=-static-libstdc++]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 15.2.0 (Rev8  Built by MSYS2 project) ]
+        ignore line: [COMPILER_PATH=C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/]
+        ignore line: [C:/msys64/mingw64/bin/../lib/gcc/]
+        ignore line: [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/]
+        ignore line: [LIBRARY_PATH=C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/]
+        ignore line: [C:/msys64/mingw64/bin/../lib/gcc/]
+        ignore line: [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib/]
+        ignore line: [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/]
+        ignore line: [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/]
+        ignore line: [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_e4633.exe' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_e4633.']
+        link line: [ C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/collect2.exe -plugin C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.dll -plugin-opt=C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\quitel\\AppData\\Local\\Temp\\ccKfDkC4.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_e4633.exe C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/crt2.o C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0 -LC:/msys64/mingw64/bin/../lib/gcc -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_e4633.dir/objects.a --no-whole-archive --out-implib libcmTC_e4633.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/default-manifest.o C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o]
+          arg [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/collect2.exe] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.dll] ==> ignore
+          arg [-plugin-opt=C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe] ==> ignore
+          arg [-plugin-opt=-fresolution=C:\\Users\\quitel\\AppData\\Local\\Temp\\ccKfDkC4.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmingw32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_eh] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmingwex] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmsvcrt] ==> ignore
+          arg [-plugin-opt=-pass-through=-lkernel32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lpthread] ==> ignore
+          arg [-plugin-opt=-pass-through=-ladvapi32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lshell32] ==> ignore
+          arg [-plugin-opt=-pass-through=-luser32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lkernel32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmingw32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_eh] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmingwex] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmsvcrt] ==> ignore
+          arg [-plugin-opt=-pass-through=-lkernel32] ==> ignore
+          arg [-m] ==> ignore
+          arg [i386pep] ==> ignore
+          arg [-Bdynamic] ==> search dynamic
+          arg [-o] ==> ignore
+          arg [cmTC_e4633.exe] ==> ignore
+          arg [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/crt2.o] ==> obj [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/crt2.o]
+          arg [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o] ==> obj [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o]
+          arg [-LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0] ==> dir [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0]
+          arg [-LC:/msys64/mingw64/bin/../lib/gcc] ==> dir [C:/msys64/mingw64/bin/../lib/gcc]
+          arg [-LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib] ==> dir [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib]
+          arg [-LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib] ==> dir [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib]
+          arg [-LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib] ==> dir [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib]
+          arg [-LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../..] ==> dir [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../..]
+          arg [-v] ==> ignore
+          arg [--whole-archive] ==> ignore
+          arg [CMakeFiles\\cmTC_e4633.dir/objects.a] ==> ignore
+          arg [--no-whole-archive] ==> ignore
+          arg [--out-implib] ==> ignore
+          arg [libcmTC_e4633.dll.a] ==> ignore
+          arg [--major-image-version] ==> ignore
+          arg [0] ==> ignore
+          arg [--minor-image-version] ==> ignore
+          arg [0] ==> ignore
+          arg [-lmingw32] ==> lib [mingw32]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lgcc_eh] ==> lib [gcc_eh]
+          arg [-lmingwex] ==> lib [mingwex]
+          arg [-lmsvcrt] ==> lib [msvcrt]
+          arg [-lkernel32] ==> lib [kernel32]
+          arg [-lpthread] ==> lib [pthread]
+          arg [-ladvapi32] ==> lib [advapi32]
+          arg [-lshell32] ==> lib [shell32]
+          arg [-luser32] ==> lib [user32]
+          arg [-lkernel32] ==> lib [kernel32]
+          arg [-lmingw32] ==> lib [mingw32]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lgcc_eh] ==> lib [gcc_eh]
+          arg [-lmingwex] ==> lib [mingwex]
+          arg [-lmsvcrt] ==> lib [msvcrt]
+          arg [-lkernel32] ==> lib [kernel32]
+          arg [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/default-manifest.o] ==> obj [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/default-manifest.o]
+          arg [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o] ==> obj [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o]
+        ignore line: [collect2 version 15.2.0]
+        ignore line: [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe -plugin C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.dll -plugin-opt=C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\quitel\\AppData\\Local\\Temp\\ccKfDkC4.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_e4633.exe C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/crt2.o C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0 -LC:/msys64/mingw64/bin/../lib/gcc -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_e4633.dir/objects.a --no-whole-archive --out-implib libcmTC_e4633.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/default-manifest.o C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o]
+        linker tool for 'C': C:/msys64/mingw64/x86_64-w64-mingw32/bin/ld.exe
+        remove lib [gcc_eh]
+        remove lib [msvcrt]
+        remove lib [gcc_eh]
+        remove lib [msvcrt]
+        collapse obj [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/crt2.o] ==> [C:/msys64/mingw64/lib/crt2.o]
+        collapse obj [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o] ==> [C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o]
+        collapse obj [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/default-manifest.o] ==> [C:/msys64/mingw64/lib/default-manifest.o]
+        collapse obj [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o] ==> [C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o]
+        collapse library dir [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0] ==> [C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0]
+        collapse library dir [C:/msys64/mingw64/bin/../lib/gcc] ==> [C:/msys64/mingw64/lib/gcc]
+        collapse library dir [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib] ==> [C:/msys64/mingw64/x86_64-w64-mingw32/lib]
+        collapse library dir [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib] ==> [C:/msys64/mingw64/lib]
+        collapse library dir [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib] ==> [C:/msys64/mingw64/x86_64-w64-mingw32/lib]
+        collapse library dir [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../..] ==> [C:/msys64/mingw64/lib]
+        implicit libs: [mingw32;gcc;mingwex;kernel32;pthread;advapi32;shell32;user32;kernel32;mingw32;gcc;mingwex;kernel32]
+        implicit objs: [C:/msys64/mingw64/lib/crt2.o;C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o;C:/msys64/mingw64/lib/default-manifest.o;C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o]
+        implicit dirs: [C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0;C:/msys64/mingw64/lib/gcc;C:/msys64/mingw64/x86_64-w64-mingw32/lib;C:/msys64/mingw64/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:210 (cmake_determine_linker_id)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Running the C compiler's linker: "C:/msys64/mingw64/x86_64-w64-mingw32/bin/ld.exe" "-v"
+      GNU ld (GNU Binutils) 2.45.1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:67 (try_compile)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-qi112n"
+      binary: "C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-qi112n"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-qi112n'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/mingw64/bin/mingw32-make.exe -f Makefile cmTC_e2dc4/fast
+        C:/msys64/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_e2dc4.dir\\build.make CMakeFiles/cmTC_e2dc4.dir/build
+        mingw32-make[1]: Entering directory 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-qi112n'
+        Building CXX object CMakeFiles/cmTC_e2dc4.dir/CMakeCXXCompilerABI.cpp.obj
+        C:\\msys64\\mingw64\\bin\\g++.exe   -v -o CMakeFiles\\cmTC_e2dc4.dir\\CMakeCXXCompilerABI.cpp.obj -c "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.29\\Modules\\CMakeCXXCompilerABI.cpp"
+        Using built-in specs.
+        COLLECT_GCC=C:\\msys64\\mingw64\\bin\\g++.exe
+        Target: x86_64-w64-mingw32
+        Configured with: ../gcc-15.2.0/configure --prefix=/mingw64 --with-local-prefix=/mingw64/local --with-native-system-header-dir=/mingw64/include --libexecdir=/mingw64/lib --enable-bootstrap --enable-checking=release --with-arch=nocona --with-tune=generic --enable-mingw-wildcard --enable-languages=c,lto,c++,fortran,ada,objc,obj-c++,jit --enable-shared --enable-static --enable-libatomic --enable-threads=posix --enable-graphite --enable-fully-dynamic-string --enable-libstdcxx-backtrace=yes --enable-libstdcxx-filesystem-ts --enable-libstdcxx-time --disable-libstdcxx-pch --enable-lto --enable-libgomp --disable-libssp --disable-multilib --disable-rpath --disable-win32-registry --disable-nls --disable-werror --disable-symvers --with-libiconv --with-system-zlib --with-gmp=/mingw64 --with-mpfr=/mingw64 --with-mpc=/mingw64 --with-isl=/mingw64 --with-pkgversion='Rev8, Built by MSYS2 project' --with-bugurl=https://github.com/msys2/MINGW-packages/issues --with-gnu-as --with-gnu-ld --with-libstdcxx-zoneinfo=yes --disable-libstdcxx-debug --enable-plugin --with-boot-ldflags=-static-libstdc++ --with-stage1-ldflags=-static-libstdc++
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 15.2.0 (Rev8, Built by MSYS2 project) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_e2dc4.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_e2dc4.dir\\'
+         C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/cc1plus.exe -quiet -v -iprefix C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/ -D_REENTRANT C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.29\\Modules\\CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles\\cmTC_e2dc4.dir\\ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=nocona -version -o C:\\Users\\quitel\\AppData\\Local\\Temp\\ccr342Hu.s
+        GNU C++17 (Rev8, Built by MSYS2 project) version 15.2.0 (x86_64-w64-mingw32)
+        	compiled by GNU C version 15.2.0, GMP version 6.3.0, MPFR version 4.2.2, MPC version 1.3.1, isl version isl-0.27-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring nonexistent directory "C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/include"
+        ignoring duplicate directory "C:/msys64/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../include/c++/15.2.0"
+        ignoring duplicate directory "C:/msys64/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../include/c++/15.2.0/x86_64-w64-mingw32"
+        ignoring duplicate directory "C:/msys64/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../include/c++/15.2.0/backward"
+        ignoring duplicate directory "C:/msys64/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/15.2.0/include"
+        ignoring nonexistent directory "D:/M/msys64/mingw64/include"
+        ignoring nonexistent directory "/mingw64/include"
+        ignoring duplicate directory "C:/msys64/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/15.2.0/include-fixed"
+        ignoring nonexistent directory "C:/msys64/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/include"
+        ignoring nonexistent directory "D:/M/msys64/mingw64/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../include/c++/15.2.0
+         C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../include/c++/15.2.0/x86_64-w64-mingw32
+         C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../include/c++/15.2.0/backward
+         C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/include
+         C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../include
+         C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/include-fixed
+        End of search list.
+        Compiler executable checksum: e7386b44e3a7fd4f3b26b08cdd95994a
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_e2dc4.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_e2dc4.dir\\'
+         C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\\cmTC_e2dc4.dir\\CMakeCXXCompilerABI.cpp.obj C:\\Users\\quitel\\AppData\\Local\\Temp\\ccr342Hu.s
+        GNU assembler version 2.45.1 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.45.1
+        COMPILER_PATH=C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/;C:/msys64/mingw64/bin/../lib/gcc/;C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/
+        LIBRARY_PATH=C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/;C:/msys64/mingw64/bin/../lib/gcc/;C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib/;C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/;C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/;C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_e2dc4.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_e2dc4.dir\\CMakeCXXCompilerABI.cpp.'
+        Linking CXX executable cmTC_e2dc4.exe
+        "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_e2dc4.dir\\link.txt --verbose=1
+        "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_e2dc4.dir/objects.a
+        C:\\msys64\\mingw64\\bin\\ar.exe qc CMakeFiles\\cmTC_e2dc4.dir/objects.a @CMakeFiles\\cmTC_e2dc4.dir\\objects1.rsp
+        C:\\msys64\\mingw64\\bin\\g++.exe  -v -Wl,-v -Wl,--whole-archive CMakeFiles\\cmTC_e2dc4.dir/objects.a -Wl,--no-whole-archive -o cmTC_e2dc4.exe -Wl,--out-implib,libcmTC_e2dc4.dll.a -Wl,--major-image-version,0,--minor-image-version,0
+        Using built-in specs.
+        COLLECT_GCC=C:\\msys64\\mingw64\\bin\\g++.exe
+        COLLECT_LTO_WRAPPER=C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe
+        Target: x86_64-w64-mingw32
+        Configured with: ../gcc-15.2.0/configure --prefix=/mingw64 --with-local-prefix=/mingw64/local --with-native-system-header-dir=/mingw64/include --libexecdir=/mingw64/lib --enable-bootstrap --enable-checking=release --with-arch=nocona --with-tune=generic --enable-mingw-wildcard --enable-languages=c,lto,c++,fortran,ada,objc,obj-c++,jit --enable-shared --enable-static --enable-libatomic --enable-threads=posix --enable-graphite --enable-fully-dynamic-string --enable-libstdcxx-backtrace=yes --enable-libstdcxx-filesystem-ts --enable-libstdcxx-time --disable-libstdcxx-pch --enable-lto --enable-libgomp --disable-libssp --disable-multilib --disable-rpath --disable-win32-registry --disable-nls --disable-werror --disable-symvers --with-libiconv --with-system-zlib --with-gmp=/mingw64 --with-mpfr=/mingw64 --with-mpc=/mingw64 --with-isl=/mingw64 --with-pkgversion='Rev8, Built by MSYS2 project' --with-bugurl=https://github.com/msys2/MINGW-packages/issues --with-gnu-as --with-gnu-ld --with-libstdcxx-zoneinfo=yes --disable-libstdcxx-debug --enable-plugin --with-boot-ldflags=-static-libstdc++ --with-stage1-ldflags=-static-libstdc++
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 15.2.0 (Rev8, Built by MSYS2 project) 
+        COMPILER_PATH=C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/;C:/msys64/mingw64/bin/../lib/gcc/;C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/
+        LIBRARY_PATH=C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/;C:/msys64/mingw64/bin/../lib/gcc/;C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib/;C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/;C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/;C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_e2dc4.exe' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_e2dc4.'
+         C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/collect2.exe -plugin C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.dll -plugin-opt=C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\quitel\\AppData\\Local\\Temp\\ccr1vqvE.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_e2dc4.exe C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/crt2.o C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0 -LC:/msys64/mingw64/bin/../lib/gcc -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_e2dc4.dir/objects.a --no-whole-archive --out-implib libcmTC_e2dc4.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/default-manifest.o C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o
+        collect2 version 15.2.0
+        C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe -plugin C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.dll -plugin-opt=C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\quitel\\AppData\\Local\\Temp\\ccr1vqvE.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_e2dc4.exe C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/crt2.o C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0 -LC:/msys64/mingw64/bin/../lib/gcc -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_e2dc4.dir/objects.a --no-whole-archive --out-implib libcmTC_e2dc4.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/default-manifest.o C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o
+        GNU ld (GNU Binutils) 2.45.1
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_e2dc4.exe' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_e2dc4.'
+        mingw32-make[1]: Leaving directory 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-qi112n'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:137 (message)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Parsed CXX implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../include/c++/15.2.0]
+          add: [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../include/c++/15.2.0/x86_64-w64-mingw32]
+          add: [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../include/c++/15.2.0/backward]
+          add: [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/include]
+          add: [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../include]
+          add: [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/include-fixed]
+        end of search list found
+        collapse include dir [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../include/c++/15.2.0] ==> [C:/msys64/mingw64/include/c++/15.2.0]
+        collapse include dir [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../include/c++/15.2.0/x86_64-w64-mingw32] ==> [C:/msys64/mingw64/include/c++/15.2.0/x86_64-w64-mingw32]
+        collapse include dir [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../include/c++/15.2.0/backward] ==> [C:/msys64/mingw64/include/c++/15.2.0/backward]
+        collapse include dir [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/include] ==> [C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include]
+        collapse include dir [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../include] ==> [C:/msys64/mingw64/include]
+        collapse include dir [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/include-fixed] ==> [C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include-fixed]
+        implicit include dirs: [C:/msys64/mingw64/include/c++/15.2.0;C:/msys64/mingw64/include/c++/15.2.0/x86_64-w64-mingw32;C:/msys64/mingw64/include/c++/15.2.0/backward;C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include;C:/msys64/mingw64/include;C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include-fixed]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:173 (message)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?))("|,| |$)]
+        ignore line: [Change Dir: 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-qi112n']
+        ignore line: []
+        ignore line: [Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/mingw64/bin/mingw32-make.exe -f Makefile cmTC_e2dc4/fast]
+        ignore line: [C:/msys64/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_e2dc4.dir\\build.make CMakeFiles/cmTC_e2dc4.dir/build]
+        ignore line: [mingw32-make[1]: Entering directory 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-qi112n']
+        ignore line: [Building CXX object CMakeFiles/cmTC_e2dc4.dir/CMakeCXXCompilerABI.cpp.obj]
+        ignore line: [C:\\msys64\\mingw64\\bin\\g++.exe   -v -o CMakeFiles\\cmTC_e2dc4.dir\\CMakeCXXCompilerABI.cpp.obj -c "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.29\\Modules\\CMakeCXXCompilerABI.cpp"]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=C:\\msys64\\mingw64\\bin\\g++.exe]
+        ignore line: [Target: x86_64-w64-mingw32]
+        ignore line: [Configured with: ../gcc-15.2.0/configure --prefix=/mingw64 --with-local-prefix=/mingw64/local --with-native-system-header-dir=/mingw64/include --libexecdir=/mingw64/lib --enable-bootstrap --enable-checking=release --with-arch=nocona --with-tune=generic --enable-mingw-wildcard --enable-languages=c,lto,c++,fortran,ada,objc,obj-c++,jit --enable-shared --enable-static --enable-libatomic --enable-threads=posix --enable-graphite --enable-fully-dynamic-string --enable-libstdcxx-backtrace=yes --enable-libstdcxx-filesystem-ts --enable-libstdcxx-time --disable-libstdcxx-pch --enable-lto --enable-libgomp --disable-libssp --disable-multilib --disable-rpath --disable-win32-registry --disable-nls --disable-werror --disable-symvers --with-libiconv --with-system-zlib --with-gmp=/mingw64 --with-mpfr=/mingw64 --with-mpc=/mingw64 --with-isl=/mingw64 --with-pkgversion='Rev8, Built by MSYS2 project' --with-bugurl=https://github.com/msys2/MINGW-packages/issues --with-gnu-as --with-gnu-ld --with-libstdcxx-zoneinfo=yes --disable-libstdcxx-debug --enable-plugin --with-boot-ldflags=-static-libstdc++ --with-stage1-ldflags=-static-libstdc++]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 15.2.0 (Rev8  Built by MSYS2 project) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_e2dc4.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_e2dc4.dir\\']
+        ignore line: [ C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/cc1plus.exe -quiet -v -iprefix C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/ -D_REENTRANT C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.29\\Modules\\CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles\\cmTC_e2dc4.dir\\ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=nocona -version -o C:\\Users\\quitel\\AppData\\Local\\Temp\\ccr342Hu.s]
+        ignore line: [GNU C++17 (Rev8  Built by MSYS2 project) version 15.2.0 (x86_64-w64-mingw32)]
+        ignore line: [	compiled by GNU C version 15.2.0  GMP version 6.3.0  MPFR version 4.2.2  MPC version 1.3.1  isl version isl-0.27-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring nonexistent directory "C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/include"]
+        ignore line: [ignoring duplicate directory "C:/msys64/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../include/c++/15.2.0"]
+        ignore line: [ignoring duplicate directory "C:/msys64/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../include/c++/15.2.0/x86_64-w64-mingw32"]
+        ignore line: [ignoring duplicate directory "C:/msys64/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../include/c++/15.2.0/backward"]
+        ignore line: [ignoring duplicate directory "C:/msys64/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/15.2.0/include"]
+        ignore line: [ignoring nonexistent directory "D:/M/msys64/mingw64/include"]
+        ignore line: [ignoring nonexistent directory "/mingw64/include"]
+        ignore line: [ignoring duplicate directory "C:/msys64/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/15.2.0/include-fixed"]
+        ignore line: [ignoring nonexistent directory "C:/msys64/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/include"]
+        ignore line: [ignoring nonexistent directory "D:/M/msys64/mingw64/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../include/c++/15.2.0]
+        ignore line: [ C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../include/c++/15.2.0/x86_64-w64-mingw32]
+        ignore line: [ C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../include/c++/15.2.0/backward]
+        ignore line: [ C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/include]
+        ignore line: [ C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../include]
+        ignore line: [ C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/include-fixed]
+        ignore line: [End of search list.]
+        ignore line: [Compiler executable checksum: e7386b44e3a7fd4f3b26b08cdd95994a]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_e2dc4.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_e2dc4.dir\\']
+        ignore line: [ C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\\cmTC_e2dc4.dir\\CMakeCXXCompilerABI.cpp.obj C:\\Users\\quitel\\AppData\\Local\\Temp\\ccr342Hu.s]
+        ignore line: [GNU assembler version 2.45.1 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.45.1]
+        ignore line: [COMPILER_PATH=C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/]
+        ignore line: [C:/msys64/mingw64/bin/../lib/gcc/]
+        ignore line: [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/]
+        ignore line: [LIBRARY_PATH=C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/]
+        ignore line: [C:/msys64/mingw64/bin/../lib/gcc/]
+        ignore line: [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib/]
+        ignore line: [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/]
+        ignore line: [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/]
+        ignore line: [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_e2dc4.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_e2dc4.dir\\CMakeCXXCompilerABI.cpp.']
+        ignore line: [Linking CXX executable cmTC_e2dc4.exe]
+        ignore line: ["C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_e2dc4.dir\\link.txt --verbose=1]
+        ignore line: ["C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_e2dc4.dir/objects.a]
+        ignore line: [C:\\msys64\\mingw64\\bin\\ar.exe qc CMakeFiles\\cmTC_e2dc4.dir/objects.a @CMakeFiles\\cmTC_e2dc4.dir\\objects1.rsp]
+        ignore line: [C:\\msys64\\mingw64\\bin\\g++.exe  -v -Wl -v -Wl --whole-archive CMakeFiles\\cmTC_e2dc4.dir/objects.a -Wl --no-whole-archive -o cmTC_e2dc4.exe -Wl --out-implib libcmTC_e2dc4.dll.a -Wl --major-image-version 0 --minor-image-version 0]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=C:\\msys64\\mingw64\\bin\\g++.exe]
+        ignore line: [COLLECT_LTO_WRAPPER=C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe]
+        ignore line: [Target: x86_64-w64-mingw32]
+        ignore line: [Configured with: ../gcc-15.2.0/configure --prefix=/mingw64 --with-local-prefix=/mingw64/local --with-native-system-header-dir=/mingw64/include --libexecdir=/mingw64/lib --enable-bootstrap --enable-checking=release --with-arch=nocona --with-tune=generic --enable-mingw-wildcard --enable-languages=c,lto,c++,fortran,ada,objc,obj-c++,jit --enable-shared --enable-static --enable-libatomic --enable-threads=posix --enable-graphite --enable-fully-dynamic-string --enable-libstdcxx-backtrace=yes --enable-libstdcxx-filesystem-ts --enable-libstdcxx-time --disable-libstdcxx-pch --enable-lto --enable-libgomp --disable-libssp --disable-multilib --disable-rpath --disable-win32-registry --disable-nls --disable-werror --disable-symvers --with-libiconv --with-system-zlib --with-gmp=/mingw64 --with-mpfr=/mingw64 --with-mpc=/mingw64 --with-isl=/mingw64 --with-pkgversion='Rev8, Built by MSYS2 project' --with-bugurl=https://github.com/msys2/MINGW-packages/issues --with-gnu-as --with-gnu-ld --with-libstdcxx-zoneinfo=yes --disable-libstdcxx-debug --enable-plugin --with-boot-ldflags=-static-libstdc++ --with-stage1-ldflags=-static-libstdc++]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 15.2.0 (Rev8  Built by MSYS2 project) ]
+        ignore line: [COMPILER_PATH=C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/]
+        ignore line: [C:/msys64/mingw64/bin/../lib/gcc/]
+        ignore line: [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/]
+        ignore line: [LIBRARY_PATH=C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/]
+        ignore line: [C:/msys64/mingw64/bin/../lib/gcc/]
+        ignore line: [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib/]
+        ignore line: [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/]
+        ignore line: [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/]
+        ignore line: [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_e2dc4.exe' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_e2dc4.']
+        link line: [ C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/collect2.exe -plugin C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.dll -plugin-opt=C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\quitel\\AppData\\Local\\Temp\\ccr1vqvE.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_e2dc4.exe C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/crt2.o C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0 -LC:/msys64/mingw64/bin/../lib/gcc -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_e2dc4.dir/objects.a --no-whole-archive --out-implib libcmTC_e2dc4.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/default-manifest.o C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o]
+          arg [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/collect2.exe] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.dll] ==> ignore
+          arg [-plugin-opt=C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe] ==> ignore
+          arg [-plugin-opt=-fresolution=C:\\Users\\quitel\\AppData\\Local\\Temp\\ccr1vqvE.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmingw32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmingwex] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmsvcrt] ==> ignore
+          arg [-plugin-opt=-pass-through=-lkernel32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lpthread] ==> ignore
+          arg [-plugin-opt=-pass-through=-ladvapi32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lshell32] ==> ignore
+          arg [-plugin-opt=-pass-through=-luser32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lkernel32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmingw32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmingwex] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmsvcrt] ==> ignore
+          arg [-plugin-opt=-pass-through=-lkernel32] ==> ignore
+          arg [-m] ==> ignore
+          arg [i386pep] ==> ignore
+          arg [-Bdynamic] ==> search dynamic
+          arg [-o] ==> ignore
+          arg [cmTC_e2dc4.exe] ==> ignore
+          arg [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/crt2.o] ==> obj [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/crt2.o]
+          arg [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o] ==> obj [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o]
+          arg [-LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0] ==> dir [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0]
+          arg [-LC:/msys64/mingw64/bin/../lib/gcc] ==> dir [C:/msys64/mingw64/bin/../lib/gcc]
+          arg [-LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib] ==> dir [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib]
+          arg [-LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib] ==> dir [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib]
+          arg [-LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib] ==> dir [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib]
+          arg [-LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../..] ==> dir [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../..]
+          arg [-v] ==> ignore
+          arg [--whole-archive] ==> ignore
+          arg [CMakeFiles\\cmTC_e2dc4.dir/objects.a] ==> ignore
+          arg [--no-whole-archive] ==> ignore
+          arg [--out-implib] ==> ignore
+          arg [libcmTC_e2dc4.dll.a] ==> ignore
+          arg [--major-image-version] ==> ignore
+          arg [0] ==> ignore
+          arg [--minor-image-version] ==> ignore
+          arg [0] ==> ignore
+          arg [-lstdc++] ==> lib [stdc++]
+          arg [-lmingw32] ==> lib [mingw32]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lmingwex] ==> lib [mingwex]
+          arg [-lmsvcrt] ==> lib [msvcrt]
+          arg [-lkernel32] ==> lib [kernel32]
+          arg [-lpthread] ==> lib [pthread]
+          arg [-ladvapi32] ==> lib [advapi32]
+          arg [-lshell32] ==> lib [shell32]
+          arg [-luser32] ==> lib [user32]
+          arg [-lkernel32] ==> lib [kernel32]
+          arg [-lmingw32] ==> lib [mingw32]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lmingwex] ==> lib [mingwex]
+          arg [-lmsvcrt] ==> lib [msvcrt]
+          arg [-lkernel32] ==> lib [kernel32]
+          arg [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/default-manifest.o] ==> obj [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/default-manifest.o]
+          arg [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o] ==> obj [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o]
+        ignore line: [collect2 version 15.2.0]
+        ignore line: [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe -plugin C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.dll -plugin-opt=C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\quitel\\AppData\\Local\\Temp\\ccr1vqvE.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_e2dc4.exe C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/crt2.o C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0 -LC:/msys64/mingw64/bin/../lib/gcc -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_e2dc4.dir/objects.a --no-whole-archive --out-implib libcmTC_e2dc4.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/default-manifest.o C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o]
+        linker tool for 'CXX': C:/msys64/mingw64/x86_64-w64-mingw32/bin/ld.exe
+        remove lib [msvcrt]
+        remove lib [msvcrt]
+        collapse obj [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/crt2.o] ==> [C:/msys64/mingw64/lib/crt2.o]
+        collapse obj [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o] ==> [C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o]
+        collapse obj [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/default-manifest.o] ==> [C:/msys64/mingw64/lib/default-manifest.o]
+        collapse obj [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o] ==> [C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o]
+        collapse library dir [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0] ==> [C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0]
+        collapse library dir [C:/msys64/mingw64/bin/../lib/gcc] ==> [C:/msys64/mingw64/lib/gcc]
+        collapse library dir [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib] ==> [C:/msys64/mingw64/x86_64-w64-mingw32/lib]
+        collapse library dir [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib] ==> [C:/msys64/mingw64/lib]
+        collapse library dir [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib] ==> [C:/msys64/mingw64/x86_64-w64-mingw32/lib]
+        collapse library dir [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../..] ==> [C:/msys64/mingw64/lib]
+        implicit libs: [stdc++;mingw32;gcc_s;gcc;mingwex;kernel32;pthread;advapi32;shell32;user32;kernel32;mingw32;gcc_s;gcc;mingwex;kernel32]
+        implicit objs: [C:/msys64/mingw64/lib/crt2.o;C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o;C:/msys64/mingw64/lib/default-manifest.o;C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o]
+        implicit dirs: [C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0;C:/msys64/mingw64/lib/gcc;C:/msys64/mingw64/x86_64-w64-mingw32/lib;C:/msys64/mingw64/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:210 (cmake_determine_linker_id)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Running the CXX compiler's linker: "C:/msys64/mingw64/x86_64-w64-mingw32/bin/ld.exe" "-v"
+      GNU ld (GNU Binutils) 2.45.1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/CheckLibraryExists.cmake:69 (try_compile)"
+      - "build/_deps/googlebenchmark-src/CMakeLists.txt:125 (check_library_exists)"
+    checks:
+      - "Looking for shm_open in rt"
+    directories:
+      source: "C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-i7nvq0"
+      binary: "C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-i7nvq0"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Projects/Zombie-game/build/_deps/googlebenchmark-src/cmake/Modules;C:/Projects/Zombie-game/build/_deps/googlebenchmark-src/cmake"
+    buildResult:
+      variable: "HAVE_LIB_RT"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-i7nvq0'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/mingw64/bin/mingw32-make.exe -f Makefile cmTC_a9bc4/fast
+        C:/msys64/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_a9bc4.dir\\build.make CMakeFiles/cmTC_a9bc4.dir/build
+        mingw32-make[1]: Entering directory 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-i7nvq0'
+        Building C object CMakeFiles/cmTC_a9bc4.dir/CheckFunctionExists.c.obj
+        C:\\msys64\\mingw64\\bin\\gcc.exe   -DCHECK_FUNCTION_EXISTS=shm_open -o CMakeFiles\\cmTC_a9bc4.dir\\CheckFunctionExists.c.obj -c C:\\Projects\\Zombie-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-i7nvq0\\CheckFunctionExists.c
+        Linking C executable cmTC_a9bc4.exe
+        "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_a9bc4.dir\\link.txt --verbose=1
+        "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_a9bc4.dir/objects.a
+        C:\\msys64\\mingw64\\bin\\ar.exe qc CMakeFiles\\cmTC_a9bc4.dir/objects.a @CMakeFiles\\cmTC_a9bc4.dir\\objects1.rsp
+        C:\\msys64\\mingw64\\bin\\gcc.exe  -DCHECK_FUNCTION_EXISTS=shm_open -Wl,--whole-archive CMakeFiles\\cmTC_a9bc4.dir/objects.a -Wl,--no-whole-archive -o cmTC_a9bc4.exe -Wl,--out-implib,libcmTC_a9bc4.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_a9bc4.dir\\linkLibs.rsp
+        C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot find -lrt: No such file or directory
+        collect2.exe: error: ld returned 1 exit status
+        mingw32-make[1]: *** [CMakeFiles\\cmTC_a9bc4.dir\\build.make:100: cmTC_a9bc4.exe] Error 1
+        mingw32-make[1]: Leaving directory 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-i7nvq0'
+        mingw32-make: *** [Makefile:126: cmTC_a9bc4/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/CheckCXXCompilerFlag.cmake:34 (cmake_check_compiler_flag)"
+      - "build/_deps/googlebenchmark-src/cmake/AddCXXCompilerFlag.cmake:34 (check_cxx_compiler_flag)"
+      - "build/_deps/googlebenchmark-src/CMakeLists.txt:174 (add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test HAVE_CXX_FLAG_WALL"
+    directories:
+      source: "C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-okqmgz"
+      binary: "C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-okqmgz"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Projects/Zombie-game/build/_deps/googlebenchmark-src/cmake/Modules;C:/Projects/Zombie-game/build/_deps/googlebenchmark-src/cmake"
+    buildResult:
+      variable: "HAVE_CXX_FLAG_WALL"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-okqmgz'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/mingw64/bin/mingw32-make.exe -f Makefile cmTC_ba052/fast
+        C:/msys64/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_ba052.dir\\build.make CMakeFiles/cmTC_ba052.dir/build
+        mingw32-make[1]: Entering directory 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-okqmgz'
+        Building CXX object CMakeFiles/cmTC_ba052.dir/src.cxx.obj
+        C:\\msys64\\mingw64\\bin\\g++.exe -DHAVE_CXX_FLAG_WALL  -Wall -std=c++11   -Wall -o CMakeFiles\\cmTC_ba052.dir\\src.cxx.obj -c C:\\Projects\\Zombie-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-okqmgz\\src.cxx
+        Linking CXX executable cmTC_ba052.exe
+        "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_ba052.dir\\link.txt --verbose=1
+        "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_ba052.dir/objects.a
+        C:\\msys64\\mingw64\\bin\\ar.exe qc CMakeFiles\\cmTC_ba052.dir/objects.a @CMakeFiles\\cmTC_ba052.dir\\objects1.rsp
+        C:\\msys64\\mingw64\\bin\\g++.exe   -Wall -Wl,--whole-archive CMakeFiles\\cmTC_ba052.dir/objects.a -Wl,--no-whole-archive -o cmTC_ba052.exe -Wl,--out-implib,libcmTC_ba052.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_ba052.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-okqmgz'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/CheckCXXCompilerFlag.cmake:34 (cmake_check_compiler_flag)"
+      - "build/_deps/googlebenchmark-src/cmake/AddCXXCompilerFlag.cmake:34 (check_cxx_compiler_flag)"
+      - "build/_deps/googlebenchmark-src/CMakeLists.txt:175 (add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test HAVE_CXX_FLAG_WEXTRA"
+    directories:
+      source: "C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-8dz1hm"
+      binary: "C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-8dz1hm"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "  -Wall"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Projects/Zombie-game/build/_deps/googlebenchmark-src/cmake/Modules;C:/Projects/Zombie-game/build/_deps/googlebenchmark-src/cmake"
+    buildResult:
+      variable: "HAVE_CXX_FLAG_WEXTRA"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-8dz1hm'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/mingw64/bin/mingw32-make.exe -f Makefile cmTC_16a29/fast
+        C:/msys64/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_16a29.dir\\build.make CMakeFiles/cmTC_16a29.dir/build
+        mingw32-make[1]: Entering directory 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-8dz1hm'
+        Building CXX object CMakeFiles/cmTC_16a29.dir/src.cxx.obj
+        C:\\msys64\\mingw64\\bin\\g++.exe -DHAVE_CXX_FLAG_WEXTRA  -Wall  -Wextra -std=c++11   -Wextra -o CMakeFiles\\cmTC_16a29.dir\\src.cxx.obj -c C:\\Projects\\Zombie-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8dz1hm\\src.cxx
+        Linking CXX executable cmTC_16a29.exe
+        "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_16a29.dir\\link.txt --verbose=1
+        "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_16a29.dir/objects.a
+        C:\\msys64\\mingw64\\bin\\ar.exe qc CMakeFiles\\cmTC_16a29.dir/objects.a @CMakeFiles\\cmTC_16a29.dir\\objects1.rsp
+        C:\\msys64\\mingw64\\bin\\g++.exe   -Wall  -Wextra -Wl,--whole-archive CMakeFiles\\cmTC_16a29.dir/objects.a -Wl,--no-whole-archive -o cmTC_16a29.exe -Wl,--out-implib,libcmTC_16a29.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_16a29.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-8dz1hm'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/CheckCXXCompilerFlag.cmake:34 (cmake_check_compiler_flag)"
+      - "build/_deps/googlebenchmark-src/cmake/AddCXXCompilerFlag.cmake:34 (check_cxx_compiler_flag)"
+      - "build/_deps/googlebenchmark-src/CMakeLists.txt:176 (add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test HAVE_CXX_FLAG_WSHADOW"
+    directories:
+      source: "C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-4rqkhu"
+      binary: "C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-4rqkhu"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "  -Wall  -Wextra"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Projects/Zombie-game/build/_deps/googlebenchmark-src/cmake/Modules;C:/Projects/Zombie-game/build/_deps/googlebenchmark-src/cmake"
+    buildResult:
+      variable: "HAVE_CXX_FLAG_WSHADOW"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-4rqkhu'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/mingw64/bin/mingw32-make.exe -f Makefile cmTC_25df0/fast
+        C:/msys64/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_25df0.dir\\build.make CMakeFiles/cmTC_25df0.dir/build
+        mingw32-make[1]: Entering directory 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-4rqkhu'
+        Building CXX object CMakeFiles/cmTC_25df0.dir/src.cxx.obj
+        C:\\msys64\\mingw64\\bin\\g++.exe -DHAVE_CXX_FLAG_WSHADOW  -Wall  -Wextra  -Wshadow -std=c++11   -Wshadow -o CMakeFiles\\cmTC_25df0.dir\\src.cxx.obj -c C:\\Projects\\Zombie-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-4rqkhu\\src.cxx
+        Linking CXX executable cmTC_25df0.exe
+        "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_25df0.dir\\link.txt --verbose=1
+        "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_25df0.dir/objects.a
+        C:\\msys64\\mingw64\\bin\\ar.exe qc CMakeFiles\\cmTC_25df0.dir/objects.a @CMakeFiles\\cmTC_25df0.dir\\objects1.rsp
+        C:\\msys64\\mingw64\\bin\\g++.exe   -Wall  -Wextra  -Wshadow -Wl,--whole-archive CMakeFiles\\cmTC_25df0.dir/objects.a -Wl,--no-whole-archive -o cmTC_25df0.exe -Wl,--out-implib,libcmTC_25df0.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_25df0.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-4rqkhu'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/CheckCXXCompilerFlag.cmake:34 (cmake_check_compiler_flag)"
+      - "build/_deps/googlebenchmark-src/cmake/AddCXXCompilerFlag.cmake:34 (check_cxx_compiler_flag)"
+      - "build/_deps/googlebenchmark-src/CMakeLists.txt:177 (add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test HAVE_CXX_FLAG_WFLOAT_EQUAL"
+    directories:
+      source: "C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-ntfsko"
+      binary: "C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-ntfsko"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "  -Wall  -Wextra  -Wshadow"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Projects/Zombie-game/build/_deps/googlebenchmark-src/cmake/Modules;C:/Projects/Zombie-game/build/_deps/googlebenchmark-src/cmake"
+    buildResult:
+      variable: "HAVE_CXX_FLAG_WFLOAT_EQUAL"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-ntfsko'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/mingw64/bin/mingw32-make.exe -f Makefile cmTC_6ed7a/fast
+        C:/msys64/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_6ed7a.dir\\build.make CMakeFiles/cmTC_6ed7a.dir/build
+        mingw32-make[1]: Entering directory 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-ntfsko'
+        Building CXX object CMakeFiles/cmTC_6ed7a.dir/src.cxx.obj
+        C:\\msys64\\mingw64\\bin\\g++.exe -DHAVE_CXX_FLAG_WFLOAT_EQUAL  -Wall  -Wextra  -Wshadow  -Wfloat-equal -std=c++11   -Wfloat-equal -o CMakeFiles\\cmTC_6ed7a.dir\\src.cxx.obj -c C:\\Projects\\Zombie-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ntfsko\\src.cxx
+        Linking CXX executable cmTC_6ed7a.exe
+        "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_6ed7a.dir\\link.txt --verbose=1
+        "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_6ed7a.dir/objects.a
+        C:\\msys64\\mingw64\\bin\\ar.exe qc CMakeFiles\\cmTC_6ed7a.dir/objects.a @CMakeFiles\\cmTC_6ed7a.dir\\objects1.rsp
+        C:\\msys64\\mingw64\\bin\\g++.exe   -Wall  -Wextra  -Wshadow  -Wfloat-equal -Wl,--whole-archive CMakeFiles\\cmTC_6ed7a.dir/objects.a -Wl,--no-whole-archive -o cmTC_6ed7a.exe -Wl,--out-implib,libcmTC_6ed7a.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_6ed7a.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-ntfsko'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/CheckCXXCompilerFlag.cmake:34 (cmake_check_compiler_flag)"
+      - "build/_deps/googlebenchmark-src/cmake/AddCXXCompilerFlag.cmake:34 (check_cxx_compiler_flag)"
+      - "build/_deps/googlebenchmark-src/CMakeLists.txt:178 (add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test HAVE_CXX_FLAG_WOLD_STYLE_CAST"
+    directories:
+      source: "C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-tj1yxi"
+      binary: "C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-tj1yxi"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "  -Wall  -Wextra  -Wshadow  -Wfloat-equal"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Projects/Zombie-game/build/_deps/googlebenchmark-src/cmake/Modules;C:/Projects/Zombie-game/build/_deps/googlebenchmark-src/cmake"
+    buildResult:
+      variable: "HAVE_CXX_FLAG_WOLD_STYLE_CAST"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-tj1yxi'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/mingw64/bin/mingw32-make.exe -f Makefile cmTC_0d33e/fast
+        C:/msys64/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_0d33e.dir\\build.make CMakeFiles/cmTC_0d33e.dir/build
+        mingw32-make[1]: Entering directory 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-tj1yxi'
+        Building CXX object CMakeFiles/cmTC_0d33e.dir/src.cxx.obj
+        C:\\msys64\\mingw64\\bin\\g++.exe -DHAVE_CXX_FLAG_WOLD_STYLE_CAST  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast -std=c++11   -Wold-style-cast -o CMakeFiles\\cmTC_0d33e.dir\\src.cxx.obj -c C:\\Projects\\Zombie-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-tj1yxi\\src.cxx
+        Linking CXX executable cmTC_0d33e.exe
+        "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_0d33e.dir\\link.txt --verbose=1
+        "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_0d33e.dir/objects.a
+        C:\\msys64\\mingw64\\bin\\ar.exe qc CMakeFiles\\cmTC_0d33e.dir/objects.a @CMakeFiles\\cmTC_0d33e.dir\\objects1.rsp
+        C:\\msys64\\mingw64\\bin\\g++.exe   -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast -Wl,--whole-archive CMakeFiles\\cmTC_0d33e.dir/objects.a -Wl,--no-whole-archive -o cmTC_0d33e.exe -Wl,--out-implib,libcmTC_0d33e.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_0d33e.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-tj1yxi'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/CheckCXXCompilerFlag.cmake:34 (cmake_check_compiler_flag)"
+      - "build/_deps/googlebenchmark-src/cmake/AddCXXCompilerFlag.cmake:34 (check_cxx_compiler_flag)"
+      - "build/_deps/googlebenchmark-src/CMakeLists.txt:180 (add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test HAVE_CXX_FLAG_WERROR"
+    directories:
+      source: "C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-zo9dhn"
+      binary: "C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-zo9dhn"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Projects/Zombie-game/build/_deps/googlebenchmark-src/cmake/Modules;C:/Projects/Zombie-game/build/_deps/googlebenchmark-src/cmake"
+    buildResult:
+      variable: "HAVE_CXX_FLAG_WERROR"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-zo9dhn'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/mingw64/bin/mingw32-make.exe -f Makefile cmTC_ba27a/fast
+        C:/msys64/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_ba27a.dir\\build.make CMakeFiles/cmTC_ba27a.dir/build
+        mingw32-make[1]: Entering directory 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-zo9dhn'
+        Building CXX object CMakeFiles/cmTC_ba27a.dir/src.cxx.obj
+        C:\\msys64\\mingw64\\bin\\g++.exe -DHAVE_CXX_FLAG_WERROR  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Werror -std=c++11   -Werror -o CMakeFiles\\cmTC_ba27a.dir\\src.cxx.obj -c C:\\Projects\\Zombie-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-zo9dhn\\src.cxx
+        Linking CXX executable cmTC_ba27a.exe
+        "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_ba27a.dir\\link.txt --verbose=1
+        "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_ba27a.dir/objects.a
+        C:\\msys64\\mingw64\\bin\\ar.exe qc CMakeFiles\\cmTC_ba27a.dir/objects.a @CMakeFiles\\cmTC_ba27a.dir\\objects1.rsp
+        C:\\msys64\\mingw64\\bin\\g++.exe   -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Werror -Wl,--whole-archive CMakeFiles\\cmTC_ba27a.dir/objects.a -Wl,--no-whole-archive -o cmTC_ba27a.exe -Wl,--out-implib,libcmTC_ba27a.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_ba27a.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-zo9dhn'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/CheckCXXCompilerFlag.cmake:34 (cmake_check_compiler_flag)"
+      - "build/_deps/googlebenchmark-src/cmake/AddCXXCompilerFlag.cmake:34 (check_cxx_compiler_flag)"
+      - "build/_deps/googlebenchmark-src/CMakeLists.txt:184 (add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test HAVE_CXX_FLAG_WSUGGEST_OVERRIDE"
+    directories:
+      source: "C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-l669lw"
+      binary: "C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-l669lw"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Werror"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Projects/Zombie-game/build/_deps/googlebenchmark-src/cmake/Modules;C:/Projects/Zombie-game/build/_deps/googlebenchmark-src/cmake"
+    buildResult:
+      variable: "HAVE_CXX_FLAG_WSUGGEST_OVERRIDE"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-l669lw'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/mingw64/bin/mingw32-make.exe -f Makefile cmTC_6ae6c/fast
+        C:/msys64/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_6ae6c.dir\\build.make CMakeFiles/cmTC_6ae6c.dir/build
+        mingw32-make[1]: Entering directory 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-l669lw'
+        Building CXX object CMakeFiles/cmTC_6ae6c.dir/src.cxx.obj
+        C:\\msys64\\mingw64\\bin\\g++.exe -DHAVE_CXX_FLAG_WSUGGEST_OVERRIDE  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Werror  -Wsuggest-override -std=c++11   -Wsuggest-override -o CMakeFiles\\cmTC_6ae6c.dir\\src.cxx.obj -c C:\\Projects\\Zombie-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-l669lw\\src.cxx
+        Linking CXX executable cmTC_6ae6c.exe
+        "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_6ae6c.dir\\link.txt --verbose=1
+        "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_6ae6c.dir/objects.a
+        C:\\msys64\\mingw64\\bin\\ar.exe qc CMakeFiles\\cmTC_6ae6c.dir/objects.a @CMakeFiles\\cmTC_6ae6c.dir\\objects1.rsp
+        C:\\msys64\\mingw64\\bin\\g++.exe   -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Werror  -Wsuggest-override -Wl,--whole-archive CMakeFiles\\cmTC_6ae6c.dir/objects.a -Wl,--no-whole-archive -o cmTC_6ae6c.exe -Wl,--out-implib,libcmTC_6ae6c.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_6ae6c.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-l669lw'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/CheckCXXCompilerFlag.cmake:34 (cmake_check_compiler_flag)"
+      - "build/_deps/googlebenchmark-src/cmake/AddCXXCompilerFlag.cmake:34 (check_cxx_compiler_flag)"
+      - "build/_deps/googlebenchmark-src/CMakeLists.txt:186 (add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test HAVE_CXX_FLAG_PEDANTIC"
+    directories:
+      source: "C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-n9qds2"
+      binary: "C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-n9qds2"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Werror  -Wsuggest-override"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Projects/Zombie-game/build/_deps/googlebenchmark-src/cmake/Modules;C:/Projects/Zombie-game/build/_deps/googlebenchmark-src/cmake"
+    buildResult:
+      variable: "HAVE_CXX_FLAG_PEDANTIC"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-n9qds2'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/mingw64/bin/mingw32-make.exe -f Makefile cmTC_53a31/fast
+        C:/msys64/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_53a31.dir\\build.make CMakeFiles/cmTC_53a31.dir/build
+        mingw32-make[1]: Entering directory 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-n9qds2'
+        Building CXX object CMakeFiles/cmTC_53a31.dir/src.cxx.obj
+        C:\\msys64\\mingw64\\bin\\g++.exe -DHAVE_CXX_FLAG_PEDANTIC  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Werror  -Wsuggest-override  -pedantic -std=c++11   -pedantic -o CMakeFiles\\cmTC_53a31.dir\\src.cxx.obj -c C:\\Projects\\Zombie-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-n9qds2\\src.cxx
+        Linking CXX executable cmTC_53a31.exe
+        "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_53a31.dir\\link.txt --verbose=1
+        "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_53a31.dir/objects.a
+        C:\\msys64\\mingw64\\bin\\ar.exe qc CMakeFiles\\cmTC_53a31.dir/objects.a @CMakeFiles\\cmTC_53a31.dir\\objects1.rsp
+        C:\\msys64\\mingw64\\bin\\g++.exe   -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Werror  -Wsuggest-override  -pedantic -Wl,--whole-archive CMakeFiles\\cmTC_53a31.dir/objects.a -Wl,--no-whole-archive -o cmTC_53a31.exe -Wl,--out-implib,libcmTC_53a31.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_53a31.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-n9qds2'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/CheckCXXCompilerFlag.cmake:34 (cmake_check_compiler_flag)"
+      - "build/_deps/googlebenchmark-src/cmake/AddCXXCompilerFlag.cmake:34 (check_cxx_compiler_flag)"
+      - "build/_deps/googlebenchmark-src/CMakeLists.txt:187 (add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test HAVE_CXX_FLAG_PEDANTIC_ERRORS"
+    directories:
+      source: "C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-vbntxt"
+      binary: "C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-vbntxt"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Werror  -Wsuggest-override  -pedantic"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Projects/Zombie-game/build/_deps/googlebenchmark-src/cmake/Modules;C:/Projects/Zombie-game/build/_deps/googlebenchmark-src/cmake"
+    buildResult:
+      variable: "HAVE_CXX_FLAG_PEDANTIC_ERRORS"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-vbntxt'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/mingw64/bin/mingw32-make.exe -f Makefile cmTC_7a6ba/fast
+        C:/msys64/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_7a6ba.dir\\build.make CMakeFiles/cmTC_7a6ba.dir/build
+        mingw32-make[1]: Entering directory 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-vbntxt'
+        Building CXX object CMakeFiles/cmTC_7a6ba.dir/src.cxx.obj
+        C:\\msys64\\mingw64\\bin\\g++.exe -DHAVE_CXX_FLAG_PEDANTIC_ERRORS  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors -std=c++11   -pedantic-errors -o CMakeFiles\\cmTC_7a6ba.dir\\src.cxx.obj -c C:\\Projects\\Zombie-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vbntxt\\src.cxx
+        Linking CXX executable cmTC_7a6ba.exe
+        "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_7a6ba.dir\\link.txt --verbose=1
+        "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_7a6ba.dir/objects.a
+        C:\\msys64\\mingw64\\bin\\ar.exe qc CMakeFiles\\cmTC_7a6ba.dir/objects.a @CMakeFiles\\cmTC_7a6ba.dir\\objects1.rsp
+        C:\\msys64\\mingw64\\bin\\g++.exe   -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors -Wl,--whole-archive CMakeFiles\\cmTC_7a6ba.dir/objects.a -Wl,--no-whole-archive -o cmTC_7a6ba.exe -Wl,--out-implib,libcmTC_7a6ba.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_7a6ba.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-vbntxt'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/CheckCXXCompilerFlag.cmake:34 (cmake_check_compiler_flag)"
+      - "build/_deps/googlebenchmark-src/cmake/AddCXXCompilerFlag.cmake:34 (check_cxx_compiler_flag)"
+      - "build/_deps/googlebenchmark-src/CMakeLists.txt:188 (add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test HAVE_CXX_FLAG_WSHORTEN_64_TO_32"
+    directories:
+      source: "C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-c3ggrt"
+      binary: "C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-c3ggrt"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Projects/Zombie-game/build/_deps/googlebenchmark-src/cmake/Modules;C:/Projects/Zombie-game/build/_deps/googlebenchmark-src/cmake"
+    buildResult:
+      variable: "HAVE_CXX_FLAG_WSHORTEN_64_TO_32"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-c3ggrt'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/mingw64/bin/mingw32-make.exe -f Makefile cmTC_1fffe/fast
+        C:/msys64/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_1fffe.dir\\build.make CMakeFiles/cmTC_1fffe.dir/build
+        mingw32-make[1]: Entering directory 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-c3ggrt'
+        Building CXX object CMakeFiles/cmTC_1fffe.dir/src.cxx.obj
+        C:\\msys64\\mingw64\\bin\\g++.exe -DHAVE_CXX_FLAG_WSHORTEN_64_TO_32  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -Wshorten-64-to-32 -std=c++11   -Wshorten-64-to-32 -o CMakeFiles\\cmTC_1fffe.dir\\src.cxx.obj -c C:\\Projects\\Zombie-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-c3ggrt\\src.cxx
+        g++.exe: error: unrecognized command-line option '-Wshorten-64-to-32'
+        g++.exe: error: unrecognized command-line option '-Wshorten-64-to-32'
+        mingw32-make[1]: *** [CMakeFiles\\cmTC_1fffe.dir\\build.make:77: CMakeFiles/cmTC_1fffe.dir/src.cxx.obj] Error 1
+        mingw32-make[1]: Leaving directory 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-c3ggrt'
+        mingw32-make: *** [Makefile:126: cmTC_1fffe/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/CheckCXXCompilerFlag.cmake:34 (cmake_check_compiler_flag)"
+      - "build/_deps/googlebenchmark-src/cmake/AddCXXCompilerFlag.cmake:34 (check_cxx_compiler_flag)"
+      - "build/_deps/googlebenchmark-src/CMakeLists.txt:189 (add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test HAVE_CXX_FLAG_FSTRICT_ALIASING"
+    directories:
+      source: "C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-wlgjva"
+      binary: "C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-wlgjva"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Projects/Zombie-game/build/_deps/googlebenchmark-src/cmake/Modules;C:/Projects/Zombie-game/build/_deps/googlebenchmark-src/cmake"
+    buildResult:
+      variable: "HAVE_CXX_FLAG_FSTRICT_ALIASING"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-wlgjva'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/mingw64/bin/mingw32-make.exe -f Makefile cmTC_3e4c5/fast
+        C:/msys64/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_3e4c5.dir\\build.make CMakeFiles/cmTC_3e4c5.dir/build
+        mingw32-make[1]: Entering directory 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-wlgjva'
+        Building CXX object CMakeFiles/cmTC_3e4c5.dir/src.cxx.obj
+        C:\\msys64\\mingw64\\bin\\g++.exe -DHAVE_CXX_FLAG_FSTRICT_ALIASING  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing -std=c++11   -fstrict-aliasing -o CMakeFiles\\cmTC_3e4c5.dir\\src.cxx.obj -c C:\\Projects\\Zombie-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-wlgjva\\src.cxx
+        Linking CXX executable cmTC_3e4c5.exe
+        "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_3e4c5.dir\\link.txt --verbose=1
+        "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_3e4c5.dir/objects.a
+        C:\\msys64\\mingw64\\bin\\ar.exe qc CMakeFiles\\cmTC_3e4c5.dir/objects.a @CMakeFiles\\cmTC_3e4c5.dir\\objects1.rsp
+        C:\\msys64\\mingw64\\bin\\g++.exe   -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing -Wl,--whole-archive CMakeFiles\\cmTC_3e4c5.dir/objects.a -Wl,--no-whole-archive -o cmTC_3e4c5.exe -Wl,--out-implib,libcmTC_3e4c5.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_3e4c5.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-wlgjva'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/CheckCXXCompilerFlag.cmake:34 (cmake_check_compiler_flag)"
+      - "build/_deps/googlebenchmark-src/cmake/AddCXXCompilerFlag.cmake:34 (check_cxx_compiler_flag)"
+      - "build/_deps/googlebenchmark-src/CMakeLists.txt:192 (add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test HAVE_CXX_FLAG_WNO_DEPRECATED_DECLARATIONS"
+    directories:
+      source: "C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-myz79y"
+      binary: "C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-myz79y"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Projects/Zombie-game/build/_deps/googlebenchmark-src/cmake/Modules;C:/Projects/Zombie-game/build/_deps/googlebenchmark-src/cmake"
+    buildResult:
+      variable: "HAVE_CXX_FLAG_WNO_DEPRECATED_DECLARATIONS"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-myz79y'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/mingw64/bin/mingw32-make.exe -f Makefile cmTC_280d1/fast
+        C:/msys64/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_280d1.dir\\build.make CMakeFiles/cmTC_280d1.dir/build
+        mingw32-make[1]: Entering directory 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-myz79y'
+        Building CXX object CMakeFiles/cmTC_280d1.dir/src.cxx.obj
+        C:\\msys64\\mingw64\\bin\\g++.exe -DHAVE_CXX_FLAG_WNO_DEPRECATED_DECLARATIONS  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations -std=c++11   -Wno-deprecated-declarations -o CMakeFiles\\cmTC_280d1.dir\\src.cxx.obj -c C:\\Projects\\Zombie-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-myz79y\\src.cxx
+        Linking CXX executable cmTC_280d1.exe
+        "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_280d1.dir\\link.txt --verbose=1
+        "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_280d1.dir/objects.a
+        C:\\msys64\\mingw64\\bin\\ar.exe qc CMakeFiles\\cmTC_280d1.dir/objects.a @CMakeFiles\\cmTC_280d1.dir\\objects1.rsp
+        C:\\msys64\\mingw64\\bin\\g++.exe   -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations -Wl,--whole-archive CMakeFiles\\cmTC_280d1.dir/objects.a -Wl,--no-whole-archive -o cmTC_280d1.exe -Wl,--out-implib,libcmTC_280d1.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_280d1.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-myz79y'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/CheckCXXCompilerFlag.cmake:34 (cmake_check_compiler_flag)"
+      - "build/_deps/googlebenchmark-src/cmake/AddCXXCompilerFlag.cmake:34 (check_cxx_compiler_flag)"
+      - "build/_deps/googlebenchmark-src/CMakeLists.txt:202 (add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test HAVE_CXX_FLAG_WNO_DEPRECATED"
+    directories:
+      source: "C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-nwykjk"
+      binary: "C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-nwykjk"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Projects/Zombie-game/build/_deps/googlebenchmark-src/cmake/Modules;C:/Projects/Zombie-game/build/_deps/googlebenchmark-src/cmake"
+    buildResult:
+      variable: "HAVE_CXX_FLAG_WNO_DEPRECATED"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-nwykjk'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/mingw64/bin/mingw32-make.exe -f Makefile cmTC_c26b3/fast
+        C:/msys64/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_c26b3.dir\\build.make CMakeFiles/cmTC_c26b3.dir/build
+        mingw32-make[1]: Entering directory 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-nwykjk'
+        Building CXX object CMakeFiles/cmTC_c26b3.dir/src.cxx.obj
+        C:\\msys64\\mingw64\\bin\\g++.exe -DHAVE_CXX_FLAG_WNO_DEPRECATED  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated -std=c++11   -Wno-deprecated -o CMakeFiles\\cmTC_c26b3.dir\\src.cxx.obj -c C:\\Projects\\Zombie-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-nwykjk\\src.cxx
+        Linking CXX executable cmTC_c26b3.exe
+        "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_c26b3.dir\\link.txt --verbose=1
+        "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_c26b3.dir/objects.a
+        C:\\msys64\\mingw64\\bin\\ar.exe qc CMakeFiles\\cmTC_c26b3.dir/objects.a @CMakeFiles\\cmTC_c26b3.dir\\objects1.rsp
+        C:\\msys64\\mingw64\\bin\\g++.exe   -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated -Wl,--whole-archive CMakeFiles\\cmTC_c26b3.dir/objects.a -Wl,--no-whole-archive -o cmTC_c26b3.exe -Wl,--out-implib,libcmTC_c26b3.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_c26b3.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-nwykjk'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/CheckCXXCompilerFlag.cmake:34 (cmake_check_compiler_flag)"
+      - "build/_deps/googlebenchmark-src/cmake/AddCXXCompilerFlag.cmake:34 (check_cxx_compiler_flag)"
+      - "build/_deps/googlebenchmark-src/CMakeLists.txt:210 (add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test HAVE_CXX_FLAG_WSTRICT_ALIASING"
+    directories:
+      source: "C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-vxqxq1"
+      binary: "C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-vxqxq1"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Projects/Zombie-game/build/_deps/googlebenchmark-src/cmake/Modules;C:/Projects/Zombie-game/build/_deps/googlebenchmark-src/cmake"
+    buildResult:
+      variable: "HAVE_CXX_FLAG_WSTRICT_ALIASING"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-vxqxq1'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/mingw64/bin/mingw32-make.exe -f Makefile cmTC_adb8c/fast
+        C:/msys64/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_adb8c.dir\\build.make CMakeFiles/cmTC_adb8c.dir/build
+        mingw32-make[1]: Entering directory 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-vxqxq1'
+        Building CXX object CMakeFiles/cmTC_adb8c.dir/src.cxx.obj
+        C:\\msys64\\mingw64\\bin\\g++.exe -DHAVE_CXX_FLAG_WSTRICT_ALIASING  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -Wstrict-aliasing -std=c++11   -Wstrict-aliasing -o CMakeFiles\\cmTC_adb8c.dir\\src.cxx.obj -c C:\\Projects\\Zombie-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vxqxq1\\src.cxx
+        Linking CXX executable cmTC_adb8c.exe
+        "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_adb8c.dir\\link.txt --verbose=1
+        "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_adb8c.dir/objects.a
+        C:\\msys64\\mingw64\\bin\\ar.exe qc CMakeFiles\\cmTC_adb8c.dir/objects.a @CMakeFiles\\cmTC_adb8c.dir\\objects1.rsp
+        C:\\msys64\\mingw64\\bin\\g++.exe   -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -Wstrict-aliasing -Wl,--whole-archive CMakeFiles\\cmTC_adb8c.dir/objects.a -Wl,--no-whole-archive -o cmTC_adb8c.exe -Wl,--out-implib,libcmTC_adb8c.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_adb8c.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-vxqxq1'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/CheckCXXCompilerFlag.cmake:34 (cmake_check_compiler_flag)"
+      - "build/_deps/googlebenchmark-src/cmake/AddCXXCompilerFlag.cmake:34 (check_cxx_compiler_flag)"
+      - "build/_deps/googlebenchmark-src/CMakeLists.txt:215 (add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test HAVE_CXX_FLAG_WD654"
+    directories:
+      source: "C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-2zcu2l"
+      binary: "C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-2zcu2l"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -Wstrict-aliasing"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Projects/Zombie-game/build/_deps/googlebenchmark-src/cmake/Modules;C:/Projects/Zombie-game/build/_deps/googlebenchmark-src/cmake"
+    buildResult:
+      variable: "HAVE_CXX_FLAG_WD654"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-2zcu2l'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/mingw64/bin/mingw32-make.exe -f Makefile cmTC_edc29/fast
+        C:/msys64/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_edc29.dir\\build.make CMakeFiles/cmTC_edc29.dir/build
+        mingw32-make[1]: Entering directory 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-2zcu2l'
+        Building CXX object CMakeFiles/cmTC_edc29.dir/src.cxx.obj
+        C:\\msys64\\mingw64\\bin\\g++.exe -DHAVE_CXX_FLAG_WD654  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -Wstrict-aliasing  -wd654 -std=c++11   -wd654 -o CMakeFiles\\cmTC_edc29.dir\\src.cxx.obj -c C:\\Projects\\Zombie-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-2zcu2l\\src.cxx
+        g++.exe: error: unrecognized command-line option '-wd654'
+        g++.exe: error: unrecognized command-line option '-wd654'
+        mingw32-make[1]: *** [CMakeFiles\\cmTC_edc29.dir\\build.make:77: CMakeFiles/cmTC_edc29.dir/src.cxx.obj] Error 1
+        mingw32-make[1]: Leaving directory 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-2zcu2l'
+        mingw32-make: *** [Makefile:126: cmTC_edc29/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/CheckCXXCompilerFlag.cmake:34 (cmake_check_compiler_flag)"
+      - "build/_deps/googlebenchmark-src/cmake/AddCXXCompilerFlag.cmake:34 (check_cxx_compiler_flag)"
+      - "build/_deps/googlebenchmark-src/CMakeLists.txt:216 (add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test HAVE_CXX_FLAG_WTHREAD_SAFETY"
+    directories:
+      source: "C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-2bsjrb"
+      binary: "C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-2bsjrb"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -Wstrict-aliasing"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Projects/Zombie-game/build/_deps/googlebenchmark-src/cmake/Modules;C:/Projects/Zombie-game/build/_deps/googlebenchmark-src/cmake"
+    buildResult:
+      variable: "HAVE_CXX_FLAG_WTHREAD_SAFETY"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-2bsjrb'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/mingw64/bin/mingw32-make.exe -f Makefile cmTC_5eb92/fast
+        C:/msys64/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_5eb92.dir\\build.make CMakeFiles/cmTC_5eb92.dir/build
+        mingw32-make[1]: Entering directory 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-2bsjrb'
+        Building CXX object CMakeFiles/cmTC_5eb92.dir/src.cxx.obj
+        C:\\msys64\\mingw64\\bin\\g++.exe -DHAVE_CXX_FLAG_WTHREAD_SAFETY  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -Wstrict-aliasing  -Wthread-safety -std=c++11   -Wthread-safety -o CMakeFiles\\cmTC_5eb92.dir\\src.cxx.obj -c C:\\Projects\\Zombie-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-2bsjrb\\src.cxx
+        g++.exe: error: unrecognized command-line option '-Wthread-safety'
+        g++.exe: error: unrecognized command-line option '-Wthread-safety'
+        mingw32-make[1]: *** [CMakeFiles\\cmTC_5eb92.dir\\build.make:77: CMakeFiles/cmTC_5eb92.dir/src.cxx.obj] Error 1
+        mingw32-make[1]: Leaving directory 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-2bsjrb'
+        mingw32-make: *** [Makefile:126: cmTC_5eb92/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/CheckCXXCompilerFlag.cmake:34 (cmake_check_compiler_flag)"
+      - "build/_deps/googlebenchmark-src/cmake/AddCXXCompilerFlag.cmake:34 (check_cxx_compiler_flag)"
+      - "build/_deps/googlebenchmark-src/CMakeLists.txt:267 (add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test HAVE_CXX_FLAG_COVERAGE"
+    directories:
+      source: "C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-jcmvn9"
+      binary: "C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-jcmvn9"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -Wstrict-aliasing"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Projects/Zombie-game/build/_deps/googlebenchmark-src/cmake/Modules;C:/Projects/Zombie-game/build/_deps/googlebenchmark-src/cmake"
+    buildResult:
+      variable: "HAVE_CXX_FLAG_COVERAGE"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-jcmvn9'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/mingw64/bin/mingw32-make.exe -f Makefile cmTC_bdab4/fast
+        C:/msys64/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_bdab4.dir\\build.make CMakeFiles/cmTC_bdab4.dir/build
+        mingw32-make[1]: Entering directory 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-jcmvn9'
+        Building CXX object CMakeFiles/cmTC_bdab4.dir/src.cxx.obj
+        C:\\msys64\\mingw64\\bin\\g++.exe -DHAVE_CXX_FLAG_COVERAGE  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -Wstrict-aliasing  --coverage -std=c++11   --coverage -o CMakeFiles\\cmTC_bdab4.dir\\src.cxx.obj -c C:\\Projects\\Zombie-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-jcmvn9\\src.cxx
+        Linking CXX executable cmTC_bdab4.exe
+        "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_bdab4.dir\\link.txt --verbose=1
+        "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_bdab4.dir/objects.a
+        C:\\msys64\\mingw64\\bin\\ar.exe qc CMakeFiles\\cmTC_bdab4.dir/objects.a @CMakeFiles\\cmTC_bdab4.dir\\objects1.rsp
+        C:\\msys64\\mingw64\\bin\\g++.exe   -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -Wstrict-aliasing  --coverage -Wl,--whole-archive CMakeFiles\\cmTC_bdab4.dir/objects.a -Wl,--no-whole-archive -o cmTC_bdab4.exe -Wl,--out-implib,libcmTC_bdab4.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_bdab4.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-jcmvn9'
+        
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "build/_deps/googlebenchmark-src/cmake/CXXFeatureCheck.cmake:57 (try_run)"
+      - "build/_deps/googlebenchmark-src/CMakeLists.txt:297 (cxx_feature_check)"
+    directories:
+      source: "C:/Projects/Zombie-game/build/CMakeFiles/CMakeTmp"
+      binary: "C:/Projects/Zombie-game/build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -Wstrict-aliasing"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Projects/Zombie-game/build/_deps/googlebenchmark-src/cmake/Modules;C:/Projects/Zombie-game/build/_deps/googlebenchmark-src/cmake"
+    buildResult:
+      variable: "COMPILE_HAVE_STD_REGEX"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/mingw64/bin/mingw32-make.exe -f Makefile cmTC_35640/fast
+        C:/msys64/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_35640.dir\\build.make CMakeFiles/cmTC_35640.dir/build
+        mingw32-make[1]: Entering directory 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_35640.dir/std_regex.cpp.obj
+        C:\\msys64\\mingw64\\bin\\g++.exe   -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -Wstrict-aliasing  -std=c++11 -o CMakeFiles\\cmTC_35640.dir\\std_regex.cpp.obj -c C:\\Projects\\Zombie-game\\build\\_deps\\googlebenchmark-src\\cmake\\std_regex.cpp
+        Linking CXX executable cmTC_35640.exe
+        "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_35640.dir\\link.txt --verbose=1
+        "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_35640.dir/objects.a
+        C:\\msys64\\mingw64\\bin\\ar.exe qc CMakeFiles\\cmTC_35640.dir/objects.a @CMakeFiles\\cmTC_35640.dir\\objects1.rsp
+        C:\\msys64\\mingw64\\bin\\g++.exe   -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -Wstrict-aliasing  -Wl,--whole-archive CMakeFiles\\cmTC_35640.dir/objects.a -Wl,--no-whole-archive -o cmTC_35640.exe -Wl,--out-implib,libcmTC_35640.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_35640.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_HAVE_STD_REGEX"
+      cached: true
+      stdout: |
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "build/_deps/googlebenchmark-src/cmake/CXXFeatureCheck.cmake:57 (try_run)"
+      - "build/_deps/googlebenchmark-src/CMakeLists.txt:298 (cxx_feature_check)"
+    directories:
+      source: "C:/Projects/Zombie-game/build/CMakeFiles/CMakeTmp"
+      binary: "C:/Projects/Zombie-game/build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -Wstrict-aliasing"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Projects/Zombie-game/build/_deps/googlebenchmark-src/cmake/Modules;C:/Projects/Zombie-game/build/_deps/googlebenchmark-src/cmake"
+    buildResult:
+      variable: "COMPILE_HAVE_GNU_POSIX_REGEX"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/mingw64/bin/mingw32-make.exe -f Makefile cmTC_889bc/fast
+        C:/msys64/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_889bc.dir\\build.make CMakeFiles/cmTC_889bc.dir/build
+        mingw32-make[1]: Entering directory 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_889bc.dir/gnu_posix_regex.cpp.obj
+        C:\\msys64\\mingw64\\bin\\g++.exe   -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -Wstrict-aliasing  -std=c++11 -o CMakeFiles\\cmTC_889bc.dir\\gnu_posix_regex.cpp.obj -c C:\\Projects\\Zombie-game\\build\\_deps\\googlebenchmark-src\\cmake\\gnu_posix_regex.cpp
+        C:\\Projects\\Zombie-game\\build\\_deps\\googlebenchmark-src\\cmake\\gnu_posix_regex.cpp:1:10: fatal error: gnuregex.h: No such file or directory
+            1 | #include <gnuregex.h>
+              |          ^~~~~~~~~~~~
+        compilation terminated.
+        mingw32-make[1]: *** [CMakeFiles\\cmTC_889bc.dir\\build.make:77: CMakeFiles/cmTC_889bc.dir/gnu_posix_regex.cpp.obj] Error 1
+        mingw32-make[1]: Leaving directory 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeTmp'
+        mingw32-make: *** [Makefile:126: cmTC_889bc/fast] Error 2
+        
+      exitCode: 2
+    runResult:
+      variable: "RUN_HAVE_GNU_POSIX_REGEX"
+      cached: true
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "build/_deps/googlebenchmark-src/cmake/CXXFeatureCheck.cmake:57 (try_run)"
+      - "build/_deps/googlebenchmark-src/CMakeLists.txt:299 (cxx_feature_check)"
+    directories:
+      source: "C:/Projects/Zombie-game/build/CMakeFiles/CMakeTmp"
+      binary: "C:/Projects/Zombie-game/build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -Wstrict-aliasing"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Projects/Zombie-game/build/_deps/googlebenchmark-src/cmake/Modules;C:/Projects/Zombie-game/build/_deps/googlebenchmark-src/cmake"
+    buildResult:
+      variable: "COMPILE_HAVE_POSIX_REGEX"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/mingw64/bin/mingw32-make.exe -f Makefile cmTC_70abb/fast
+        C:/msys64/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_70abb.dir\\build.make CMakeFiles/cmTC_70abb.dir/build
+        mingw32-make[1]: Entering directory 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_70abb.dir/posix_regex.cpp.obj
+        C:\\msys64\\mingw64\\bin\\g++.exe   -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -Wstrict-aliasing  -std=c++11 -o CMakeFiles\\cmTC_70abb.dir\\posix_regex.cpp.obj -c C:\\Projects\\Zombie-game\\build\\_deps\\googlebenchmark-src\\cmake\\posix_regex.cpp
+        Linking CXX executable cmTC_70abb.exe
+        "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_70abb.dir\\link.txt --verbose=1
+        "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_70abb.dir/objects.a
+        C:\\msys64\\mingw64\\bin\\ar.exe qc CMakeFiles\\cmTC_70abb.dir/objects.a @CMakeFiles\\cmTC_70abb.dir\\objects1.rsp
+        C:\\msys64\\mingw64\\bin\\g++.exe   -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -Wstrict-aliasing  -Wl,--whole-archive CMakeFiles\\cmTC_70abb.dir/objects.a -Wl,--no-whole-archive -o cmTC_70abb.exe -Wl,--out-implib,libcmTC_70abb.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_70abb.dir\\linkLibs.rsp
+        C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: CMakeFiles\\cmTC_70abb.dir/objects.a(posix_regex.cpp.obj):posix_regex.cp:(.text+0x5c): undefined reference to `regcomp'
+        C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: CMakeFiles\\cmTC_70abb.dir/objects.a(posix_regex.cpp.obj):posix_regex.cp:(.text+0x99): undefined reference to `regexec'
+        C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: CMakeFiles\\cmTC_70abb.dir/objects.a(posix_regex.cpp.obj):posix_regex.cp:(.text+0xb9): undefined reference to `regfree'
+        collect2.exe: error: ld returned 1 exit status
+        mingw32-make[1]: *** [CMakeFiles\\cmTC_70abb.dir\\build.make:100: cmTC_70abb.exe] Error 1
+        mingw32-make[1]: Leaving directory 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeTmp'
+        mingw32-make: *** [Makefile:126: cmTC_70abb/fast] Error 2
+        
+      exitCode: 2
+    runResult:
+      variable: "RUN_HAVE_POSIX_REGEX"
+      cached: true
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "build/_deps/googlebenchmark-src/cmake/CXXFeatureCheck.cmake:57 (try_run)"
+      - "build/_deps/googlebenchmark-src/CMakeLists.txt:308 (cxx_feature_check)"
+    directories:
+      source: "C:/Projects/Zombie-game/build/CMakeFiles/CMakeTmp"
+      binary: "C:/Projects/Zombie-game/build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -Wstrict-aliasing"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Projects/Zombie-game/build/_deps/googlebenchmark-src/cmake/Modules;C:/Projects/Zombie-game/build/_deps/googlebenchmark-src/cmake"
+    buildResult:
+      variable: "COMPILE_HAVE_STEADY_CLOCK"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/mingw64/bin/mingw32-make.exe -f Makefile cmTC_3f739/fast
+        C:/msys64/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_3f739.dir\\build.make CMakeFiles/cmTC_3f739.dir/build
+        mingw32-make[1]: Entering directory 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_3f739.dir/steady_clock.cpp.obj
+        C:\\msys64\\mingw64\\bin\\g++.exe   -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -Wstrict-aliasing  -std=c++11 -o CMakeFiles\\cmTC_3f739.dir\\steady_clock.cpp.obj -c C:\\Projects\\Zombie-game\\build\\_deps\\googlebenchmark-src\\cmake\\steady_clock.cpp
+        Linking CXX executable cmTC_3f739.exe
+        "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_3f739.dir\\link.txt --verbose=1
+        "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_3f739.dir/objects.a
+        C:\\msys64\\mingw64\\bin\\ar.exe qc CMakeFiles\\cmTC_3f739.dir/objects.a @CMakeFiles\\cmTC_3f739.dir\\objects1.rsp
+        C:\\msys64\\mingw64\\bin\\g++.exe   -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -Wstrict-aliasing  -Wl,--whole-archive CMakeFiles\\cmTC_3f739.dir/objects.a -Wl,--no-whole-archive -o cmTC_3f739.exe -Wl,--out-implib,libcmTC_3f739.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_3f739.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_HAVE_STEADY_CLOCK"
+      cached: true
+      stdout: |
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/CheckCSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/FindThreads.cmake:97 (CHECK_C_SOURCE_COMPILES)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/FindThreads.cmake:163 (_threads_check_libc)"
+      - "build/_deps/googlebenchmark-src/CMakeLists.txt:311 (find_package)"
+    checks:
+      - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
+    directories:
+      source: "C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-gt2wr4"
+      binary: "C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-gt2wr4"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Projects/Zombie-game/build/_deps/googlebenchmark-src/cmake/Modules;C:/Projects/Zombie-game/build/_deps/googlebenchmark-src/cmake"
+    buildResult:
+      variable: "CMAKE_HAVE_LIBC_PTHREAD"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-gt2wr4'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/mingw64/bin/mingw32-make.exe -f Makefile cmTC_a788c/fast
+        C:/msys64/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_a788c.dir\\build.make CMakeFiles/cmTC_a788c.dir/build
+        mingw32-make[1]: Entering directory 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-gt2wr4'
+        Building C object CMakeFiles/cmTC_a788c.dir/src.c.obj
+        C:\\msys64\\mingw64\\bin\\gcc.exe -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles\\cmTC_a788c.dir\\src.c.obj -c C:\\Projects\\Zombie-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-gt2wr4\\src.c
+        Linking C executable cmTC_a788c.exe
+        "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_a788c.dir\\link.txt --verbose=1
+        "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_a788c.dir/objects.a
+        C:\\msys64\\mingw64\\bin\\ar.exe qc CMakeFiles\\cmTC_a788c.dir/objects.a @CMakeFiles\\cmTC_a788c.dir\\objects1.rsp
+        C:\\msys64\\mingw64\\bin\\gcc.exe -Wl,--whole-archive CMakeFiles\\cmTC_a788c.dir/objects.a -Wl,--no-whole-archive -o cmTC_a788c.exe -Wl,--out-implib,libcmTC_a788c.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_a788c.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeScratch/TryCompile-gt2wr4'
+        
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "build/_deps/googlebenchmark-src/cmake/CXXFeatureCheck.cmake:57 (try_run)"
+      - "build/_deps/googlebenchmark-src/CMakeLists.txt:312 (cxx_feature_check)"
+    directories:
+      source: "C:/Projects/Zombie-game/build/CMakeFiles/CMakeTmp"
+      binary: "C:/Projects/Zombie-game/build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -Wstrict-aliasing"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Projects/Zombie-game/build/_deps/googlebenchmark-src/cmake/Modules;C:/Projects/Zombie-game/build/_deps/googlebenchmark-src/cmake"
+    buildResult:
+      variable: "COMPILE_HAVE_PTHREAD_AFFINITY"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/mingw64/bin/mingw32-make.exe -f Makefile cmTC_13753/fast
+        C:/msys64/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_13753.dir\\build.make CMakeFiles/cmTC_13753.dir/build
+        mingw32-make[1]: Entering directory 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_13753.dir/pthread_affinity.cpp.obj
+        C:\\msys64\\mingw64\\bin\\g++.exe   -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -Wstrict-aliasing  -std=c++11 -o CMakeFiles\\cmTC_13753.dir\\pthread_affinity.cpp.obj -c C:\\Projects\\Zombie-game\\build\\_deps\\googlebenchmark-src\\cmake\\pthread_affinity.cpp
+        C:\\Projects\\Zombie-game\\build\\_deps\\googlebenchmark-src\\cmake\\pthread_affinity.cpp: In function 'int main()':
+        C:\\Projects\\Zombie-game\\build\\_deps\\googlebenchmark-src\\cmake\\pthread_affinity.cpp:3:3: error: 'cpu_set_t' was not declared in this scope
+            3 |   cpu_set_t set;
+              |   ^~~~~~~~~
+        C:\\Projects\\Zombie-game\\build\\_deps\\googlebenchmark-src\\cmake\\pthread_affinity.cpp:4:13: error: 'set' was not declared in this scope; did you mean 'tzset'?
+            4 |   CPU_ZERO(&set);
+              |             ^~~
+              |             tzset
+        C:\\Projects\\Zombie-game\\build\\_deps\\googlebenchmark-src\\cmake\\pthread_affinity.cpp:4:3: error: 'CPU_ZERO' was not declared in this scope
+            4 |   CPU_ZERO(&set);
+              |   ^~~~~~~~
+        C:\\Projects\\Zombie-game\\build\\_deps\\googlebenchmark-src\\cmake\\pthread_affinity.cpp:5:23: error: 'CPU_SETSIZE' was not declared in this scope
+            5 |   for (int i = 0; i < CPU_SETSIZE; ++i) {
+              |                       ^~~~~~~~~~~
+        C:\\Projects\\Zombie-game\\build\\_deps\\googlebenchmark-src\\cmake\\pthread_affinity.cpp:6:5: error: 'CPU_SET' was not declared in this scope
+            6 |     CPU_SET(i, &set);
+              |     ^~~~~~~
+        C:\\Projects\\Zombie-game\\build\\_deps\\googlebenchmark-src\\cmake\\pthread_affinity.cpp:7:5: error: 'CPU_CLR' was not declared in this scope
+            7 |     CPU_CLR(i, &set);
+              |     ^~~~~~~
+        C:\\Projects\\Zombie-game\\build\\_deps\\googlebenchmark-src\\cmake\\pthread_affinity.cpp:11:9: error: 'pthread_getaffinity_np' was not declared in this scope; did you mean 'pthread_getname_np'?
+           11 |   ret = pthread_getaffinity_np(self, sizeof(set), &set);
+              |         ^~~~~~~~~~~~~~~~~~~~~~
+              |         pthread_getname_np
+        C:\\Projects\\Zombie-game\\build\\_deps\\googlebenchmark-src\\cmake\\pthread_affinity.cpp:13:9: error: 'pthread_setaffinity_np' was not declared in this scope; did you mean 'pthread_setname_np'?
+           13 |   ret = pthread_setaffinity_np(self, sizeof(set), &set);
+              |         ^~~~~~~~~~~~~~~~~~~~~~
+              |         pthread_setname_np
+        mingw32-make[1]: *** [CMakeFiles\\cmTC_13753.dir\\build.make:77: CMakeFiles/cmTC_13753.dir/pthread_affinity.cpp.obj] Error 1
+        mingw32-make[1]: Leaving directory 'C:/Projects/Zombie-game/build/CMakeFiles/CMakeTmp'
+        mingw32-make: *** [Makefile:126: cmTC_13753/fast] Error 2
+        
+      exitCode: 2
+    runResult:
+      variable: "RUN_HAVE_PTHREAD_AFFINITY"
+      cached: true
+...

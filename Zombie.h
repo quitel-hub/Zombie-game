@@ -20,8 +20,6 @@ class Zombie : public Entity {
     int x, y;
     std::vector<IObserver*> observers;
 
-    int x, y;
-
 public:
     Zombie() : Entity("Zombie", 50, 10), x(0), y(0) {}
 
