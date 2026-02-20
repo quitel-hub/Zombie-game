@@ -1,0 +1,92 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+package "Core" {
+    class Game {
+        - window: sf::RenderWindow
+        - currentState: State
+        + void processEvents()
+        + void updateGameState()
+        + void renderFrame()
+    }
+
+    abstract class State {
+        + virtual void handleInput() = 0
+        + virtual void updateStateLogic() = 0
+        + virtual void drawScene() = 0
+    }
+}
+
+package "Entities" {
+    abstract class Entity {
+        # position: sf::Vector2f
+        # sprite: sf::Sprite
+        + virtual void moveEntity() = 0
+        + virtual void drawEntity() = 0
+    }
+
+    class Player {
+        - health: int
+        - inventory: Inventory
+        + void executeAttack()
+        + void takeDamage(amount: int)
+    }
+
+    class Zombie {
+        - movementSpeed: float
+        + void trackPlayer(target: sf::Vector2f)
+    }
+
+    class Boss {
+        - specialAttackCooldown: float
+        + void executeSpecialAttack()
+    }
+}
+
+package "Items" {
+    abstract class Weapon {
+        # damage: int
+        + virtual void useWeapon() = 0
+    }
+
+    class Sword {
+        + void useWeapon()
+    }
+
+    class Gun {
+        - ammo: int
+        + void useWeapon()
+        + void reloadWeapon()
+    }
+
+    class Inventory {
+        - items: std::vector<Weapon*>
+        + void addItem(weapon: Weapon*)
+        + void equipWeapon(index: int)
+    }
+}
+
+package "Environment" {
+    class Map {
+        - tiles: std::vector<sf::Sprite>
+        + void loadMapData()
+        + void renderMap()
+    }
+}
+
+' Relationships
+Entity <|-- Player
+Entity <|-- Zombie
+Zombie <|-- Boss
+Weapon <|-- Sword
+Weapon <|-- Gun
+
+Player *-- Inventory
+Inventory o-- Weapon
+
+Game *-- State
+Game *-- Map
+Game *-- Player
+Game o-- Entity
+
+@enduml

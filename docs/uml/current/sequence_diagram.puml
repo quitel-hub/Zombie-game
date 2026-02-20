@@ -1,0 +1,45 @@
+@startuml
+actor "User" as user
+participant "Game" as game
+participant "Player" as player
+participant "Zombie" as zombie
+participant "Map" as map
+participant "sf::RenderWindow" as window
+
+user -> game : Launch Application
+activate game
+
+game -> map : loadMapData()
+activate map
+deactivate map
+
+loop Game Loop [while window.isOpen()]
+    
+    == 1. Event Processing (Input) ==
+    game -> window : pollEvent()
+    user -> game : Keyboard/Mouse Input
+    game -> game : processEvents()
+    
+    == 2. State Update (Logic) ==
+    game -> game : updateGameState()
+    activate game
+    game -> player : moveEntity()
+    game -> player : executeAttack() (if input triggered)
+    game -> zombie : trackPlayer(player.position)
+    deactivate game
+    
+    == 3. Rendering (Graphics) ==
+    game -> window : clear()
+    game -> game : renderFrame()
+    activate game
+    game -> map : renderMap()
+    game -> player : drawEntity()
+    game -> zombie : drawEntity()
+    deactivate game
+    game -> window : display()
+    
+end
+
+game --> user : Exit Application
+deactivate game
+@enduml

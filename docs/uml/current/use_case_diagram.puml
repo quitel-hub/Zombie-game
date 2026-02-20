@@ -1,0 +1,24 @@
+@startuml
+left to right direction
+actor "Player" as player
+
+package "Zombie Survival Game" {
+  usecase "Start / Load Game" as UC1
+  usecase "Move Character" as UC2
+  usecase "Attack Enemies" as UC3
+  usecase "Switch Weapon" as UC4
+  usecase "Take Damage / Die" as UC5
+  usecase "Pause / Exit Game" as UC6
+}
+
+player --> UC1
+player --> UC2
+player --> UC3
+player --> UC4
+player --> UC6
+
+' Зв'язок розширення (гравець може отримати шкоду під час атаки або руху)
+UC5 .> UC2 : <<extends>>
+UC5 .> UC3 : <<extends>>
+
+@enduml
