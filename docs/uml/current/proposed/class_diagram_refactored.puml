@@ -1,0 +1,67 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+package "Core Architecture (Refactored)" #LightCyan {
+    class Game {
+        - window: sf::RenderWindow
+        - scoreManager: ScoreManager
+        - enemyFactory: EnemyFactory
+        + void initializeGameEngine()
+        + void processUserEvents()
+        + void updateGameState()
+        + void renderFrame()
+    }
+}
+
+package "Events (Observer Pattern)" #LightGreen {
+    interface IObserver {
+        + virtual void onEnemyKilled(scoreValue: int) = 0
+    }
+
+    class ScoreManager {
+        - currentScore: int
+        + void onEnemyKilled(scoreValue: int)
+        + void displayCurrentScore()
+    }
+}
+
+package "Entities" {
+    abstract class Entity {
+        # position: sf::Vector2f
+        + virtual void updateEntityPosition() = 0
+        + virtual void drawEntity(window: sf::RenderWindow&) = 0
+    }
+
+    class Zombie {
+        - movementSpeed: float
+        - observers: std::vector<IObserver*>
+        + void addDeathObserver(observer: IObserver*)
+        + void notifyObserversOnDeath()
+    }
+    
+    class Boss {
+        - observers: std::vector<IObserver*>
+        + void addDeathObserver(observer: IObserver*)
+        + void notifyObserversOnDeath()
+    }
+}
+
+package "Creation (Factory Method)" #LightYellow {
+    class EnemyFactory {
+        + Zombie* createBasicZombie(spawnPoint: sf::Vector2f)
+        + Boss* createBossEntity(spawnPoint: sf::Vector2f)
+    }
+}
+
+' Relationships
+Entity <|-- Zombie
+Entity <|-- Boss
+IObserver <|.. ScoreManager
+Zombie o-- IObserver
+Boss o-- IObserver
+Game *-- ScoreManager
+Game *-- EnemyFactory
+EnemyFactory ..> Zombie : creates
+EnemyFactory ..> Boss : creates
+
+@enduml
