@@ -4,8 +4,9 @@
 #include "Zombie.h"
 #include "LocalizationManager.h"
 #include "Logger.h"
+#include "IObserver.h"
 
-using namespace std;
+
 
 #ifndef UNTITLED23_BOSS_H
 #define UNTITLED23_BOSS_H
@@ -34,6 +35,13 @@ public:
      * @details Завдає шкоди цілі, що дорівнює (базова_шкода + лють).
      * @param target Сутність, яку атакує бос.
      */
+
+    void notifyObserversOnDeath() override {
+        for (auto* observer : observers) {
+            observer->onEnemyKilled(50); 
+        }
+    }
+
     void attack(Entity& target) override {
         int totalDamage = getDamage() + rage;
 

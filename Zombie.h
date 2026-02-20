@@ -5,6 +5,7 @@
 #include "LocalizationManager.h"
 #include "Entity.h"
 #include "Logger.h"
+#include "IObserver.h"
 
 using namespace std;
 
@@ -15,6 +16,10 @@ using namespace std;
  * @brief Клас ворога-зомбі.
  */
 class Zombie : public Entity {
+    protected:
+    int x, y;
+    std::vector<IObserver*> observers;
+
     int x, y;
 
 public:
@@ -22,6 +27,16 @@ public:
 
     Zombie(const string& n, int h, int d, int sx, int sy)
             : Entity(n, h, d), x(sx), y(sy) {}
+
+    void addDeathObserver(IObserver* observer) {
+        observers.push_back(observer);
+    }
+
+    virtual void notifyObserversOnDeath() {
+        for (auto* observer : observers) {
+            observer->onEnemyKilled(10); 
+        }
+    }
 
     void attack(Entity& target) override {
         LOG_INFO(L10N.getString("zombie_attack_header"));
