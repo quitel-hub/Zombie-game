@@ -358,7 +358,9 @@ void Game::resetGame() {
         int bossY = configMapHeight - 2;
         if (map.getGrid()[bossY][bossX] == 1) { bossX--; }
 
-        enemies.add(make_unique<Boss>("BOSS", 120, 20, bossX, bossY, 7));
+        Boss* newBoss = enemyFactory.createBossEntity(bossX, bossY);
+        newBoss->addDeathObserver(&scoreManager);
+        enemies.add(std::unique_ptr<Boss>(newBoss)); 
         LOG_INFO("Boss spawned at (" + to_string(bossX) + "," + to_string(bossY) + ")");
     }
 
@@ -388,7 +390,9 @@ void Game::resetGame() {
             z_y = configMapHeight - 2;
         }
 
-        enemies.add(make_unique<Zombie>("Zombie " + std::to_string(i + 1), 50, 10, z_x, z_y));
+        Zombie* newZombie = enemyFactory.createBasicZombie(z_x, z_y);
+        newZombie->addDeathObserver(&scoreManager);
+        enemies.add(std::unique_ptr<Zombie>(newZombie));
     }
 
 
@@ -886,7 +890,10 @@ void Game::handlePlayerAttack() {
                 if (!z->isAlive()) {
                     LOG_INFO("Enemy neutralized: " + z->getName());
                     addLogMessage(z->getName() + " defeated!");
-                    player.addScore(50);
+                   
+                    z->notifyObserversOnDeath(); 
+                    player.addScore(scoreManager.getCurrentScore()); 
+                    
                     enemies.remove(i);
                     zombieSound.play();
                 }
