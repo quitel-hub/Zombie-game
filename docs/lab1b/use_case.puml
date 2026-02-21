@@ -1,0 +1,27 @@
+@startuml
+left to right direction
+actor "Standard User" as user
+actor "Developer" as dev
+
+user <|-- dev : inherits
+
+package "DevTalk Messenger" {
+  usecase "Register / Login" as UC1
+  usecase "Send Text/Media Message" as UC2
+  usecase "Create Group Chat" as UC3
+  
+  usecase "Link GitHub/GitLab Repo" as UC4
+  usecase "Receive Native Commit Cards" as UC5
+  usecase "Review Code in Chat" as UC6
+}
+
+user --> UC1
+user --> UC2
+user --> UC3
+
+dev --> UC4
+dev --> UC5
+dev --> UC6
+
+UC6 .> UC5 : <<includes>>
+@enduml

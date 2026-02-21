@@ -1,0 +1,32 @@
+@startuml
+node "User Device" <<Mobile / Desktop>> {
+  component "DevTalk Client App" as client
+}
+
+node "Cloud Infrastructure (AWS/GCP)" <<Cloud Environment>> {
+  node "Load Balancer" <<Nginx>> as lb
+  
+  node "App Server (Docker)" <<Container>> {
+    component "API Gateway" as api
+    component "Chat Service" as chat
+    component "Webhook Listener" as webhook
+  }
+  
+  node "Database Server" <<VM>> {
+    database "PostgreSQL (Main DB)" as db
+    database "Redis (Cache)" as cache
+  }
+}
+
+cloud "GitHub / GitLab" as external_git
+
+client <--> lb : HTTPS / WSS
+lb --> api
+lb --> webhook : Route Git Hooks
+
+api --> chat
+chat --> db
+chat --> cache
+
+external_git --> lb : Webhook HTTP POST
+@enduml

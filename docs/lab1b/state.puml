@@ -1,0 +1,15 @@
+@startuml
+[*] --> Draft : User starts typing
+
+Draft --> Sent : User presses Send
+Draft --> [*] : User clears text
+
+Sent --> Delivered : Server acknowledges & \n routes to recipient
+Sent --> Failed : Network error / Timeout
+
+Failed --> Sent : Auto-retry / Manual retry
+Failed --> [*] : Message deleted
+
+Delivered --> Read : Recipient opens chat window
+Read --> [*]
+@enduml

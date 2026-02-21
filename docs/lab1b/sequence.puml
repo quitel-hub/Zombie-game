@@ -1,0 +1,26 @@
+@startuml
+actor "Developer 1" as dev1
+participant "Client App" as client
+participant "API Gateway" as api
+participant "Chat Service" as chat
+participant "DevHub Listener" as devhub
+database "PostgreSQL" as db
+actor "GitHub API" as git
+
+== Standard Messaging ==
+dev1 -> client: Type & Send Message
+client -> api: POST /api/messages
+api -> chat: Route Message
+chat -> db: Save Message
+db --> chat: Confirm Save
+chat --> api: Success
+api --> client: Message Delivered (200 OK)
+
+== Webhook Integration (Commit Card) ==
+git -> devhub: Webhook Payload (Push Event)
+devhub -> devhub: Parse & Verify Token
+devhub -> chat: Generate "Commit Card"
+chat -> db: Save Commit Message
+chat -> client: Push Event via WebSocket
+client -> dev1: Display Commit Card UI
+@enduml

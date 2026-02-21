@@ -1,0 +1,35 @@
+@startuml
+package "Client Side" {
+  [Mobile App (iOS/Android)] as Mobile
+  [Desktop Web App] as Web
+}
+
+package "Cloud Infrastructure (DevTalk)" {
+  [API Gateway] as Gateway
+  [Auth Service] as Auth
+  [Chat & WebSocket Service] as Chat
+  [DevHub Webhook Listener] as DevHub
+  
+  database "PostgreSQL (Users & Chats)" as DB
+  database "Redis (Message Cache)" as Cache
+}
+
+cloud "External Services" {
+  [GitHub / GitLab] as Git
+  [Firebase/APNs (Push)] as Push
+}
+
+Mobile <--> Gateway : REST / WSS
+Web <--> Gateway : REST / WSS
+
+Gateway --> Auth : Token Verify
+Gateway --> Chat : Route Messages
+Gateway --> DevHub : Manage Integrations
+
+Chat <--> Cache : Fast Access
+Chat --> DB : Persist Messages
+Chat --> Push : Trigger Notifications
+
+Git --> DevHub : Webhooks (Push, PR)
+DevHub --> Chat : Generate Commit Card
+@enduml

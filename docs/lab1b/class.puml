@@ -1,0 +1,44 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class User {
+  + uuid: UUID
+  + username: String
+  + email: String
+  + authenticate()
+}
+
+class Chat {
+  + chatID: UUID
+  + title: String
+  + isGroup: Boolean
+  + addParticipant()
+}
+
+abstract class Message {
+  + messageID: UUID
+  + timestamp: DateTime
+  + deliver()
+}
+
+class TextMessage extends Message {
+  + textContent: String
+}
+
+class CommitCardMessage extends Message {
+  + repositoryName: String
+  + commitHash: String
+  + diffSnippet: String
+  + openInlineReview()
+}
+
+class RepoIntegration {
+  + webhookURL: String
+  + secretToken: String
+  + verifyPayload()
+}
+
+User "1" *-- "many" Chat : participates >
+Chat "1" *-- "many" Message : contains >
+Chat "1" o-- "0..1" RepoIntegration : has >
+@enduml
